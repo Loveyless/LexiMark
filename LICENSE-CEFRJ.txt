@@ -1,0 +1,13 @@
+CEFR-J Wordlist
+Source:  https://www.cefr-j.org/
+License: CC BY-SA 4.0  (https://creativecommons.org/licenses/by-sa/4.0/)
+
+LexiMark uses CEFR-J Wordlist as the data source for A1/A2/B1/B2 leveled
+word lists. The transformed JSON files under `public/data/levels/` are
+re-distributions of CEFR-J data, and therefore inherit the same CC BY-SA 4.0
+license. Any downstream use must:
+
+  1. Provide attribution to CEFR-J.
+  2. Distribute under the same CC BY-SA 4.0 license.
+
+For the canonical wordlist and additional usage notes, see the CEFR-J site.

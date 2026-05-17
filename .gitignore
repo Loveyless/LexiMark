@@ -1,0 +1,11 @@
+node_modules/
+.wxt/
+.output/
+dist/
+*.zip
+*.log
+.env
+.DS_Store
+
+# 大体积数据源（本地构建产物允许进仓库，但原始 ECDICT 完整版不进仓库）
+data/raw/
