@@ -5,6 +5,7 @@ import {
   TOKEN_REGEX,
 } from '../shared/constants'
 import {
+  hasEnoughLettersToHighlight,
   iterTokens,
   isAllCaps,
   isCapitalizedWord,
@@ -42,6 +43,7 @@ export function processTextNode(
 
   const matches: TokenMatch[] = []
   for (const tk of iterTokens(text, TOKEN_REGEX)) {
+    if (!hasEnoughLettersToHighlight(tk.raw)) continue
     const norm = decideNormalized(tk.raw, tk.start, text, idx)
     if (!norm) continue
     const verdict = shouldHighlight(norm, idx)

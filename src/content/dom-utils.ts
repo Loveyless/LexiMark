@@ -3,6 +3,7 @@ import {
   SKIP_TAGS_CODE,
   HIGHLIGHT_CLASS,
   HIGHLIGHT_PROCESSED_ATTR,
+  MIN_HIGHLIGHT_TOKEN_LETTERS,
 } from '../shared/constants'
 
 /** 判断元素是否落在跳过标签里（或它的祖先里有跳过标签） */
@@ -43,6 +44,12 @@ export function* iterTokens(
   while ((m = regex.exec(text)) !== null) {
     yield { raw: m[0], start: m.index, end: m.index + m[0].length }
   }
+}
+
+/** 单个英文字母不作为可高亮单词处理 */
+export function hasEnoughLettersToHighlight(raw: string): boolean {
+  const matched = raw.match(/[A-Za-z]/g)
+  return (matched?.length ?? 0) >= MIN_HIGHLIGHT_TOKEN_LETTERS
 }
 
 /**
