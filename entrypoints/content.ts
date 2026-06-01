@@ -30,6 +30,7 @@ import {
 } from '../src/content/tooltip'
 import { isHostDisabled } from '../src/storage/sites'
 import { currentHost } from '../src/content/dom-utils'
+import { preloadSpeechVoices } from '../src/speech/speak'
 import type {
   DictEntry,
   IndexSnapshot,
@@ -38,7 +39,7 @@ import type {
 
 export default defineContentScript({
   matches: ['https://*/*', 'http://*/*'],
-  allFrames: false,
+  allFrames: true,
   runAt: 'document_idle',
   async main() {
     injectHighlightCss()
@@ -54,6 +55,7 @@ export default defineContentScript({
     // 监听设置变化 → 重新决定是否扫描
     subscribe((idx) => {
       applyHighlightStyle(idx.settings)
+      preloadSpeechVoices(idx.settings)
       const host = currentHost()
       const shouldRun =
         idx.settings.enabled && !isHostDisabled(host, idx.settings.disabledSites)
@@ -129,6 +131,7 @@ async function requestSnapshot(known: number | undefined): Promise<IndexSnapshot
 function applyState(snap: IndexSnapshot) {
   const idx = setSnapshot(snap)
   applyHighlightStyle(idx.settings)
+  preloadSpeechVoices(idx.settings)
   const host = currentHost()
   const shouldRun =
     idx.settings.enabled && !isHostDisabled(host, idx.settings.disabledSites)
