@@ -7,6 +7,7 @@ export function useWordList(key: 'customWords' | 'excludedWords'): {
   words: string[]
   loading: boolean
   add: (w: string) => Promise<void>
+  addMany: (items: string[]) => Promise<void>
   remove: (w: string) => Promise<void>
   setAll: (next: string[]) => Promise<void>
 } {
@@ -54,6 +55,10 @@ export function useWordList(key: 'customWords' | 'excludedWords'): {
     add: async (w) => {
       const cur = await getCurrent(key)
       await persist([...cur, w])
+    },
+    addMany: async (items) => {
+      const cur = await getCurrent(key)
+      await persist([...cur, ...items])
     },
     remove: async (w) => {
       const cur = await getCurrent(key)

@@ -136,9 +136,9 @@ export default function App() {
         <Section title="自定义词（强制高亮）">
           <WordEditor
             words={custom.words}
-            onAdd={(w) => custom.add(w)}
+            onAddWords={(items) => custom.addMany(items)}
             onRemove={(w) => custom.remove(w)}
-            placeholder="例如：middleware"
+            placeholder={'middleware, rendering\nlocalization'}
           />
         </Section>
 
@@ -146,9 +146,9 @@ export default function App() {
         <Section title="排除词（永远不高亮）">
           <WordEditor
             words={excluded.words}
-            onAdd={(w) => excluded.add(w)}
+            onAddWords={(items) => excluded.addMany(items)}
             onRemove={(w) => excluded.remove(w)}
-            placeholder="例如：developer"
+            placeholder={'developer, release\nbrowser'}
           />
         </Section>
 
@@ -284,69 +284,125 @@ function HighlightPreview(props: { mode: HighlightMode; color: string }) {
   return <span style={style}>preview highlight</span>
 }
 
+type WordListViewMode = 'tags' | 'comma' | 'lines'
+
 function WordEditor(props: {
   words: string[]
-  onAdd: (w: string) => void | Promise<void>
+  onAddWords: (items: string[]) => void | Promise<void>
   onRemove: (w: string) => void | Promise<void>
   placeholder?: string
 }) {
   const [input, setInput] = useState('')
+  const [viewMode, setViewMode] = useState<WordListViewMode>('tags')
   const sorted = useMemo(() => [...props.words].sort(), [props.words])
+  const pendingWords = useMemo(() => parseWordInput(input), [input])
+  const textBlockValue = useMemo(
+    () => viewMode === 'comma' ? sorted.join(', ') : sorted.join('\n'),
+    [sorted, viewMode],
+  )
 
-  const handleAdd = () => {
-    const w = input.trim().toLowerCase()
-    if (!w) return
-    props.onAdd(w)
+  const handleAdd = async () => {
+    if (pendingWords.length === 0) return
+    await props.onAddWords(pendingWords)
     setInput('')
   }
 
   return (
     <div>
-      <div className="flex gap-2">
-        <input
-          type="text"
+      <div className="flex items-start gap-2">
+        <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={props.placeholder}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
               e.preventDefault()
               handleAdd()
             }
           }}
-          className="flex-1 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-3 py-1.5 text-sm"
+          rows={3}
+          className="min-h-20 flex-1 resize-y rounded border border-gray-300 bg-white px-3 py-2 text-sm leading-5 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-gray-700 dark:bg-gray-950"
         />
         <button
           type="button"
           onClick={handleAdd}
-          className="rounded bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 text-sm"
+          disabled={pendingWords.length === 0}
+          className="rounded bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-700"
         >
-          添加
+          {pendingWords.length > 1 ? `添加 ${pendingWords.length} 个` : '添加'}
         </button>
       </div>
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {sorted.length === 0 && (
-          <div className="text-xs text-gray-400 dark:text-gray-500">（暂无）</div>
-        )}
-        {sorted.map((w) => (
-          <span
-            key={w}
-            className="inline-flex items-center gap-1 rounded bg-gray-100 dark:bg-gray-800 px-2 py-1 text-xs"
-          >
-            {w}
+
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+        <div className="text-xs text-gray-500 dark:text-gray-400">{sorted.length} 个词</div>
+        <div className="inline-flex overflow-hidden rounded border border-gray-200 dark:border-gray-700">
+          {([
+            ['tags', '标签'],
+            ['comma', '逗号'],
+            ['lines', '换行'],
+          ] as const).map(([mode, label]) => (
             <button
+              key={mode}
               type="button"
-              onClick={() => props.onRemove(w)}
-              className="text-gray-400 hover:text-red-600"
-              aria-label={`移除 ${w}`}
+              onClick={() => setViewMode(mode)}
+              className={[
+                'px-2.5 py-1 text-xs transition',
+                viewMode === mode
+                  ? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-950'
+                  : 'bg-white text-gray-600 hover:bg-gray-50 dark:bg-gray-900 dark:text-gray-300 dark:hover:bg-gray-800',
+              ].join(' ')}
             >
-              ×
+              {label}
             </button>
-          </span>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3">
+        {sorted.length === 0 ? (
+          <div className="text-xs text-gray-400 dark:text-gray-500">（暂无）</div>
+        ) : viewMode === 'tags' ? (
+          <div className="flex flex-wrap gap-1.5">
+            {sorted.map((w) => (
+              <span
+                key={w}
+                className="inline-flex items-center gap-1 rounded bg-gray-100 px-2 py-1 text-xs dark:bg-gray-800"
+              >
+                {w}
+                <button
+                  type="button"
+                  onClick={() => props.onRemove(w)}
+                  className="text-gray-400 hover:text-red-600"
+                  aria-label={`移除 ${w}`}
+                >
+                  ×
+                </button>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <textarea
+            readOnly
+            value={textBlockValue}
+            rows={Math.min(Math.max(sorted.length, 4), 12)}
+            className="w-full resize-y rounded border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs leading-5 text-gray-800 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100"
+          />
+        )}
       </div>
     </div>
   )
+}
+
+function parseWordInput(raw: string): string[] {
+  const seen = new Set<string>()
+  const words: string[] = []
+  for (const item of raw.split(/[\n,，]+/)) {
+    const word = item.trim().toLowerCase()
+    if (!word || seen.has(word)) continue
+    seen.add(word)
+    words.push(word)
+  }
+  return words
 }
 
 function LevelPreview(props: { lv: UserLevel; includeCurrent: boolean; adv: boolean }) {
