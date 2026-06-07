@@ -46,7 +46,7 @@ export function* iterTokens(
   }
 }
 
-/** 单个英文字母不作为可高亮单词处理 */
+/** 少于三个英文字母的 token 不作为可高亮单词处理 */
 export function hasEnoughLettersToHighlight(raw: string): boolean {
   const matched = raw.match(/[A-Za-z]/g)
   return (matched?.length ?? 0) >= MIN_HIGHLIGHT_TOKEN_LETTERS

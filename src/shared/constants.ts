@@ -91,7 +91,7 @@ export const ENGLISH_RATIO_THRESHOLD = 0.3
 export const TOKEN_REGEX = /[A-Za-z]+(?:['’\-][A-Za-z]+)*/g
 
 /** 可高亮 token 至少包含的英文字母数 */
-export const MIN_HIGHLIGHT_TOKEN_LETTERS = 2
+export const MIN_HIGHLIGHT_TOKEN_LETTERS = 3
 
 /** 单页面 token 数上限（PRD §24），超过则只处理 viewport 附近 */
 export const MAX_TOKENS_PER_PAGE = 50_000
