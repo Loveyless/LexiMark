@@ -45,6 +45,15 @@ function installSpeechMock(initialVoices: SpeechSynthesisVoice[] = []) {
     fireVoicesChanged() {
       for (const listener of listeners) listener()
     },
+    finishLast(type: 'end' | 'error' = 'end') {
+      const utterance = spoken.at(-1)
+      if (!utterance) return
+      if (type === 'end') {
+        utterance.onend?.call(utterance, {} as SpeechSynthesisEvent)
+      } else {
+        utterance.onerror?.call(utterance, {} as SpeechSynthesisErrorEvent)
+      }
+    },
   }
 }
 
@@ -120,5 +129,77 @@ describe('speak', () => {
 
     expect(speech.spoken).toHaveLength(1)
     expect(speech.spoken[0]?.voice).toBe(selectedVoice)
+  })
+
+  it('resolves a pending playback when a newer playback cancels it', async () => {
+    const speech = installSpeechMock()
+    const { speakAndWait } = await import('./speak')
+
+    const first = speakAndWait('hello', {
+      speakLang: 'en-US',
+      speakRate: 0.9,
+      speakVoiceURI: '',
+    }, true)
+    await Promise.resolve()
+
+    expect(speech.spoken).toHaveLength(1)
+
+    const second = speakAndWait('world', {
+      speakLang: 'en-US',
+      speakRate: 0.9,
+      speakVoiceURI: '',
+    }, true)
+    await Promise.resolve()
+
+    await expect(first).resolves.toBe('canceled')
+    expect(speech.spoken).toHaveLength(2)
+
+    speech.finishLast()
+    await expect(second).resolves.toBe('spoken')
+  })
+
+  it('does not throttle a request canceled before speech is queued', async () => {
+    const speech = installSpeechMock()
+    const selectedVoice = makeVoice('selected-voice')
+    const { speakAndWait } = await import('./speak')
+
+    const first = speakAndWait('hello', {
+      speakLang: 'en-US',
+      speakRate: 0.9,
+      speakVoiceURI: selectedVoice.voiceURI,
+    }, false)
+    await Promise.resolve()
+
+    expect(speech.spoken).toHaveLength(0)
+
+    const interrupting = speakAndWait('world', {
+      speakLang: 'en-US',
+      speakRate: 0.9,
+      speakVoiceURI: '',
+    }, true)
+    await Promise.resolve()
+
+    expect(speech.spoken).toHaveLength(1)
+
+    speech.setVoices([selectedVoice])
+    speech.fireVoicesChanged()
+    await Promise.resolve()
+
+    await expect(first).resolves.toBe('canceled')
+
+    speech.finishLast()
+    await expect(interrupting).resolves.toBe('spoken')
+
+    const retry = speakAndWait('hello', {
+      speakLang: 'en-US',
+      speakRate: 0.9,
+      speakVoiceURI: selectedVoice.voiceURI,
+    }, false)
+    await Promise.resolve()
+
+    expect(speech.spoken).toHaveLength(2)
+
+    speech.finishLast()
+    await expect(retry).resolves.toBe('spoken')
   })
 })

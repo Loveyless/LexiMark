@@ -178,6 +178,8 @@ function requestIdleSafe(cb: () => void) {
 
 // ============ hover 委托 ============
 
+let hoverSeq = 0
+
 function setupHoverListener() {
   let hoverTimer: number | null = null
   let pendingWord: string | null = null
@@ -191,13 +193,14 @@ function setupHoverListener() {
       if (!target.classList?.contains(HIGHLIGHT_CLASS)) return
       const word = target.getAttribute(HIGHLIGHT_WORD_ATTR)
       if (!word) return
+      const seq = ++hoverSeq
       pendingWord = word
       pendingPos = { x: e.clientX, y: e.clientY }
       if (hoverTimer != null) clearTimeout(hoverTimer)
       hoverTimer = window.setTimeout(() => {
         hoverTimer = null
-        if (pendingWord !== word) return
-        showCardFor(word, pendingPos, target)
+        if (pendingWord !== word || hoverSeq !== seq) return
+        showCardFor(word, pendingPos, target, seq)
       }, TOOLTIP_DELAY_MS)
     },
     true,
@@ -210,11 +213,12 @@ function setupHoverListener() {
       const target = e.target as Element | null
       if (!target?.classList?.contains(HIGHLIGHT_CLASS)) return
       if (related && related.closest?.('#leximark-tooltip-host')) return
+      hoverSeq++
       if (hoverTimer != null) {
         clearTimeout(hoverTimer)
         hoverTimer = null
-        pendingWord = null
       }
+      pendingWord = null
       scheduleHide(200)
     },
     true,
@@ -227,7 +231,8 @@ function setupHoverListener() {
 async function showCardFor(
   word: string,
   pos: { x: number; y: number },
-  _target: Element,
+  target: Element,
+  seq: number,
 ) {
   const idx = getOrEmpty()
   let entry: DictEntry | null = null
@@ -240,6 +245,7 @@ async function showCardFor(
   } catch (e) {
     console.warn('[LexiMark] query entry failed:', e)
   }
+  if (seq !== hoverSeq || !target.isConnected) return
   showTooltip({
     word,
     entry,

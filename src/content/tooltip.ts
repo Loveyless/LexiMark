@@ -1,5 +1,5 @@
 import type { DictEntry, Settings } from '../shared/types'
-import { speak } from '../speech/speak'
+import { speak, speakAndWait } from '../speech/speak'
 
 /**
  * Tooltip / 释义卡片。
@@ -9,6 +9,7 @@ import { speak } from '../speech/speak'
  */
 
 const TOOLTIP_HOST_ID = 'leximark-tooltip-host'
+const HOVER_SPEECH_LOOP_GAP_MS = 250
 
 const TOOLTIP_CSS = `
 :host {
@@ -88,6 +89,9 @@ let shadow: ShadowRoot | null = null
 let cardEl: HTMLDivElement | null = null
 let hideTimer: number | null = null
 let currentWord: string | null = null
+let speechLoopId = 0
+let speechLoopTimer: number | null = null
+let speechLoopResolve: (() => void) | null = null
 
 function ensureMounted(): void {
   if (host) return
@@ -139,11 +143,14 @@ export function showTooltip(opts: ShowOptions): void {
   host.style.top = `${y}px`
 
   if (opts.settings.autoSpeakOnHover) {
-    speak(opts.word, opts.settings, false)
+    startAutoSpeechLoop(opts.word, opts.settings)
+  } else {
+    stopAutoSpeechLoop()
   }
 }
 
 export function scheduleHide(delay = 200): void {
+  stopAutoSpeechLoop()
   if (hideTimer != null) clearTimeout(hideTimer)
   hideTimer = window.setTimeout(() => {
     hideTimer = null
@@ -153,6 +160,7 @@ export function scheduleHide(delay = 200): void {
 }
 
 export function hideTooltipImmediate(): void {
+  stopAutoSpeechLoop()
   if (hideTimer != null) {
     clearTimeout(hideTimer)
     hideTimer = null
@@ -194,11 +202,65 @@ function renderCard(word: string, entry: DictEntry | null, settings: Settings): 
 function bindActions(opts: ShowOptions): void {
   if (!cardEl) return
   cardEl.querySelector<HTMLButtonElement>('[data-act="speak"]')?.addEventListener('click', () => {
+    if (opts.settings.autoSpeakOnHover) {
+      startAutoSpeechLoop(opts.word, opts.settings)
+      return
+    }
+    stopAutoSpeechLoop()
     speak(opts.word, opts.settings, true)
   })
   cardEl.querySelector<HTMLButtonElement>('[data-act="exclude"]')?.addEventListener('click', () => {
     opts.onExclude(opts.word)
     hideTooltipImmediate()
+  })
+}
+
+function startAutoSpeechLoop(word: string, settings: Settings): void {
+  stopAutoSpeechLoop()
+  const loopId = ++speechLoopId
+  const speechSettings = {
+    speakLang: settings.speakLang,
+    speakRate: settings.speakRate,
+    speakVoiceURI: settings.speakVoiceURI,
+  }
+
+  const loop = async () => {
+    while (loopId === speechLoopId && currentWord === word) {
+      const result = await speakAndWait(word, speechSettings, true)
+      if (loopId !== speechLoopId || currentWord !== word) return
+      if (result === 'skipped' || result === 'error') return
+      await waitForSpeechLoopGap(loopId)
+    }
+  }
+
+  void loop()
+}
+
+function stopAutoSpeechLoop(): void {
+  speechLoopId++
+  if (speechLoopTimer != null) {
+    clearTimeout(speechLoopTimer)
+    speechLoopTimer = null
+  }
+  if (speechLoopResolve) {
+    speechLoopResolve()
+    speechLoopResolve = null
+  }
+}
+
+function waitForSpeechLoopGap(loopId: number): Promise<void> {
+  return new Promise((resolve) => {
+    speechLoopResolve = () => {
+      speechLoopResolve = null
+      resolve()
+    }
+    speechLoopTimer = window.setTimeout(() => {
+      if (speechLoopTimer != null && loopId === speechLoopId) {
+        speechLoopTimer = null
+      }
+      speechLoopResolve = null
+      resolve()
+    }, HOVER_SPEECH_LOOP_GAP_MS)
   })
 }
 

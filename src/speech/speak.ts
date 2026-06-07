@@ -1,12 +1,15 @@
 import { SPEECH_REPEAT_MS } from '../shared/constants'
 import type { Settings } from '../shared/types'
 
+export type SpeakResult = 'spoken' | 'skipped' | 'canceled' | 'error'
+
 const lastSpoken = new Map<string, number>()
 const SELECTED_VOICE_WAIT_MS = 1200
 
 let voicesCache: SpeechSynthesisVoice[] = []
 let voicesBound = false
 let speakRequestId = 0
+let activeSpeechFinish: ((result: SpeakResult) => void) | null = null
 
 function getVoices(): SpeechSynthesisVoice[] {
   if (typeof window === 'undefined' || !window.speechSynthesis) return []
@@ -99,41 +102,81 @@ export function speak(
   settings: Pick<Settings, 'speakLang' | 'speakRate' | 'speakVoiceURI'>,
   force = false,
 ): void {
-  void speakAsync(word, settings, force)
+  void speakAndWait(word, settings, force)
+}
+
+export function speakAndWait(
+  word: string,
+  settings: Pick<Settings, 'speakLang' | 'speakRate' | 'speakVoiceURI'>,
+  force = false,
+): Promise<SpeakResult> {
+  return speakAsync(word, settings, force)
 }
 
 async function speakAsync(
   word: string,
   settings: Pick<Settings, 'speakLang' | 'speakRate' | 'speakVoiceURI'>,
   force: boolean,
-): Promise<void> {
-  if (!word) return
-  if (typeof window === 'undefined' || !window.speechSynthesis) return
+): Promise<SpeakResult> {
+  if (!word) return 'skipped'
+  if (typeof window === 'undefined' || !window.speechSynthesis) return 'skipped'
   const key = word.toLowerCase()
   const now = Date.now()
   if (!force) {
     const last = lastSpoken.get(key) ?? 0
-    if (now - last < SPEECH_REPEAT_MS) return
+    if (now - last < SPEECH_REPEAT_MS) return 'skipped'
   }
-  lastSpoken.set(key, now)
   const requestId = ++speakRequestId
   try {
+    finishActiveSpeech('canceled')
     window.speechSynthesis.cancel()
     const voice = await waitForSelectedVoice(settings.speakVoiceURI ?? '')
-    if (requestId !== speakRequestId) return
+    if (requestId !== speakRequestId) return 'canceled'
+    lastSpoken.set(key, Date.now())
     const u = new SpeechSynthesisUtterance(word)
     const lang = settings.speakLang ?? 'en-US'
     u.lang = lang
     const rate = typeof settings.speakRate === 'number' ? settings.speakRate : 0.9
     u.rate = Math.min(Math.max(rate, 0.5), 1.5)
     if (voice) u.voice = voice
-    window.speechSynthesis.speak(u)
+    return await new Promise<SpeakResult>((resolve) => {
+      let done = false
+      const finish = (result: SpeakResult) => {
+        if (done) return
+        done = true
+        u.onend = null
+        u.onerror = null
+        if (activeSpeechFinish === finish) activeSpeechFinish = null
+        resolve(result)
+      }
+      activeSpeechFinish = finish
+      u.onend = () => finish('spoken')
+      u.onerror = () => finish('error')
+      try {
+        window.speechSynthesis.speak(u)
+      } catch (e) {
+        console.warn('[LexiMark] speak failed:', e)
+        finish('error')
+      }
+    })
   } catch (e) {
     console.warn('[LexiMark] speak failed:', e)
+    return 'error'
   }
 }
 
 export function clearSpeechCache(): void {
   lastSpoken.clear()
   speakRequestId++
+  finishActiveSpeech('canceled')
+  if (typeof window !== 'undefined' && window.speechSynthesis) {
+    window.speechSynthesis.cancel()
+  }
+}
+
+function finishActiveSpeech(result: SpeakResult): void {
+  const finish = activeSpeechFinish
+  if (!finish) return
+  activeSpeechFinish = null
+  finish(result)
 }
