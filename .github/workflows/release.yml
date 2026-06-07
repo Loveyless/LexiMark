@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build extension
+        run: pnpm build
+
+      - name: Package extension
+        run: |
+          rm -f .output/*-chrome.zip
+          pnpm zip
+
+      - name: Find release asset
+        id: asset
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(.output/*-chrome.zip)
+          if [ "${#files[@]}" -ne 1 ]; then
+            printf 'Expected exactly one Chrome zip in .output, found %s\n' "${#files[@]}" >&2
+            printf '%s\n' "${files[@]}" >&2
+            exit 1
+          fi
+          printf 'path=%s\n' "${files[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG_NAME" \
+            "${{ steps.asset.outputs.path }}#LexiMark Chrome extension" \
+            --verify-tag \
+            --generate-notes
