@@ -261,6 +261,8 @@ function buildLemmaMap(entries: DictEntry[]): Map<string, string> {
 
 `customWords` / `excludedWords` 不拆分为多 key，写时整组覆盖。预期规模下性能足够；若未来超过 5000 条再考虑分片。
 
+内置排除词不写入 `chrome.storage`：来源是随包发布的 `src/wordbook/builtin-excluded.json`，`buildSnapshot()` 时与用户排除词合并（内置在前、去重），设置页只展示和编辑用户自己的列表。
+
 ### 7.2 IndexedDB（Dexie）
 
 ```ts

@@ -6,6 +6,7 @@ import {
   flattenLevelMap,
 } from '../wordbook/level-words'
 import { buildAdvancedWordSet } from '../wordbook/advanced-word'
+import { mergeExcludedWords } from '../wordbook/builtin-excluded'
 import {
   getSettings,
   getCustomWords,
@@ -52,11 +53,12 @@ export function buildSnapshot(): Promise<IndexSnapshot> {
       }
 
       // 2. 设置 / 用户词
-      const [settings, customWords, excludedWords] = await Promise.all([
+      const [settings, customWords, userExcludedWords] = await Promise.all([
         getSettings(),
         getCustomWords(),
         getExcludedWords(),
       ])
+      const excludedWords = mergeExcludedWords(userExcludedWords)
 
       // 3. 分级词
       let levelWords: IndexSnapshot['levelWords'] = { A1: [], A2: [], B1: [], B2: [] }
