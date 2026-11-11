@@ -17,7 +17,7 @@ export default defineConfig({
     name: 'LexiMark',
     short_name: 'LexiMark',
     description: '本地优先的 Chrome 英语生词高亮扩展：按你的英语水平自动高亮可能不熟的词。',
-    version: '0.2.3',
+    version: '0.3.0',
     permissions: ['storage', 'activeTab'],
     action: {
       default_title: 'LexiMark',

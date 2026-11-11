@@ -1,6 +1,6 @@
 {
   "name": "leximark",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "LexiMark - 本地优先的 Chrome 英语生词高亮扩展（基于 WXT + React + TypeScript）",
   "private": true,
   "packageManager": "pnpm@9.15.9",
