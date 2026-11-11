@@ -1,23 +1,6 @@
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">LexiMark logo</title>
-  <desc id="desc">Orange-yellow rounded square with a stylized L, reading mark, and highlight line.</desc>
-  <defs>
-    <linearGradient id="bg" x1="18" y1="12" x2="110" y2="116" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FDE047"/>
-      <stop offset="0.42" stop-color="#F59E0B"/>
-      <stop offset="1" stop-color="#EA580C"/>
-    </linearGradient>
-    <linearGradient id="page" x1="40" y1="30" x2="86" y2="86" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF7D6"/>
-      <stop offset="1" stop-color="#FFFFFF"/>
-    </linearGradient>
-  </defs>
-  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
-  <path d="M38 34C38 29.5817 41.5817 26 46 26H82C86.4183 26 90 29.5817 90 34V93C90 96.866 86.866 100 83 100H45C41.134 100 38 96.866 38 93V34Z" fill="url(#page)" fill-opacity="0.96"/>
-  <path d="M47 35H79C80.6569 35 82 36.3431 82 38V84C82 85.6569 80.6569 87 79 87H47V35Z" fill="#FFF3C4"/>
-  <path d="M49 38H75C76.6569 38 78 39.3431 78 41V78C78 79.6569 76.6569 81 75 81H49V38Z" fill="#FFFFFF"/>
-  <path d="M57 43V73H75" stroke="#B45309" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M49 89H81" stroke="#92400E" stroke-width="7" stroke-linecap="round"/>
-  <path d="M49 99H81" stroke="#FDE047" stroke-width="7" stroke-linecap="round"/>
-  <path d="M92 28L98 40L90 38L84 50L83 35L92 28Z" fill="#FFFFFF" fill-opacity="0.78"/>
+  <desc id="desc">A deep orange rounded square with a simple cream L monogram.</desc>
+  <rect x="4" y="4" width="120" height="120" rx="22" fill="#C2410C"/>
+  <path d="M47 37V82C47 87.5228 51.4772 92 57 92H85" stroke="#FFFDF7" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

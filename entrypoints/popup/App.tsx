@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSettings } from '../../src/ui/useSettings'
 import { isHostDisabled, toggleHostInList } from '../../src/storage/sites'
+import { Switch } from '../../src/ui/controls'
 
 export default function App() {
   const { settings, update, loading } = useSettings()
@@ -21,7 +22,8 @@ export default function App() {
 
   if (loading || !settings) {
     return (
-      <div className="p-4 text-sm text-gray-600 dark:text-gray-300">
+      <div className="flex items-center gap-2 p-4 text-sm text-stone-500 dark:text-stone-400">
+        <span className="h-2 w-2 animate-pulse rounded-full bg-brand-600" />
         加载中…
       </div>
     )
@@ -30,40 +32,42 @@ export default function App() {
   const siteDisabled = !!host && isHostDisabled(host, settings.disabledSites)
 
   return (
-    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-      <header className="px-4 pt-4 pb-2 border-b border-gray-100 dark:border-gray-800">
+    <div className="bg-[#FFFDF7] text-stone-900 dark:bg-[#0C0A09] dark:text-stone-100">
+      <header className="px-4 pb-3 pt-4">
         <div className="flex items-center justify-between">
-          <div>
-            <div className="text-base font-semibold">LexiMark</div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">
-              英语生词高亮
+          <div className="flex items-center gap-2.5">
+            <img src="/icon/32.png" alt="" className="h-8 w-8 drop-shadow-sm" />
+            <div>
+              <div className="text-[15px] font-semibold tracking-tight">LexiMark</div>
+              <div className="text-[11px] text-stone-500 dark:text-stone-400">
+                英语生词高亮
+              </div>
             </div>
           </div>
           <button
+            type="button"
             onClick={() => chrome.runtime.openOptionsPage()}
-            className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
+            className="rounded-md px-1.5 py-1 text-[11px] font-medium text-brand-700 transition hover:bg-brand-50 hover:text-brand-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40 dark:text-brand-300 dark:hover:bg-brand-950/50"
           >
             设置 →
           </button>
         </div>
       </header>
 
-      <div className="p-4 space-y-3 text-sm">
-        <Row
-          label="总开关"
-          desc={settings.enabled ? '已启用' : '已停用'}
-        >
-          <Toggle
+      <div className="space-y-3 border-t border-stone-200/70 px-4 py-3 text-sm dark:border-stone-800">
+        <Row label="总开关" desc={settings.enabled ? '已启用' : '已停用'}>
+          <Switch
             checked={settings.enabled}
-            onChange={(v) => update({ enabled: v })}
+            onChange={(enabled) => update({ enabled })}
+            label="总开关"
           />
         </Row>
 
         <Row
           label="当前网站"
-          desc={host ? (siteDisabled ? `已在 ${host} 关闭` : host || '—') : '当前页不可用'}
+          desc={host ? (siteDisabled ? `已在 ${host} 关闭` : host) : '当前页不可用'}
         >
-          <Toggle
+          <Switch
             checked={!!host && !siteDisabled}
             disabled={!host}
             onChange={() => {
@@ -71,6 +75,7 @@ export default function App() {
               const next = toggleHostInList(host, settings.disabledSites)
               update({ disabledSites: next })
             }}
+            label="当前网站"
           />
         </Row>
 
@@ -78,16 +83,20 @@ export default function App() {
           label="hover 自动朗读"
           desc={settings.autoSpeakOnHover ? '悬停时自动发音' : '点按钮才发音'}
         >
-          <Toggle
+          <Switch
             checked={settings.autoSpeakOnHover}
-            onChange={(v) => update({ autoSpeakOnHover: v })}
+            onChange={(autoSpeakOnHover) => update({ autoSpeakOnHover })}
+            label="hover 自动朗读"
           />
         </Row>
 
-        <div className="pt-2 text-[11px] text-gray-400 dark:text-gray-500">
-          我的水平：{settings.userLevel}
-          {settings.includeCurrentLevel ? '（含本级）' : '（不含本级）'} ·
-          {settings.highlightAdvancedUnknownWords ? ' 含 B2+' : ' 不含 B2+'}
+        <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 px-0.5 text-[10px] font-medium text-stone-500 dark:text-stone-400">
+          <span className="text-stone-400 dark:text-stone-500">当前</span>
+          <span>{settings.userLevel}</span>
+          <span className="text-stone-300 dark:text-stone-600">·</span>
+          <span>{settings.includeCurrentLevel ? '含本级' : '仅更高等级'}</span>
+          <span className="text-stone-300 dark:text-stone-600">·</span>
+          <span>{settings.highlightAdvancedUnknownWords ? '含 B2+' : '不含 B2+'}</span>
         </div>
       </div>
     </div>
@@ -96,42 +105,16 @@ export default function App() {
 
 function Row(props: { label: string; desc?: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-center justify-between">
-      <div>
-        <div>{props.label}</div>
+    <div className="flex items-center justify-between gap-3">
+      <div className="min-w-0">
+        <div className="text-[13px] font-medium">{props.label}</div>
         {props.desc && (
-          <div className="text-[11px] text-gray-500 dark:text-gray-400">{props.desc}</div>
+          <div className="mt-0.5 truncate text-[11px] text-stone-500 dark:text-stone-400">
+            {props.desc}
+          </div>
         )}
       </div>
       <div className="shrink-0">{props.children}</div>
     </div>
-  )
-}
-
-function Toggle(props: {
-  checked: boolean
-  disabled?: boolean
-  onChange: (v: boolean) => void
-}) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={props.checked}
-      disabled={props.disabled}
-      onClick={() => !props.disabled && props.onChange(!props.checked)}
-      className={[
-        'inline-flex h-5 w-9 items-center rounded-full transition',
-        props.checked ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-700',
-        props.disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
-      ].join(' ')}
-    >
-      <span
-        className={[
-          'inline-block h-4 w-4 transform rounded-full bg-white transition shadow',
-          props.checked ? 'translate-x-4' : 'translate-x-1',
-        ].join(' ')}
-      />
-    </button>
   )
 }
