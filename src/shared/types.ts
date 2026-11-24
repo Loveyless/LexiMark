@@ -20,7 +20,7 @@ export type Settings = {
   highlightColor: string
   definitionLang: DefinitionLang
   tooltipFontFamily: TooltipFontFamily
-  /** auto follows the page color scheme; otherwise a six-digit hex color. */
+  /** auto follows the browser color scheme; otherwise a six-digit hex color. */
   tooltipTextColor: string
   tooltipOpacity: number
   tooltipFontSize: number

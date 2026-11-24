@@ -119,8 +119,8 @@ export default function App() {
 
             <Section
               icon="globe"
-              title="释义语言"
-              description="hover 高亮词时，卡片里显示哪种解释。"
+              title="字幕语言"
+              description="hover 高亮词时，在词语下方显示中文、英文或中英对照。"
             >
               <Segmented
                 value={settings.definitionLang}
@@ -130,7 +130,7 @@ export default function App() {
               />
             </Section>
 
-            <Section icon="info" title="悬浮释义">
+            <Section icon="info" title="字幕样式">
               <div className="flex items-center justify-between gap-4">
                 <label
                   htmlFor="tooltip-font"
@@ -155,7 +155,7 @@ export default function App() {
               </div>
               <div className="flex items-center justify-between gap-4">
                 <span className="text-sm font-medium text-stone-800 dark:text-stone-200">
-                  释义颜色
+                  字幕颜色
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-[11px] text-stone-400 dark:text-stone-500">
@@ -187,7 +187,7 @@ export default function App() {
                 onChange={(tooltipOpacity) => update({ tooltipOpacity })}
               />
               <TooltipRange
-                label="释义字号"
+                label="字幕字号"
                 value={settings.tooltipFontSize}
                 display={`${settings.tooltipFontSize}px`}
                 min={12}
@@ -196,7 +196,7 @@ export default function App() {
                 onChange={(tooltipFontSize) => update({ tooltipFontSize })}
               />
               <TooltipRange
-                label="悬停触发延迟"
+                label="悬停显示延迟"
                 value={settings.tooltipDelayMs}
                 display={`${settings.tooltipDelayMs}ms`}
                 min={0}
@@ -213,7 +213,7 @@ export default function App() {
             >
               <ToggleRow
                 label="hover 自动朗读"
-                description="悬停高亮词后自动读一次；关闭后只在卡片里点按钮发音。"
+                description="悬停高亮词后自动朗读；关闭后只显示释义字幕。"
                 checked={settings.autoSpeakOnHover}
                 onChange={(autoSpeakOnHover) => update({ autoSpeakOnHover })}
               />

@@ -150,27 +150,3 @@ export function removeAllHighlights(): void {
     wrapping = false
   }
 }
-
-/** 单词被加入排除词后，从页面中移除所有命中该词的高亮 */
-export function removeHighlightsByWord(word: string): void {
-  const w = word.trim().toLowerCase()
-  if (!w) return
-  const spans = document.querySelectorAll<HTMLSpanElement>(
-    `.${HIGHLIGHT_CLASS}[${HIGHLIGHT_WORD_ATTR}="${cssAttrEscape(w)}"]`,
-  )
-  wrapping = true
-  try {
-    for (const span of Array.from(spans)) {
-      const parent = span.parentNode
-      if (!parent) continue
-      const text = document.createTextNode(span.textContent ?? '')
-      parent.replaceChild(text, span)
-    }
-  } finally {
-    wrapping = false
-  }
-}
-
-function cssAttrEscape(s: string): string {
-  return s.replace(/["\\]/g, '\\$&')
-}

@@ -15,7 +15,6 @@ import {
 import {
   processTextNode,
   removeAllHighlights,
-  removeHighlightsByWord,
 } from '../src/content/highlighter'
 import { startMutationObserver } from '../src/content/mutation'
 import {
@@ -198,7 +197,7 @@ function setupHoverListener() {
       hoverTimer = window.setTimeout(() => {
         hoverTimer = null
         if (pendingWord !== word || hoverSeq !== seq) return
-        showCardFor(word, target, seq)
+        showSubtitleFor(word, target, seq)
       }, delay)
     },
     true,
@@ -226,7 +225,7 @@ function setupHoverListener() {
   window.addEventListener('scroll', () => hideTooltipImmediate(), { passive: true })
 }
 
-async function showCardFor(
+async function showSubtitleFor(
   word: string,
   target: Element,
   seq: number,
@@ -254,10 +253,5 @@ async function showCardFor(
       bottom: rect.bottom,
     },
     settings: idx.settings,
-    onExclude: (w) => {
-      // 立即响应：本页面同词高亮去掉，再发到 worker 持久化
-      removeHighlightsByWord(w)
-      chrome.runtime.sendMessage({ type: 'LM_ADD_EXCLUDED', word: w }).catch(() => {})
-    },
   })
 }

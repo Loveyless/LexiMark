@@ -11,7 +11,7 @@ export const defaultSettings: Settings = {
   highlightAdvancedUnknownWords: true,
   highlightMode: 'dashed-underline',
   highlightColor: DEFAULT_HIGHLIGHT_COLOR,
-  definitionLang: 'both',
+  definitionLang: 'zh',
   tooltipFontFamily: 'system',
   tooltipTextColor: 'auto',
   tooltipOpacity: 1,
@@ -56,7 +56,7 @@ export const HIGHLIGHT_COLOR_OPTIONS: ReadonlyArray<{ value: string; label: stri
 export const DEFINITION_LANG_OPTIONS: ReadonlyArray<{ value: DefinitionLang; label: string }> = [
   { value: 'zh', label: '仅中文' },
   { value: 'en', label: '仅英文' },
-  { value: 'both', label: '中英同时显示（默认）' },
+  { value: 'both', label: '中英同时显示' },
 ]
 
 export const TOOLTIP_FONT_OPTIONS: ReadonlyArray<{ value: TooltipFontFamily; label: string }> = [

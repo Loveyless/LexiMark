@@ -19,6 +19,7 @@ describe('tooltip settings', () => {
     const settings = await getSettings()
 
     expect(settings.enabled).toBe(true)
+    expect(settings.definitionLang).toBe('zh')
     expect(settings.tooltipFontFamily).toBe('system')
     expect(settings.tooltipTextColor).toBe('auto')
     expect(settings.tooltipOpacity).toBe(1)
@@ -27,6 +28,7 @@ describe('tooltip settings', () => {
 
     mockStoredSettings({ enabled: true, definitionLang: 'both' })
     const migrated = await getSettings()
+    expect(migrated.definitionLang).toBe('both')
     expect(migrated.tooltipDelayMs).toBe(300)
   })
 
