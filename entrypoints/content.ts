@@ -2,7 +2,6 @@ import { defineContentScript } from 'wxt/sandbox'
 import {
   HIGHLIGHT_CLASS,
   HIGHLIGHT_WORD_ATTR,
-  TOOLTIP_DELAY_MS,
 } from '../src/shared/constants'
 import {
   setSnapshot,
@@ -183,7 +182,6 @@ let hoverSeq = 0
 function setupHoverListener() {
   let hoverTimer: number | null = null
   let pendingWord: string | null = null
-  let pendingPos: { x: number; y: number } = { x: 0, y: 0 }
 
   document.addEventListener(
     'mouseover',
@@ -195,13 +193,13 @@ function setupHoverListener() {
       if (!word) return
       const seq = ++hoverSeq
       pendingWord = word
-      pendingPos = { x: e.clientX, y: e.clientY }
       if (hoverTimer != null) clearTimeout(hoverTimer)
+      const delay = getOrEmpty().settings.tooltipDelayMs
       hoverTimer = window.setTimeout(() => {
         hoverTimer = null
         if (pendingWord !== word || hoverSeq !== seq) return
-        showCardFor(word, pendingPos, target, seq)
-      }, TOOLTIP_DELAY_MS)
+        showCardFor(word, target, seq)
+      }, delay)
     },
     true,
   )
@@ -230,7 +228,6 @@ function setupHoverListener() {
 
 async function showCardFor(
   word: string,
-  pos: { x: number; y: number },
   target: Element,
   seq: number,
 ) {
@@ -246,10 +243,16 @@ async function showCardFor(
     console.warn('[LexiMark] query entry failed:', e)
   }
   if (seq !== hoverSeq || !target.isConnected) return
+  const rect = target.getBoundingClientRect()
   showTooltip({
     word,
     entry,
-    position: pos,
+    anchorRect: {
+      left: rect.left,
+      right: rect.right,
+      top: rect.top,
+      bottom: rect.bottom,
+    },
     settings: idx.settings,
     onExclude: (w) => {
       // 立即响应：本页面同词高亮去掉，再发到 worker 持久化

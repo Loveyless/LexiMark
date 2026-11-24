@@ -1,4 +1,4 @@
-import type { DefinitionLang, HighlightMode, Settings, UserLevel } from './types'
+import type { DefinitionLang, HighlightMode, Settings, TooltipFontFamily, UserLevel } from './types'
 
 // ============ 默认设置（PRD §16） ============
 
@@ -12,6 +12,11 @@ export const defaultSettings: Settings = {
   highlightMode: 'dashed-underline',
   highlightColor: DEFAULT_HIGHLIGHT_COLOR,
   definitionLang: 'both',
+  tooltipFontFamily: 'system',
+  tooltipTextColor: 'auto',
+  tooltipOpacity: 1,
+  tooltipFontSize: 13,
+  tooltipDelayMs: 300,
   autoSpeakOnHover: true,
   speakLang: 'en-US',
   speakRate: 0.9,
@@ -52,6 +57,13 @@ export const DEFINITION_LANG_OPTIONS: ReadonlyArray<{ value: DefinitionLang; lab
   { value: 'zh', label: '仅中文' },
   { value: 'en', label: '仅英文' },
   { value: 'both', label: '中英同时显示（默认）' },
+]
+
+export const TOOLTIP_FONT_OPTIONS: ReadonlyArray<{ value: TooltipFontFamily; label: string }> = [
+  { value: 'system', label: '系统默认' },
+  { value: 'sans', label: '无衬线' },
+  { value: 'serif', label: '衬线' },
+  { value: 'mono', label: '等宽' },
 ]
 
 // ============ 词频阈值 ============
@@ -101,7 +113,6 @@ export const MAX_TOKENS_PER_PAGE = 50_000
 export const HIGHLIGHT_CLASS = 'leximark-hl'
 export const HIGHLIGHT_PROCESSED_ATTR = 'data-leximark-processed'
 export const HIGHLIGHT_WORD_ATTR = 'data-word'
-export const TOOLTIP_DELAY_MS = 300
 export const SPEECH_REPEAT_MS = 3000
 export const SCAN_DEBOUNCE_MS = 250
 

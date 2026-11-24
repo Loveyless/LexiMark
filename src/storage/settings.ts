@@ -4,10 +4,11 @@ import {
   STORAGE_KEY_EXCLUDED_WORDS,
   STORAGE_KEY_DICT_META,
   HIGHLIGHT_MODE_OPTIONS,
+  TOOLTIP_FONT_OPTIONS,
   DEFAULT_HIGHLIGHT_COLOR,
   defaultSettings,
 } from '../shared/constants'
-import type { DictMeta, HighlightMode, Settings } from '../shared/types'
+import type { DictMeta, HighlightMode, Settings, TooltipFontFamily } from '../shared/types'
 
 /**
  * chrome.storage.local 的轻封装。
@@ -111,9 +112,62 @@ function normalizeSettings(settings: Partial<Settings>): Settings {
   merged.speakRate = Math.min(Math.max(merged.speakRate, 0.5), 1.5)
   merged.highlightMode = normalizeHighlightMode((settings as { highlightMode?: unknown }).highlightMode)
   merged.highlightColor = normalizeHighlightColor((settings as { highlightColor?: unknown }).highlightColor)
+  merged.tooltipFontFamily = normalizeTooltipFontFamily(settings.tooltipFontFamily)
+  merged.tooltipTextColor = normalizeTooltipTextColor(settings.tooltipTextColor)
+  merged.tooltipOpacity = normalizeNumber(
+    settings.tooltipOpacity,
+    defaultSettings.tooltipOpacity,
+    0.3,
+    1,
+    2,
+  )
+  merged.tooltipFontSize = normalizeNumber(
+    settings.tooltipFontSize,
+    defaultSettings.tooltipFontSize,
+    12,
+    24,
+    0,
+  )
+  merged.tooltipDelayMs = normalizeNumber(
+    settings.tooltipDelayMs,
+    defaultSettings.tooltipDelayMs,
+    0,
+    1000,
+    0,
+  )
   if (typeof merged.speakVoiceURI !== 'string') merged.speakVoiceURI = ''
   if (!Array.isArray(merged.disabledSites)) merged.disabledSites = []
   return merged
+}
+
+function normalizeNumber(
+  raw: unknown,
+  fallback: number,
+  min: number,
+  max: number,
+  decimals: number,
+): number {
+  if (typeof raw !== 'number' || !Number.isFinite(raw)) return fallback
+  const factor = 10 ** decimals
+  return Math.round(Math.min(Math.max(raw, min), max) * factor) / factor
+}
+
+function normalizeTooltipFontFamily(raw: unknown): TooltipFontFamily {
+  if (
+    typeof raw === 'string' &&
+    TOOLTIP_FONT_OPTIONS.some((option) => option.value === raw)
+  ) {
+    return raw as TooltipFontFamily
+  }
+  return defaultSettings.tooltipFontFamily
+}
+
+function normalizeTooltipTextColor(raw: unknown): string {
+  if (raw === 'auto') return raw
+  if (typeof raw !== 'string') return defaultSettings.tooltipTextColor
+  const value = raw.trim()
+  if (!/^#[0-9a-fA-F]{6}$/.test(value)) return defaultSettings.tooltipTextColor
+  return value.toLowerCase()
 }
 
 function normalizeHighlightMode(raw: unknown): HighlightMode {

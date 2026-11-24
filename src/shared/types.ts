@@ -7,6 +7,8 @@ export type HighlightMode = 'dashed-underline' | 'underline' | 'text-color'
 
 export type DefinitionLang = 'zh' | 'en' | 'both'
 
+export type TooltipFontFamily = 'system' | 'sans' | 'serif' | 'mono'
+
 export type SpeakLang = 'en-US'
 
 export type Settings = {
@@ -17,6 +19,12 @@ export type Settings = {
   highlightMode: HighlightMode
   highlightColor: string
   definitionLang: DefinitionLang
+  tooltipFontFamily: TooltipFontFamily
+  /** auto follows the page color scheme; otherwise a six-digit hex color. */
+  tooltipTextColor: string
+  tooltipOpacity: number
+  tooltipFontSize: number
+  tooltipDelayMs: number
   autoSpeakOnHover: boolean
   speakLang: SpeakLang
   speakRate: number
