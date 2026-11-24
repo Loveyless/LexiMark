@@ -9,60 +9,57 @@ function mockStoredSettings(settings: unknown) {
   vi.stubGlobal('chrome', { storage: { local } })
 }
 
-describe('tooltip settings', () => {
+describe('subtitle settings', () => {
   afterEach(() => {
     vi.unstubAllGlobals()
   })
 
-  it('uses default tooltip preferences for new and existing installs', async () => {
+  it('uses persistent subtitle defaults and preserves the card language preference', async () => {
     mockStoredSettings(undefined)
     const settings = await getSettings()
 
     expect(settings.enabled).toBe(true)
-    expect(settings.definitionLang).toBe('zh')
-    expect(settings.tooltipFontFamily).toBe('system')
-    expect(settings.tooltipTextColor).toBe('auto')
-    expect(settings.tooltipOpacity).toBe(1)
-    expect(settings.tooltipFontSize).toBe(13)
-    expect(settings.tooltipDelayMs).toBe(300)
+    expect(settings.definitionLang).toBe('both')
+    expect(settings.subtitleFontSize).toBe(12)
+    expect(settings.subtitleGap).toBe(2)
 
-    mockStoredSettings({ enabled: true, definitionLang: 'both' })
+    mockStoredSettings({
+      enabled: true,
+      definitionLang: 'both',
+      tooltipFontFamily: 'serif',
+      tooltipTextColor: '#aabbcc',
+      tooltipOpacity: 0.5,
+      tooltipFontSize: 20,
+      tooltipDelayMs: 500,
+    })
     const migrated = await getSettings()
     expect(migrated.definitionLang).toBe('both')
-    expect(migrated.tooltipDelayMs).toBe(300)
+    expect(migrated).not.toHaveProperty('tooltipFontFamily')
+    expect(migrated).not.toHaveProperty('tooltipTextColor')
+    expect(migrated).not.toHaveProperty('tooltipOpacity')
+    expect(migrated).not.toHaveProperty('tooltipFontSize')
+    expect(migrated).not.toHaveProperty('tooltipDelayMs')
   })
 
-  it('clamps numeric values and replaces invalid font and color values', async () => {
+  it('clamps subtitle size and spacing', async () => {
     mockStoredSettings({
-      tooltipFontFamily: 'comic-sans',
-      tooltipTextColor: 'red',
-      tooltipOpacity: 5,
-      tooltipFontSize: 40,
-      tooltipDelayMs: -20,
+      subtitleFontSize: 40,
+      subtitleGap: -20,
     })
     const settings = await getSettings()
 
-    expect(settings.tooltipFontFamily).toBe('system')
-    expect(settings.tooltipTextColor).toBe('auto')
-    expect(settings.tooltipOpacity).toBe(1)
-    expect(settings.tooltipFontSize).toBe(24)
-    expect(settings.tooltipDelayMs).toBe(0)
+    expect(settings.subtitleFontSize).toBe(24)
+    expect(settings.subtitleGap).toBe(0)
   })
 
-  it('preserves supported custom values', async () => {
+  it('preserves supported subtitle values', async () => {
     mockStoredSettings({
-      tooltipFontFamily: 'serif',
-      tooltipTextColor: '#AABBCC',
-      tooltipOpacity: 0.65,
-      tooltipFontSize: 18,
-      tooltipDelayMs: 450,
+      subtitleFontSize: 18,
+      subtitleGap: 10,
     })
     const settings = await getSettings()
 
-    expect(settings.tooltipFontFamily).toBe('serif')
-    expect(settings.tooltipTextColor).toBe('#aabbcc')
-    expect(settings.tooltipOpacity).toBe(0.65)
-    expect(settings.tooltipFontSize).toBe(18)
-    expect(settings.tooltipDelayMs).toBe(450)
+    expect(settings.subtitleFontSize).toBe(18)
+    expect(settings.subtitleGap).toBe(10)
   })
 })

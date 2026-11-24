@@ -4,7 +4,7 @@ import {
   getSnapshot,
 } from '../src/background/snapshot'
 import { broadcastSnapshotUpdated } from '../src/background/broadcast'
-import { queryEntry } from '../src/dictionary/query'
+import { queryEntry, queryEntries } from '../src/dictionary/query'
 import { addExcludedWord } from '../src/storage/settings'
 import {
   STORAGE_KEY_SETTINGS,
@@ -14,6 +14,7 @@ import {
 import type {
   MsgFromContent,
   MsgQueryEntryResp,
+  MsgQueryEntriesResp,
   MsgRequestSnapshotResp,
   MsgAddExcludedResp,
 } from '../src/shared/types'
@@ -55,6 +56,12 @@ export default defineBackground({
               case 'LM_QUERY_ENTRY': {
                 const entry = await queryEntry(msg.word)
                 const resp: MsgQueryEntryResp = { entry }
+                sendResponse(resp)
+                return
+              }
+              case 'LM_QUERY_ENTRIES': {
+                const entries = await queryEntries(msg.words)
+                const resp: MsgQueryEntriesResp = { entries }
                 sendResponse(resp)
                 return
               }

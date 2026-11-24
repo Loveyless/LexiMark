@@ -15,6 +15,7 @@ import {
 import {
   processTextNode,
   removeAllHighlights,
+  removeHighlightsByWord,
 } from '../src/content/highlighter'
 import { startMutationObserver } from '../src/content/mutation'
 import {
@@ -26,6 +27,12 @@ import {
   scheduleHide,
   hideTooltipImmediate,
 } from '../src/content/tooltip'
+import {
+  cleanupDisconnectedSubtitles,
+  clearSubtitles,
+  configureSubtitles,
+  observeSubtitles,
+} from '../src/content/subtitles'
 import { isHostDisabled } from '../src/storage/sites'
 import { currentHost } from '../src/content/dom-utils'
 import { preloadSpeechVoices } from '../src/speech/speak'
@@ -34,6 +41,8 @@ import type {
   IndexSnapshot,
   MsgSnapshotUpdated,
 } from '../src/shared/types'
+
+const TOOLTIP_SHOW_DELAY_MS = 300
 
 export default defineContentScript({
   matches: ['https://*/*', 'http://*/*'],
@@ -58,11 +67,14 @@ export default defineContentScript({
       const shouldRun =
         idx.settings.enabled && !isHostDisabled(host, idx.settings.disabledSites)
       if (!shouldRun) {
+        clearSubtitles()
         removeAllHighlights()
         return
       }
       // 设置或词库变了，简单清理后重扫
+      clearSubtitles()
       removeAllHighlights()
+      configureSubtitles(idx.settings)
       runScan(document.body)
     })
 
@@ -84,12 +96,13 @@ export default defineContentScript({
     // 注册 hover / mutation
     setupHoverListener()
     startMutationObserver((nodes) => {
+      cleanupDisconnectedSubtitles()
       const idx = getOrEmpty()
       if (!idx.settings.enabled) return
       if (isHostDisabled(currentHost(), idx.settings.disabledSites)) return
       for (const n of nodes) {
         if (n.nodeType === Node.TEXT_NODE) {
-          processTextNode(n as Text, idx)
+          observeSubtitles(processTextNode(n as Text, idx))
         } else if (n.nodeType === Node.ELEMENT_NODE) {
           runScan(n as Element)
         }
@@ -134,9 +147,11 @@ function applyState(snap: IndexSnapshot) {
   const shouldRun =
     idx.settings.enabled && !isHostDisabled(host, idx.settings.disabledSites)
   if (!shouldRun) {
+    clearSubtitles()
     removeAllHighlights()
     return
   }
+  configureSubtitles(idx.settings)
   if (!isPageMostlyEnglish(idx.settings.skipCodeBlocks)) return
   // 首次扫描
   runScan(document.body)
@@ -154,7 +169,7 @@ function runScan(root: Node) {
     for (; i < end; i++) {
       const n = nodes[i]!
       visited.add(n)
-      processTextNode(n, idx)
+      observeSubtitles(processTextNode(n, idx))
     }
     if (i < nodes.length) {
       requestIdleSafe(step)
@@ -193,12 +208,11 @@ function setupHoverListener() {
       const seq = ++hoverSeq
       pendingWord = word
       if (hoverTimer != null) clearTimeout(hoverTimer)
-      const delay = getOrEmpty().settings.tooltipDelayMs
       hoverTimer = window.setTimeout(() => {
         hoverTimer = null
         if (pendingWord !== word || hoverSeq !== seq) return
-        showSubtitleFor(word, target, seq)
-      }, delay)
+        showCardFor(word, target, seq)
+      }, TOOLTIP_SHOW_DELAY_MS)
     },
     true,
   )
@@ -225,7 +239,7 @@ function setupHoverListener() {
   window.addEventListener('scroll', () => hideTooltipImmediate(), { passive: true })
 }
 
-async function showSubtitleFor(
+async function showCardFor(
   word: string,
   target: Element,
   seq: number,
@@ -253,5 +267,9 @@ async function showSubtitleFor(
       bottom: rect.bottom,
     },
     settings: idx.settings,
+    onExclude: (w) => {
+      removeHighlightsByWord(w)
+      chrome.runtime.sendMessage({ type: 'LM_ADD_EXCLUDED', word: w }).catch(() => {})
+    },
   })
 }

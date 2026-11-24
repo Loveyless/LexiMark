@@ -81,7 +81,7 @@ export default function App() {
 
         <Row
           label="hover 自动朗读"
-          desc={settings.autoSpeakOnHover ? '悬停时自动发音' : '悬停时不发音'}
+          desc={settings.autoSpeakOnHover ? '悬停时自动发音' : '点按钮才发音'}
         >
           <Switch
             checked={settings.autoSpeakOnHover}

@@ -1,10 +1,7 @@
-import type { DictEntry, Settings, TooltipFontFamily } from '../shared/types'
-import { speakAndWait } from '../speech/speak'
+import type { DictEntry, Settings } from '../shared/types'
+import { speak, speakAndWait } from '../speech/speak'
 
-/**
- * Subtitle-like definition overlay.
- * It is isolated from page styles and positioned without taking layout space.
- */
+/** Hover card using the extension's fixed default appearance. */
 
 const TOOLTIP_HOST_ID = 'leximark-tooltip-host'
 const HOVER_SPEECH_LOOP_GAP_MS = 250
@@ -15,32 +12,69 @@ const TOOLTIP_CSS = `
   position: fixed;
   z-index: 2147483646;
   pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-.lm-subtitle {
-  box-sizing: border-box;
-  display: block;
-  width: max-content;
-  max-width: calc(100vw - 16px);
-  max-height: calc(100vh - 8px);
-  overflow: hidden;
-  color: var(--lm-tooltip-text-color, #f9fafb);
-  font-family: var(--lm-tooltip-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
-  font-size: var(--lm-tooltip-font-size, 13px);
-  line-height: 1.3;
-  text-align: center;
-  white-space: pre-line;
-  overflow-wrap: anywhere;
+.lm-card {
+  pointer-events: none;
+  min-width: min(220px, calc(100vw - 16px));
+  max-width: 360px;
+  max-height: calc(100vh - 16px);
+  overflow: auto;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.45;
   opacity: 0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.95), 1px 0 rgba(0,0,0,0.9), -1px 0 rgba(0,0,0,0.9), 0 -1px rgba(0,0,0,0.9);
-  transition: opacity 100ms ease;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 120ms ease;
 }
-.lm-subtitle.show { opacity: var(--lm-tooltip-opacity, 1); }
+.lm-card.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.lm-card .lm-head { display: flex; align-items: baseline; gap: 8px; }
+.lm-card .lm-word { font-size: 15px; font-weight: 600; color: #111827; }
+.lm-card .lm-phon { font-size: 12px; color: #6b7280; }
+.lm-card .lm-zh,
+.lm-card .lm-en {
+  margin-top: 8px;
+  color: #111827;
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+.lm-card .lm-en { margin-top: 6px; }
+.lm-card .lm-actions { display: flex; gap: 8px; margin-top: 10px; }
+.lm-card button {
+  all: unset;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  background: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.lm-card button:hover { background: #e5e7eb; }
+.lm-card .lm-empty { color: #9ca3af; }
 
-@media (prefers-color-scheme: light) {
-  .lm-subtitle {
-    color: var(--lm-tooltip-text-color, #111827);
-    text-shadow: 0 1px 2px rgba(255,255,255,0.95), 1px 0 rgba(255,255,255,0.9), -1px 0 rgba(255,255,255,0.9), 0 -1px rgba(255,255,255,0.9);
+@media (prefers-color-scheme: dark) {
+  .lm-card {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.55);
   }
+  .lm-card .lm-word { color: #f9fafb; }
+  .lm-card .lm-phon { color: #9ca3af; }
+  .lm-card .lm-zh,
+  .lm-card .lm-en { color: #f3f4f6; }
+  .lm-card button {
+    background: #374151;
+    color: #f3f4f6;
+    border-color: rgba(255,255,255,0.08);
+  }
+  .lm-card button:hover { background: #4b5563; }
 }
 `
 
@@ -50,66 +84,61 @@ type ShowOptions = {
   entry: DictEntry | null
   anchorRect: AnchorRect
   settings: Settings
+  onExclude: (word: string) => void
 }
 
 let host: HTMLDivElement | null = null
-let subtitleEl: HTMLDivElement | null = null
+let shadow: ShadowRoot | null = null
+let cardEl: HTMLDivElement | null = null
 let hideTimer: number | null = null
 let currentWord: string | null = null
 let speechLoopId = 0
 let speechLoopTimer: number | null = null
 let speechLoopResolve: (() => void) | null = null
 
-const TOOLTIP_FONT_STACKS: Record<TooltipFontFamily, string> = {
-  system: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-  sans: 'Arial, Helvetica, sans-serif',
-  serif: 'Georgia, "Times New Roman", serif',
-  mono: 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace',
-}
-
 function ensureMounted(): void {
   if (host) return
   host = document.createElement('div')
   host.id = TOOLTIP_HOST_ID
-  const shadow = host.attachShadow({ mode: 'closed' })
+  shadow = host.attachShadow({ mode: 'closed' })
   const style = document.createElement('style')
   style.textContent = TOOLTIP_CSS
   shadow.appendChild(style)
-  subtitleEl = document.createElement('div')
-  subtitleEl.className = 'lm-subtitle'
-  shadow.appendChild(subtitleEl)
+  cardEl = document.createElement('div')
+  cardEl.className = 'lm-card'
+  shadow.appendChild(cardEl)
   document.documentElement.appendChild(host)
+
+  cardEl.addEventListener('mouseenter', () => {
+    if (hideTimer != null) {
+      clearTimeout(hideTimer)
+      hideTimer = null
+    }
+  })
+  cardEl.addEventListener('mouseleave', () => scheduleHide(200))
 }
 
 export function showTooltip(opts: ShowOptions): void {
   ensureMounted()
-  if (!host || !subtitleEl) return
-  if (hideTimer != null) {
-    clearTimeout(hideTimer)
-    hideTimer = null
-  }
+  if (!host || !cardEl) return
   currentWord = opts.word
+  cardEl.innerHTML = renderCard(opts.word, opts.entry, opts.settings)
+  bindActions(opts)
 
-  subtitleEl.textContent = renderSubtitle(opts.entry, opts.settings)
-  applyTooltipSettings(subtitleEl, opts.settings)
+  const pad = 8
+  const gap = 8
+  cardEl.classList.add('show')
   host.style.left = '0px'
   host.style.top = '0px'
-
-  if (subtitleEl.textContent) {
-    subtitleEl.classList.add('show')
-    const pad = 8
-    const gap = 4
-    const rect = subtitleEl.getBoundingClientRect()
-    const x = (opts.anchorRect.left + opts.anchorRect.right - rect.width) / 2
-    const maxX = Math.max(pad, window.innerWidth - rect.width - pad)
-    const belowY = opts.anchorRect.bottom + gap
-    const maxY = Math.max(pad, window.innerHeight - rect.height - pad)
-    host.style.left = `${Math.min(Math.max(pad, x), maxX)}px`
-    // Keep the subtitle below the word unless the viewport edge leaves no room.
-    host.style.top = `${Math.min(belowY, maxY)}px`
-  } else {
-    subtitleEl.classList.remove('show')
-  }
+  const rect = cardEl.getBoundingClientRect()
+  let x = (opts.anchorRect.left + opts.anchorRect.right - rect.width) / 2
+  let y = opts.anchorRect.bottom + gap
+  const aboveY = opts.anchorRect.top - rect.height - gap
+  if (y + rect.height > window.innerHeight - pad && aboveY >= pad) y = aboveY
+  x = Math.min(Math.max(pad, x), Math.max(pad, window.innerWidth - rect.width - pad))
+  y = Math.min(Math.max(pad, y), Math.max(pad, window.innerHeight - rect.height - pad))
+  host.style.left = `${x}px`
+  host.style.top = `${y}px`
 
   if (opts.settings.autoSpeakOnHover) {
     startAutoSpeechLoop(opts.word, opts.settings)
@@ -118,35 +147,13 @@ export function showTooltip(opts: ShowOptions): void {
   }
 }
 
-function applyTooltipSettings(element: HTMLElement, settings: Settings): void {
-  element.style.setProperty('--lm-tooltip-font-family', TOOLTIP_FONT_STACKS[settings.tooltipFontFamily])
-  element.style.setProperty('--lm-tooltip-opacity', String(settings.tooltipOpacity))
-  element.style.setProperty('--lm-tooltip-font-size', `${settings.tooltipFontSize}px`)
-  if (settings.tooltipTextColor === 'auto') {
-    element.style.removeProperty('--lm-tooltip-text-color')
-  } else {
-    element.style.setProperty('--lm-tooltip-text-color', settings.tooltipTextColor)
-  }
-}
-
-function renderSubtitle(entry: DictEntry | null, settings: Settings): string {
-  const lines: string[] = []
-  if (settings.definitionLang !== 'en' && entry?.translation?.trim()) {
-    lines.push(entry.translation.trim())
-  }
-  if (settings.definitionLang !== 'zh' && entry?.definition?.trim()) {
-    lines.push(entry.definition.trim())
-  }
-  return lines.join('\n')
-}
-
 export function scheduleHide(delay = 200): void {
   stopAutoSpeechLoop()
   if (hideTimer != null) clearTimeout(hideTimer)
   hideTimer = window.setTimeout(() => {
     hideTimer = null
     currentWord = null
-    if (subtitleEl) subtitleEl.classList.remove('show')
+    if (cardEl) cardEl.classList.remove('show')
   }, delay)
 }
 
@@ -157,11 +164,53 @@ export function hideTooltipImmediate(): void {
     hideTimer = null
   }
   currentWord = null
-  if (subtitleEl) subtitleEl.classList.remove('show')
+  if (cardEl) cardEl.classList.remove('show')
 }
 
 export function getCurrentTooltipWord(): string | null {
   return currentWord
+}
+
+function renderCard(word: string, entry: DictEntry | null, settings: Settings): string {
+  const phon = entry?.phonetic ? `<span class="lm-phon">/${escapeHtml(entry.phonetic)}/</span>` : ''
+  const showZh = settings.definitionLang === 'zh' || settings.definitionLang === 'both'
+  const showEn = settings.definitionLang === 'en' || settings.definitionLang === 'both'
+  const zh = showZh && entry?.translation
+    ? `<div class="lm-zh">${escapeHtml(entry.translation)}</div>`
+    : ''
+  const en = showEn && entry?.definition
+    ? `<div class="lm-en">${escapeHtml(entry.definition)}</div>`
+    : ''
+  const empty = !entry || (!entry.translation && !entry.definition)
+    ? '<div class="lm-empty">（暂无释义）</div>'
+    : ''
+  return `
+    <div class="lm-head">
+      <span class="lm-word">${escapeHtml(word)}</span>
+      ${phon}
+    </div>
+    ${zh}${en}${empty}
+    <div class="lm-actions">
+      <button data-act="speak" type="button">🔊 发音</button>
+      <button data-act="exclude" type="button">不再提示</button>
+    </div>
+  `
+}
+
+function bindActions(opts: ShowOptions): void {
+  if (!cardEl) return
+  cardEl.querySelector<HTMLButtonElement>('[data-act="speak"]')?.addEventListener('click', () => {
+    if (opts.settings.autoSpeakOnHover) {
+      startAutoSpeechLoop(opts.word, opts.settings)
+      return
+    }
+    stopAutoSpeechLoop()
+    speak(opts.word, opts.settings, true)
+  })
+  cardEl.querySelector<HTMLButtonElement>('[data-act="exclude"]')?.addEventListener('click', () => {
+    opts.onExclude(opts.word)
+    hideTooltipImmediate()
+  })
 }
 
 function startAutoSpeechLoop(word: string, settings: Settings): void {
@@ -211,4 +260,13 @@ function waitForSpeechLoopGap(loopId: number): Promise<void> {
       resolve()
     }, HOVER_SPEECH_LOOP_GAP_MS)
   })
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }

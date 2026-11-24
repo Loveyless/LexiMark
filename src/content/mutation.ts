@@ -9,12 +9,14 @@ import { SCAN_DEBOUNCE_MS } from '../shared/constants'
 export function startMutationObserver(onChange: (nodes: Node[]) => void): () => void {
   let pending: Node[] = []
   let timer: number | null = null
+  let hasMutation = false
 
   const flush = () => {
     timer = null
     const batch = pending
     pending = []
-    if (batch.length > 0) onChange(batch)
+    if (batch.length > 0 || hasMutation) onChange(batch)
+    hasMutation = false
   }
 
   const schedule = () => {
@@ -25,6 +27,7 @@ export function startMutationObserver(onChange: (nodes: Node[]) => void): () => 
   const observer = new MutationObserver((mutations) => {
     if (isWrapping()) return
     for (const m of mutations) {
+      hasMutation = true
       if (m.type === 'characterData') {
         const t = m.target as Text
         if (t.parentElement) pending.push(t.parentElement)
@@ -35,7 +38,7 @@ export function startMutationObserver(onChange: (nodes: Node[]) => void): () => 
         })
       }
     }
-    if (pending.length > 0) schedule()
+    if (pending.length > 0 || hasMutation) schedule()
   })
 
   observer.observe(document.body, {

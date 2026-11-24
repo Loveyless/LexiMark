@@ -37,9 +37,9 @@ export function isWrapping(): boolean {
 export function processTextNode(
   node: Text,
   idx: InMemoryIndexes,
-): void {
+): HTMLSpanElement[] {
   const text = node.nodeValue ?? ''
-  if (!text || !/[A-Za-z]/.test(text)) return
+  if (!text || !/[A-Za-z]/.test(text)) return []
 
   const matches: TokenMatch[] = []
   for (const tk of iterTokens(text, TOKEN_REGEX)) {
@@ -50,9 +50,9 @@ export function processTextNode(
     if (!verdict.hit) continue
     matches.push({ start: tk.start, end: tk.end, lemma: norm })
   }
-  if (matches.length === 0) return
+  if (matches.length === 0) return []
 
-  wrapMatchesInTextNode(node, matches)
+  return wrapMatchesInTextNode(node, matches)
 }
 
 /**
@@ -95,9 +95,10 @@ function decideNormalized(
   return normalizeWord(work, idx.lemmaMap)
 }
 
-function wrapMatchesInTextNode(node: Text, matches: TokenMatch[]) {
+function wrapMatchesInTextNode(node: Text, matches: TokenMatch[]): HTMLSpanElement[] {
   const parent = node.parentNode
-  if (!parent) return
+  if (!parent) return []
+  const spans: HTMLSpanElement[] = []
   wrapping = true
   try {
     const frag = document.createDocumentFragment()
@@ -112,6 +113,7 @@ function wrapMatchesInTextNode(node: Text, matches: TokenMatch[]) {
       span.setAttribute(HIGHLIGHT_WORD_ATTR, m.lemma)
       span.textContent = raw.slice(m.start, m.end)
       frag.appendChild(span)
+      spans.push(span)
       cursor = m.end
     }
     if (cursor < raw.length) {
@@ -125,6 +127,7 @@ function wrapMatchesInTextNode(node: Text, matches: TokenMatch[]) {
   } finally {
     wrapping = false
   }
+  return spans
 }
 
 /**
@@ -149,4 +152,26 @@ export function removeAllHighlights(): void {
   } finally {
     wrapping = false
   }
+}
+
+/** 单词被加入排除词后，从页面中移除所有命中该词的高亮 span。 */
+export function removeHighlightsByWord(word: string): void {
+  const normalized = word.trim().toLowerCase()
+  if (!normalized) return
+  const spans = document.querySelectorAll<HTMLSpanElement>(
+    `.${HIGHLIGHT_CLASS}[${HIGHLIGHT_WORD_ATTR}="${cssAttrEscape(normalized)}"]`,
+  )
+  wrapping = true
+  try {
+    for (const span of Array.from(spans)) {
+      const parent = span.parentNode
+      if (parent) parent.replaceChild(document.createTextNode(span.textContent ?? ''), span)
+    }
+  } finally {
+    wrapping = false
+  }
+}
+
+function cssAttrEscape(value: string): string {
+  return value.replace(/["\\]/g, '\\$&')
 }

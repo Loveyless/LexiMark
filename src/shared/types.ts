@@ -7,8 +7,6 @@ export type HighlightMode = 'dashed-underline' | 'underline' | 'text-color'
 
 export type DefinitionLang = 'zh' | 'en' | 'both'
 
-export type TooltipFontFamily = 'system' | 'sans' | 'serif' | 'mono'
-
 export type SpeakLang = 'en-US'
 
 export type Settings = {
@@ -19,12 +17,8 @@ export type Settings = {
   highlightMode: HighlightMode
   highlightColor: string
   definitionLang: DefinitionLang
-  tooltipFontFamily: TooltipFontFamily
-  /** auto follows the browser color scheme; otherwise a six-digit hex color. */
-  tooltipTextColor: string
-  tooltipOpacity: number
-  tooltipFontSize: number
-  tooltipDelayMs: number
+  subtitleFontSize: number
+  subtitleGap: number
   autoSpeakOnHover: boolean
   speakLang: SpeakLang
   speakRate: number
@@ -108,6 +102,15 @@ export type MsgQueryEntryResp = {
   entry: DictEntry | null
 }
 
+export type MsgQueryEntries = {
+  type: 'LM_QUERY_ENTRIES'
+  words: string[]
+}
+
+export type MsgQueryEntriesResp = {
+  entries: DictEntry[]
+}
+
 export type MsgAddExcluded = {
   type: 'LM_ADD_EXCLUDED'
   word: string
@@ -125,6 +128,7 @@ export type MsgSnapshotUpdated = {
 export type MsgFromContent =
   | MsgRequestSnapshot
   | MsgQueryEntry
+  | MsgQueryEntries
   | MsgAddExcluded
 
 export type MsgFromWorker = MsgSnapshotUpdated

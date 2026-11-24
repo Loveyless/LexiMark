@@ -5,7 +5,6 @@ import {
   ALL_LEVELS,
   LEVEL_RANK,
   HIGHLIGHT_COLOR_OPTIONS,
-  TOOLTIP_FONT_OPTIONS,
 } from '../../src/shared/constants'
 import type { HighlightMode, Settings, UserLevel } from '../../src/shared/types'
 import { listVoices, onVoicesChanged, speak } from '../../src/speech/speak'
@@ -119,8 +118,8 @@ export default function App() {
 
             <Section
               icon="globe"
-              title="字幕语言"
-              description="hover 高亮词时，在词语下方显示中文、英文或中英对照。"
+              title="释义语言"
+              description="hover 高亮词时，卡片中显示中文、英文或中英对照。"
             >
               <Segmented
                 value={settings.definitionLang}
@@ -130,79 +129,28 @@ export default function App() {
               />
             </Section>
 
-            <Section icon="info" title="字幕样式">
-              <div className="flex items-center justify-between gap-4">
-                <label
-                  htmlFor="tooltip-font"
-                  className="text-sm font-medium text-stone-800 dark:text-stone-200"
-                >
-                  字体
-                </label>
-                <select
-                  id="tooltip-font"
-                  value={settings.tooltipFontFamily}
-                  onChange={(event) =>
-                    update({ tooltipFontFamily: event.target.value as Settings['tooltipFontFamily'] })
-                  }
-                  className="rounded-md border border-stone-200 bg-white px-2.5 py-1.5 text-sm text-stone-700 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200"
-                >
-                  {TOOLTIP_FONT_OPTIONS.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm font-medium text-stone-800 dark:text-stone-200">
-                  字幕颜色
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-[11px] text-stone-400 dark:text-stone-500">
-                    {settings.tooltipTextColor === 'auto' ? '自动' : settings.tooltipTextColor}
-                  </span>
-                  <input
-                    type="color"
-                    value={settings.tooltipTextColor === 'auto' ? '#111827' : settings.tooltipTextColor}
-                    onChange={(event) => update({ tooltipTextColor: event.target.value })}
-                    aria-label="释义颜色"
-                    className="h-8 w-10 cursor-pointer rounded border border-stone-200 bg-white p-1 dark:border-stone-700 dark:bg-stone-900"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => update({ tooltipTextColor: 'auto' })}
-                    className="text-xs text-stone-500 underline-offset-2 hover:underline dark:text-stone-400"
-                  >
-                    自动
-                  </button>
-                </div>
-              </div>
+            <Section
+              icon="info"
+              title="常驻字幕"
+              description="在可视区域内的生词下方持续显示一个中文释义，不需要悬停。"
+            >
               <TooltipRange
-                label="透明度"
-                value={settings.tooltipOpacity}
-                display={`${Math.round(settings.tooltipOpacity * 100)}%`}
-                min={0.3}
-                max={1}
-                step={0.05}
-                onChange={(tooltipOpacity) => update({ tooltipOpacity })}
-              />
-              <TooltipRange
-                label="字幕字号"
-                value={settings.tooltipFontSize}
-                display={`${settings.tooltipFontSize}px`}
-                min={12}
+                label="字号"
+                value={settings.subtitleFontSize}
+                display={`${settings.subtitleFontSize}px`}
+                min={8}
                 max={24}
                 step={1}
-                onChange={(tooltipFontSize) => update({ tooltipFontSize })}
+                onChange={(subtitleFontSize) => update({ subtitleFontSize })}
               />
               <TooltipRange
-                label="悬停显示延迟"
-                value={settings.tooltipDelayMs}
-                display={`${settings.tooltipDelayMs}ms`}
+                label="与单词间距"
+                value={settings.subtitleGap}
+                display={`${settings.subtitleGap}px`}
                 min={0}
-                max={1000}
-                step={50}
-                onChange={(tooltipDelayMs) => update({ tooltipDelayMs })}
+                max={24}
+                step={1}
+                onChange={(subtitleGap) => update({ subtitleGap })}
               />
             </Section>
 
@@ -213,7 +161,7 @@ export default function App() {
             >
               <ToggleRow
                 label="hover 自动朗读"
-                description="悬停高亮词后自动朗读；关闭后只显示释义字幕。"
+                description="悬停高亮词后自动读一次；关闭后可在卡片中点按钮发音。"
                 checked={settings.autoSpeakOnHover}
                 onChange={(autoSpeakOnHover) => update({ autoSpeakOnHover })}
               />

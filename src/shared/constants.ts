@@ -1,4 +1,4 @@
-import type { DefinitionLang, HighlightMode, Settings, TooltipFontFamily, UserLevel } from './types'
+import type { DefinitionLang, HighlightMode, Settings, UserLevel } from './types'
 
 // ============ 默认设置（PRD §16） ============
 
@@ -11,12 +11,9 @@ export const defaultSettings: Settings = {
   highlightAdvancedUnknownWords: true,
   highlightMode: 'dashed-underline',
   highlightColor: DEFAULT_HIGHLIGHT_COLOR,
-  definitionLang: 'zh',
-  tooltipFontFamily: 'system',
-  tooltipTextColor: 'auto',
-  tooltipOpacity: 1,
-  tooltipFontSize: 13,
-  tooltipDelayMs: 300,
+  definitionLang: 'both',
+  subtitleFontSize: 12,
+  subtitleGap: 2,
   autoSpeakOnHover: true,
   speakLang: 'en-US',
   speakRate: 0.9,
@@ -56,14 +53,7 @@ export const HIGHLIGHT_COLOR_OPTIONS: ReadonlyArray<{ value: string; label: stri
 export const DEFINITION_LANG_OPTIONS: ReadonlyArray<{ value: DefinitionLang; label: string }> = [
   { value: 'zh', label: '仅中文' },
   { value: 'en', label: '仅英文' },
-  { value: 'both', label: '中英同时显示' },
-]
-
-export const TOOLTIP_FONT_OPTIONS: ReadonlyArray<{ value: TooltipFontFamily; label: string }> = [
-  { value: 'system', label: '系统默认' },
-  { value: 'sans', label: '无衬线' },
-  { value: 'serif', label: '衬线' },
-  { value: 'mono', label: '等宽' },
+  { value: 'both', label: '中英同时显示（默认）' },
 ]
 
 // ============ 词频阈值 ============

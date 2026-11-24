@@ -14,6 +14,14 @@ export async function queryEntry(word: string): Promise<DictEntry | null> {
   return got ?? null
 }
 
+/** 批量查询页面字幕需要的词条，避免每个命中词都单独跨 context 发消息。 */
+export async function queryEntries(words: string[]): Promise<DictEntry[]> {
+  const keys = [...new Set(words.map((word) => word.trim().toLowerCase()).filter(Boolean))]
+  if (keys.length === 0) return []
+  const entries = await getDb().entries.bulkGet(keys)
+  return entries.filter((entry): entry is DictEntry => entry != null)
+}
+
 /** 批量取词条（构建内存索引用） */
 export async function getAllEntries(): Promise<DictEntry[]> {
   const db = getDb()
