@@ -19,11 +19,13 @@ describe('subtitle settings', () => {
     const settings = await getSettings()
 
     expect(settings.enabled).toBe(true)
+    expect(settings.userLevel).toBe('A2')
+    expect(settings.highlightMode).toBe('text-color')
+    expect(settings.preserveTextColor).toBe(true)
     expect(settings.definitionLang).toBe('both')
-    expect(settings.preserveTextColor).toBe(false)
     expect(settings.subtitlePosition).toBe('below')
-    expect(settings.subtitleFontSize).toBe(12)
-    expect(settings.subtitleGap).toBe(2)
+    expect(settings.subtitleFontSize).toBe(10)
+    expect(settings.subtitleGap).toBe(-4)
 
     mockStoredSettings({
       enabled: true,
