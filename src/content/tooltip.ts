@@ -33,9 +33,9 @@ const TOOLTIP_CSS = `
   transition: opacity 120ms ease, transform 120ms ease;
 }
 .lm-card.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.lm-card .lm-head { display: flex; align-items: baseline; gap: 8px; }
-.lm-card .lm-word { font-size: 15px; font-weight: 600; color: #111827; }
-.lm-card .lm-phon { font-size: 12px; color: #6b7280; }
+.lm-card .lm-head { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.lm-card .lm-word { min-width: 0; font-size: 15px; font-weight: 600; color: #111827; overflow-wrap: anywhere; }
+.lm-card .lm-phon { min-width: 0; font-size: 12px; color: #6b7280; overflow-wrap: anywhere; }
 .lm-card .lm-zh,
 .lm-card .lm-en {
   margin-top: 8px;
@@ -44,11 +44,11 @@ const TOOLTIP_CSS = `
   white-space: pre-wrap;
 }
 .lm-card .lm-en { margin-top: 6px; }
-.lm-card .lm-actions { display: flex; gap: 8px; margin-top: 10px; }
+.lm-card .lm-actions { display: flex; flex: 0 0 auto; gap: 6px; margin-left: auto; }
 .lm-card button {
   all: unset;
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 4px 7px;
   border-radius: 6px;
   font-size: 12px;
   background: #f3f4f6;
@@ -188,12 +188,12 @@ function renderCard(word: string, entry: DictEntry | null, settings: Settings): 
     <div class="lm-head">
       <span class="lm-word">${escapeHtml(word)}</span>
       ${phon}
+      <div class="lm-actions">
+        <button data-act="speak" type="button">🔊 发音</button>
+        <button data-act="exclude" type="button">不再提示</button>
+      </div>
     </div>
     ${zh}${en}${empty}
-    <div class="lm-actions">
-      <button data-act="speak" type="button">🔊 发音</button>
-      <button data-act="exclude" type="button">不再提示</button>
-    </div>
   `
 }
 

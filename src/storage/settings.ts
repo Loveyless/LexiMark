@@ -116,17 +116,24 @@ function normalizeSettings(settings: Partial<Settings>): Settings {
   merged.speakRate = Math.min(Math.max(merged.speakRate, 0.5), 1.5)
   merged.highlightMode = normalizeHighlightMode((settings as { highlightMode?: unknown }).highlightMode)
   merged.highlightColor = normalizeHighlightColor((settings as { highlightColor?: unknown }).highlightColor)
+  merged.preserveTextColor = typeof settings.preserveTextColor === 'boolean'
+    ? settings.preserveTextColor
+    : defaultSettings.preserveTextColor
+  const subtitlePosition = (settings as { subtitlePosition?: unknown }).subtitlePosition
+  merged.subtitlePosition = subtitlePosition === 'above' || subtitlePosition === 'below'
+    ? subtitlePosition
+    : defaultSettings.subtitlePosition
   merged.subtitleFontSize = normalizeNumber(
     settings.subtitleFontSize,
     defaultSettings.subtitleFontSize,
-    8,
+    4,
     24,
     0,
   )
   merged.subtitleGap = normalizeNumber(
     settings.subtitleGap,
     defaultSettings.subtitleGap,
-    0,
+    -24,
     24,
     0,
   )

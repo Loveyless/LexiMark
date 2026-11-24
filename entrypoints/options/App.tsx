@@ -35,6 +35,14 @@ const LANG_OPTIONS: ReadonlyArray<{ value: Settings['definitionLang']; label: st
   { value: 'en', label: '仅英文' },
 ]
 
+const SUBTITLE_POSITION_OPTIONS: ReadonlyArray<{
+  value: Settings['subtitlePosition']
+  label: string
+}> = [
+  { value: 'below', label: '下方' },
+  { value: 'above', label: '上方' },
+]
+
 export default function App() {
   const { settings, update, loading } = useSettings()
   const custom = useWordList('customWords')
@@ -112,7 +120,8 @@ export default function App() {
               <ColorPicker
                 value={settings.highlightColor}
                 mode={settings.highlightMode}
-                onChange={(highlightColor) => update({ highlightColor })}
+                preserveTextColor={settings.preserveTextColor}
+                onChange={(patch) => update(patch)}
               />
             </Section>
 
@@ -132,13 +141,19 @@ export default function App() {
             <Section
               icon="info"
               title="常驻字幕"
-              description="在可视区域内的生词下方持续显示一个中文释义，不需要悬停。"
+              description="在可视区域内的生词附近持续显示一个中文释义，不需要悬停。"
             >
+              <Segmented
+                value={settings.subtitlePosition}
+                options={SUBTITLE_POSITION_OPTIONS}
+                onChange={(subtitlePosition) => update({ subtitlePosition })}
+                label="释义位置"
+              />
               <TooltipRange
                 label="字号"
                 value={settings.subtitleFontSize}
                 display={`${settings.subtitleFontSize}px`}
-                min={8}
+                min={4}
                 max={24}
                 step={1}
                 onChange={(subtitleFontSize) => update({ subtitleFontSize })}
@@ -147,7 +162,7 @@ export default function App() {
                 label="与单词间距"
                 value={settings.subtitleGap}
                 display={`${settings.subtitleGap}px`}
-                min={0}
+                min={-24}
                 max={24}
                 step={1}
                 onChange={(subtitleGap) => update({ subtitleGap })}
@@ -315,7 +330,9 @@ function PreviewPanel(props: {
   const { settings } = props
   const style: React.CSSProperties =
     settings.highlightMode === 'text-color'
-      ? { color: settings.highlightColor }
+      ? settings.preserveTextColor
+        ? {}
+        : { color: settings.highlightColor }
       : {
           textDecorationLine: 'underline',
           textDecorationStyle:
@@ -402,24 +419,29 @@ function PreviewPanel(props: {
 function ColorPicker(props: {
   value: string
   mode: HighlightMode
-  onChange: (value: string) => void
+  preserveTextColor: boolean
+  onChange: (patch: Partial<Pick<Settings, 'highlightColor' | 'preserveTextColor'>>) => void
 }) {
+  const isPreservingTextColor = props.mode === 'text-color' && props.preserveTextColor
+
   return (
     <div>
       <div className="flex items-center justify-between gap-3">
         <span className="text-sm font-medium text-stone-800 dark:text-stone-200">颜色</span>
         <span className="font-mono text-[11px] text-stone-400 dark:text-stone-500">
-          {props.value}
+          {isPreservingTextColor
+            ? '不改变生词颜色'
+            : props.value}
         </span>
       </div>
       <div className="mt-2.5 flex flex-wrap items-center gap-2">
         {HIGHLIGHT_COLOR_OPTIONS.map((option) => {
-          const selected = props.value === option.value
+          const selected = !isPreservingTextColor && props.value === option.value
           return (
             <button
               key={option.value}
               type="button"
-              onClick={() => props.onChange(option.value)}
+              onClick={() => props.onChange({ highlightColor: option.value, preserveTextColor: false })}
               aria-label={option.label}
               aria-pressed={selected}
               title={option.label}
@@ -460,11 +482,29 @@ function ColorPicker(props: {
           <input
             type="color"
             value={props.value}
-            onChange={(event) => props.onChange(event.target.value)}
+            onChange={(event) => props.onChange({
+              highlightColor: event.target.value,
+              preserveTextColor: false,
+            })}
             aria-label="自定义高亮颜色"
             className="sr-only"
           />
         </label>
+        {props.mode === 'text-color' && (
+          <button
+            type="button"
+            onClick={() => props.onChange({ preserveTextColor: true })}
+            aria-pressed={isPreservingTextColor}
+            className={cx(
+              'inline-flex h-8 items-center rounded-md border px-2.5 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/50',
+              isPreservingTextColor
+                ? 'border-brand-400 bg-brand-50 text-brand-800 dark:border-brand-700 dark:bg-brand-900/40 dark:text-brand-200'
+                : 'border-stone-300 text-stone-600 hover:border-stone-400 dark:border-stone-700 dark:text-stone-300 dark:hover:border-stone-500',
+            )}
+          >
+            不改变生词颜色
+          </button>
+        )}
       </div>
     </div>
   )

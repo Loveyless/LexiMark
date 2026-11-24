@@ -20,6 +20,8 @@ describe('subtitle settings', () => {
 
     expect(settings.enabled).toBe(true)
     expect(settings.definitionLang).toBe('both')
+    expect(settings.preserveTextColor).toBe(false)
+    expect(settings.subtitlePosition).toBe('below')
     expect(settings.subtitleFontSize).toBe(12)
     expect(settings.subtitleGap).toBe(2)
 
@@ -44,22 +46,38 @@ describe('subtitle settings', () => {
   it('clamps subtitle size and spacing', async () => {
     mockStoredSettings({
       subtitleFontSize: 40,
-      subtitleGap: -20,
+      subtitleGap: -40,
     })
     const settings = await getSettings()
 
     expect(settings.subtitleFontSize).toBe(24)
-    expect(settings.subtitleGap).toBe(0)
+    expect(settings.subtitleGap).toBe(-24)
   })
 
-  it('preserves supported subtitle values', async () => {
+  it('preserves smaller fonts, negative gaps, and the above position', async () => {
     mockStoredSettings({
-      subtitleFontSize: 18,
-      subtitleGap: 10,
+      subtitlePosition: 'above',
+      subtitleFontSize: 4,
+      subtitleGap: -8,
     })
     const settings = await getSettings()
 
-    expect(settings.subtitleFontSize).toBe(18)
-    expect(settings.subtitleGap).toBe(10)
+    expect(settings.subtitlePosition).toBe('above')
+    expect(settings.subtitleFontSize).toBe(4)
+    expect(settings.subtitleGap).toBe(-8)
+  })
+
+  it('uses below when the saved subtitle position is invalid', async () => {
+    mockStoredSettings({ subtitlePosition: 'sideways' })
+    const settings = await getSettings()
+
+    expect(settings.subtitlePosition).toBe('below')
+  })
+
+  it('preserves the setting to keep the page text color', async () => {
+    mockStoredSettings({ preserveTextColor: true })
+    const settings = await getSettings()
+
+    expect(settings.preserveTextColor).toBe(true)
   })
 })

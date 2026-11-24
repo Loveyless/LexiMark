@@ -37,7 +37,7 @@ html[data-leximark-mode="dashed-underline"] :where(.leximark-hl) {
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
 }
-html[data-leximark-mode="text-color"] :where(.leximark-hl) {
+html[data-leximark-mode="text-color"]:not([data-leximark-preserve-text-color="true"]) :where(.leximark-hl) {
   color: var(--leximark-color);
 }
 `
@@ -54,8 +54,16 @@ export function injectHighlightCss(): void {
   injected = true
 }
 
-export function applyHighlightStyle(settings: Pick<Settings, 'highlightMode' | 'highlightColor'>): void {
+export function applyHighlightStyle(
+  settings: Pick<Settings, 'highlightMode' | 'highlightColor' | 'preserveTextColor'>,
+): void {
   if (typeof document === 'undefined') return
-  document.documentElement.setAttribute('data-leximark-mode', settings.highlightMode)
-  document.documentElement.style.setProperty('--leximark-color', settings.highlightColor)
+  const root = document.documentElement
+  root.setAttribute('data-leximark-mode', settings.highlightMode)
+  root.style.setProperty('--leximark-color', settings.highlightColor)
+  if (settings.highlightMode === 'text-color' && settings.preserveTextColor) {
+    root.setAttribute('data-leximark-preserve-text-color', 'true')
+  } else {
+    root.removeAttribute('data-leximark-preserve-text-color')
+  }
 }

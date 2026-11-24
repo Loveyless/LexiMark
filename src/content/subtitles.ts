@@ -39,17 +39,10 @@ const SUBTITLE_CSS = `
 `
 
 type Caption = {
-  anchor: HTMLSpanElement
   element: HTMLSpanElement
   wordRect: DOMRect
   width: number
-  height: number
-  left: number
-  top: number
 }
-
-type PlacedRect = { left: number; right: number; top: number; bottom: number }
-type WordRect = PlacedRect & { anchor: HTMLSpanElement }
 
 let host: HTMLDivElement | null = null
 let root: ShadowRoot | null = null
@@ -276,104 +269,20 @@ function layoutCaptions(): void {
     if (wordRect.width === 0 || wordRect.height === 0) continue
     const rect = element.getBoundingClientRect()
     items.push({
-      anchor,
       element,
       wordRect,
       width: rect.width,
-      height: rect.height,
-      left: 0,
-      top: wordRect.bottom + settings.subtitleGap,
-    })
-  }
-  items.sort((a, b) => a.wordRect.top - b.wordRect.top || a.wordRect.left - b.wordRect.left)
-
-  const wordRects: WordRect[] = []
-  for (const anchor of visibleAnchors) {
-    if (!anchor.isConnected) continue
-    const rect = anchor.getBoundingClientRect()
-    if (rect.width === 0 || rect.height === 0) continue
-    wordRects.push({
-      anchor,
-      left: rect.left,
-      right: rect.right,
-      top: rect.top,
-      bottom: rect.bottom,
     })
   }
 
-  const occupied: PlacedRect[] = []
   const pad = 8
   for (const item of items) {
     const centered = (item.wordRect.left + item.wordRect.right - item.width) / 2
-    item.left = Math.min(Math.max(pad, centered), Math.max(pad, window.innerWidth - item.width - pad))
-
-    const blockers = [
-      ...wordRects.filter((rect) => rect.anchor !== item.anchor),
-      ...occupied,
-    ]
-    const minTop = pad
-    const maxTop = Math.max(minTop, window.innerHeight - item.height - pad)
-    const belowTop = item.wordRect.bottom + settings.subtitleGap
-    const aboveTop = item.wordRect.top - settings.subtitleGap - item.height
-    const candidates = belowTop <= maxTop
-      ? [{ top: belowTop, direction: 'down' as const }, { top: aboveTop, direction: 'up' as const }]
-      : [{ top: aboveTop, direction: 'up' as const }, { top: belowTop, direction: 'down' as const }]
-
-    let placedTop: number | null = null
-    for (const candidate of candidates) {
-      if (candidate.top < minTop || candidate.top > maxTop) continue
-      placedTop = findAvailableTop(
-        candidate.top,
-        candidate.direction,
-        item.left,
-        item.left + item.width,
-        item.height,
-        minTop,
-        maxTop,
-        blockers,
-      )
-      if (placedTop != null) break
-    }
-
-    item.top = placedTop ?? Math.min(Math.max(pad, belowTop), maxTop)
-    item.element.style.left = `${item.left}px`
-    item.element.style.top = `${item.top}px`
-    occupied.push({
-      left: item.left,
-      right: item.left + item.width,
-      top: item.top,
-      bottom: item.top + item.height,
-    })
+    const left = Math.min(Math.max(pad, centered), Math.max(pad, window.innerWidth - item.width - pad))
+    item.element.style.left = `${left}px`
+    const top = settings.subtitlePosition === 'above'
+      ? item.wordRect.top - item.element.getBoundingClientRect().height - settings.subtitleGap
+      : item.wordRect.bottom + settings.subtitleGap
+    item.element.style.top = `${top}px`
   }
-}
-
-function findAvailableTop(
-  initialTop: number,
-  direction: 'down' | 'up',
-  left: number,
-  right: number,
-  height: number,
-  minTop: number,
-  maxTop: number,
-  blockers: PlacedRect[],
-): number | null {
-  let top = initialTop
-  while (top >= minTop && top <= maxTop) {
-    const overlapping = blockers.filter((rect) =>
-      overlaps(left, right, top, top + height, rect),
-    )
-    if (overlapping.length === 0) return top
-    const nextTop = direction === 'down'
-      ? Math.max(...overlapping.map((rect) => rect.bottom + 2))
-      : Math.min(...overlapping.map((rect) => rect.top - height - 2))
-    if ((direction === 'down' && nextTop <= top) || (direction === 'up' && nextTop >= top)) {
-      return null
-    }
-    top = nextTop
-  }
-  return null
-}
-
-function overlaps(left: number, right: number, top: number, bottom: number, other: PlacedRect): boolean {
-  return left < other.right && right > other.left && top < other.bottom && bottom > other.top
 }

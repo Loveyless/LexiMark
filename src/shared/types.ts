@@ -16,7 +16,9 @@ export type Settings = {
   highlightAdvancedUnknownWords: boolean
   highlightMode: HighlightMode
   highlightColor: string
+  preserveTextColor: boolean
   definitionLang: DefinitionLang
+  subtitlePosition: 'above' | 'below'
   subtitleFontSize: number
   subtitleGap: number
   autoSpeakOnHover: boolean
