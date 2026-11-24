@@ -24,8 +24,23 @@ describe('builtin excluded words', () => {
   })
 
   it('keeps the words the user already excluded', () => {
-    for (const word of ['accessibility', 'chamberlain', 'docker', 'shanghai', 'vibe']) {
+    for (const word of [
+      'able', 'andy', 'community', 'feature', 'hate', 'mario', 'natural', 'roland',
+      'sharing', 'software', 'subscribe', 'tar', 'truth', 'unlock', 'whole',
+      'accessibility', 'chamberlain', 'docker', 'shanghai', 'vibe',
+    ]) {
       expect(BUILTIN_EXCLUDED_WORDS).toContain(word)
+    }
+  })
+
+  it('does not exclude words the user wants to learn', () => {
+    for (const word of [
+      'assign', 'attachment', 'debt', 'estimate', 'frequently', 'increasingly',
+      'occasionally', 'relatively', 'reproduce', 'restore', 'trace', 'volume',
+      'accordingly', 'compile', 'evaluation', 'migration', 'metric', 'reinforcement',
+      'significantly',
+    ]) {
+      expect(BUILTIN_EXCLUDED_WORDS).not.toContain(word)
     }
   })
 
