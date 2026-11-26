@@ -36,6 +36,7 @@ import {
 import { isHostDisabled } from '../src/storage/sites'
 import { currentHost } from '../src/content/dom-utils'
 import { preloadSpeechVoices } from '../src/speech/speak'
+import { normalizeWord } from '../src/dictionary/normalize'
 import type {
   DictEntry,
   IndexSnapshot,
@@ -249,7 +250,7 @@ async function showCardFor(
   try {
     const resp = await chrome.runtime.sendMessage({
       type: 'LM_QUERY_ENTRY',
-      word,
+      word: normalizeWord(word, idx.lemmaMap),
     })
     entry = (resp as { entry: DictEntry | null })?.entry ?? null
   } catch (e) {

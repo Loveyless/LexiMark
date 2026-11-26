@@ -131,7 +131,7 @@ pnpm zip        # 打包 → .output/leximark-<version>-chrome.zip
 仓库自带一份可直接运行的词库产物，位于 `public/data/`：
 
 - `public/data/levels/*.json`：CEFR-J A1–B2 分级词表，共 6,558 词。
-- `public/data/dict/ecdict.subset.csv`：ECDICT 裁剪子集，约 5.7 万词条，按 BNC/FRQ 排名截取。
+- `public/data/dict/ecdict.subset.csv`：ECDICT 裁剪子集，约 5.7 万词条；除按 BNC/FRQ 排名截取外，也完整保留 CEFR-J A1–B2 词条，并合并 `scripts/ecdict-overrides.json` 中有来源记录的补充释义。
 
 需要重新生成时，先把原始数据放到本地 `data/raw/`，再运行：
 

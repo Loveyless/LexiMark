@@ -1729,6 +1729,7 @@ anchorage,'æŋkәridʒ,"n. 下锚, 锚地, 停泊税\n[化] 固着; 固定; 锚
 anchored,,a. 固定的；抛锚的,v fix firmly and stably\nv secure a vessel with an anchor,,0:anchore/1:dp/p:anchored/d:anchored,40447,34183
 anchoring,,[机] 吊骨,v fix firmly and stably\nv secure a vessel with an anchor,,0:anchor/1:i/i:anchoring,41450,26748
 anchorman,'æŋkәmæn,"n. 末棒运动员, 成绩倒数第一名, 新闻节目主持人",n a television reporter who coordinates a broadcast to which several correspondents contribute,,s:anchormen,40851,20305
+anchorperson,"'æŋkә,p\\\\:sən",n. 新闻节目主持人,n a television reporter who coordinates a broadcast to which several correspondents contribute,,,0,0
 anchorwoman,"'æŋkə,wumən",n. 广播新闻的女主持人,,,,0,30275
 anchovy,'æntʃәvi,n. 凤尾鱼；鳀鱼,n. tiny fishes usually canned or salted; used for hors d'oeuvres or as seasoning in sauces\nn. small herring-like plankton-eating fishes often canned whole or as paste; abundant in tropical waters worldwide,,s:anchovies,25653,15854
 ancient,'einʃәnt,"a. 古代的, 古老的, 年老的, 旧的",n. a very old person\nn. a person who lived in ancient times\ns. belonging to times long past especially of the historical period before the fall of the Western Roman Empire\ns. very old,,s:ancients,1841,1817
@@ -2033,6 +2034,7 @@ antibacterial,.æntibæk'tiәriәl,a. 抗菌的\nn. 抗菌剂,n. any drug that d
 antibiotic,.æntibai'ɒtik,n. 抗生素\na. 抗生的,n. a chemical substance derivable from a mold or bacterium that can kill microorganisms and cure bacterial infections\na. of or relating to antibiotic drugs,,s:antibiotics,7295,5080
 antibody,'æntibɒdi,n. 抗体\n[化] 抗体,"n. any of a large variety of proteins normally present in the body or produced in response to an antigen which it neutralizes, thus producing an immune response",,s:antibodies,4257,8806
 antic,'æntik,n. 滑稽动作\na. 古怪的,n. a ludicrous or grotesque act done for fun and amusement\ns. ludicrously odd,,s:antics/i:anticking/p:anticked/3:antics/d:anticked,13906,27837
+anticancer,'ænti'kænsә,a. [医]抗癌的,a used in the treatment of cancer,,,0,0
 antichrist,'æntikraist,n. 反对基督者,n. (Christianity) the adversary of Christ (or Christianity) mentioned in the New Testament; the Antichrist will rule the world until overthrown by the Second Coming of Christ,,s:antichrists,47975,25010
 anticipate,æn'tisipeit,"vt. 预期, 占先, 加速, 提前使用\n[医] 提前出现, 先期发生",v. act in advance of; deal with ahead of time\nv. realize beforehand\nv. be excited or anxious about\nv. be a forerunner of or occur earlier than,,d:anticipated/i:anticipating/p:anticipated/3:anticipates,3106,3187
 anticipated,,a. 预期的；期望的,s. expected hopefully,,0:anticipate/1:dp/d:anticipated/p:anticipated,8625,8773
@@ -2082,6 +2084,7 @@ antiphon,'æntif(ә)n,"n. 轮流吟唱的歌, 唱和",n. a verse or song to be c
 antiphonal,æn'tifәnәl,a. 启应轮流吟唱的\nn. 启应轮流吟唱的圣歌诗集,n bound collection of antiphons\na containing or using responses; alternating\na relating to or resembling an antiphon or antiphony,,,49427,0
 antipode,'æntipәud,n. 正相反的事物\n[化] 对映体,n. direct opposite,,s:antipodes,37715,41319
 antipodean,"æn,tipә'di(:)әn",正相反对的,a relating to the antipodes or situated at opposite sides of the earth,,s:antipodeans,34819,0
+antipollution,'æntipә'lju:ʃәn,"a. 防止环境污染的, 防污染的",a intended to reduce pollution,,,0,0
 antiproton,.ænti'prәutɒn,n. 反质子\n[化] 反质子; 负质子,n. an unstable negatively charged proton; the antiparticle of a proton,,s:antiprotons,0,35708
 antiqua,,n. 安迪瓜（瓜地马拉首都）,,,,49355,0
 antiquarian,.ænti'kwєәriәn,"n. 古文物收藏家, 古董商\na. 古文物的, 古文物研究的",a. of or relating to persons who study or deal in antiques or antiquities\na. of or relating to antiques or antiquities,,s:antiquarians,20026,25534
@@ -2098,6 +2101,7 @@ antisera,,n. [免疫] 抗血清（antiserum的复数）,n blood serum containing
 antiserum,.ænti'siәrәm,n. 抗血清\n[化] (复antisera)抗血清,n. blood serum containing antibodies against specific antigens; provides immunity to a disease,,s:antiserums,30669,44935
 antislavery,.ænti'sleivәri,n. 反对奴隶制\na. 反对奴隶制度的,a. Opposed to slavery.\nn. Opposition to slavery.,,,18364,0
 antisocial,.ænti'sәuʃәl,"不爱社交的, 反社会的, 有害于公众利益的\n[医] 不喜社交的","s. shunning contact with others; just shy""\ns. hostile to or disruptive of normal standards of social behavior",,,24620,11089
+antistatic,",ænti'stætik",a. 抗静电的,,,,0,0
 antiterrorism,",ænti'terәrizәm",n. 反恐怖主义,,,,0,24289
 antithesis,æn'tiθisis,"n. 对偶, 对照, 对立面",n. exact opposite\nn. the juxtaposition of contrasting words or ideas to give a feeling of balance,,s:antitheses,15369,15063
 antithetical,.ænti'θetik.-kәl,"a. 对立的, 正相反的",s sharply contrasted in character or purpose,,,25903,17691
@@ -2106,6 +2110,7 @@ antitrust,.ænti'trʌst,a. 反托拉斯的\n[法] 反托拉斯的,s of laws and 
 antitype,'æntitaip,n. 对型,n. a person or thing represented or foreshadowed by a type or symbol; especially a figure in the Old Testament having a counterpart in the New Testament\nn. an opposite or contrasting type,,s:antitypes,0,46893
 antivenin,",ænti'venin",[化] 抗蛇毒血清\n[医] 抗蛇毒素,n. an antitoxin that counteracts the effects of venom from the bite of a snake or insect or other animal,,,0,38297
 antiviral,'ænti'vaiәrәl,a. 抗病毒的\n[医] 抗病毒的,n. any drug that destroys viruses\na. inhibiting or stopping the growth and reproduction of viruses,,s:antivirals,47679,22296
+antivirus,,n. 抗病毒素\n[医] 细菌滤液,,,,0,0
 antler,'æntlә,n. 鹿角,n. deciduous horn of a member of the deer family,,s:antlers/p:antlered,20616,12101
 antlered,,带鹿角的\n有鹿角的\n饰以鹿角的,s. having antlers,,0:antler/1:p/p:antlered,0,40254
 antoine,æn'twɑ:n,"n. 安托万（男子名, Anthony的异体）",,,,23849,0
@@ -2467,6 +2472,7 @@ ardour,'ɑ:dә,"n. 热忱, 热情, 情欲, 激情, 灼热",n a feeling of strong
 ards,,abbr. 急性呼吸窘迫综合征（Acute Respiratory Distress Syndrome）；航空研究发展局（Aviation Research and Development Service）,n acute lung injury characterized by coughing and rales; inflammation of the lungs which become stiff and fibrous and cannot exchange oxygen; occurs among persons exposed to irritants such as corrosive chemical vapors or ammonia or chlorine etc.,,,18298,0
 arduous,'ɑ:djuәs,"a. 费力的, 努力的, 险峻的",s. characterized by effort to the point of exhaustion; especially physical effort\ns. taxing to the utmost; testing powers of endurance\ns. difficult to accomplish; demanding considerable mental effort and skill,,,13723,12441
 arduously,,adv. 严酷地；费力地,r. in an arduous manner,,,0,40255
+are,ɑ:,be的现在时复数或第二人称单数,n. a unit of surface area equal to 100 square meters,,s:ares,0,0
 area,'єәriә,"n. 区域, 面积, 范围, 空地\n[计] 区域",n. a particular geographical region of indefinite boundary (usually serving some special purpose or distinguished by its people or culture or geography)\nn. a subject of study\nn. a part of an animal that has a special function or is supplied by a given artery or nerve\nn. a part of a structure having some specific characteristic or function,,s:areas,149,230
 areal,'εәriәl,a. 地区的；面积的；广大的,a. of or relating to or involving an area,,,29503,33740
 areawide,"'eərɪə,waɪd",a. 全区域的；覆盖全区的,,,,0,30711
@@ -3580,6 +3586,7 @@ bacteriophage,bæk'tiәriәfeidʒ,n. 噬菌体\n[医] 噬菌体,n. a virus that 
 bacterium,bæk'tiәriәm,n. 细菌\n[医] [无芽胞]杆菌属,n (microbiology) single-celled or noncellular spherical or spiral or rod-shaped organisms lacking chlorophyll that reproduce by fission; important as pathogens and for biochemical properties; taxonomy is difficult; often considered to be plants,,s:bacteria,4650,0
 bactrian,'bæktriәn,n. 大夏人[语]\na. 大夏(语)的,a. Of or pertaining to Bactria in Asia.\nn. A native of Bactria.,,,0,42712
 bad,bæd,a. 坏的\nn. 坏\nadv. 坏地,n. that which is below standard or expectations as of ethics or decency\na. having undesirable or negative qualities\ns. very intense\ns. feeling physical discomfort or pain (`tough' is occasionally used colloquially for `bad'),,r:worse/t:worst,349,282
+bad-tempered,,a. 脾气不好的,s annoyed and irritable,,,0,0
 baddeley,,n. (Baddeley)人名；(英)巴德利,,,,37610,0
 baddie,'bædi,"n. 坏人, (尤指电影中之)恶人",n the principal bad character in a film or work of fiction,,,35955,43970
 baddy,'bædi,"n. 坏人, (尤指电影中之)恶人",,,s:baddies,23983,0
@@ -4362,6 +4369,7 @@ beekeeper,'bi:fki:pә,n. 养蜂人,n. a farmer who keeps bees for their honey,,s
 beekeeping,"'bi:,ki:piŋ",n. 养蜂,n. the cultivation of bees on a commercial scale for the production of honey,,,0,32326
 beeline,'bi:lain,n. 笔直线,n. the most direct route,,,39718,21828
 beelzebub,bi:'elzibʌb,"n. 魔王, 魔鬼",n (Judeo-Christian and Islamic religions) chief spirit of evil and adversary of God; tempter of mankind; master of Hell,,s:beelzebubs,40453,0
+been,bi:n,be的过去分词,"v have the quality of being; (copula, used with an adjective or a predicate noun)\nv be identical to; be someone or something\nv occupy a certain position or area; be somewhere\nv have an existence, be extant\nv happen, occur, take place; this was during the visit to my parents' house""\nv be identical or equivalent to\nv form or compose\nv work in a specific place, with a specific subject, or in a specific function\nv represent, as of a character on stage\nv spend or use time\nv have life, be alive\nv to remain unmolested, undisturbed, or uninterrupted -- used only in infinitive form\nv be priced at",,1:d/0:be/s:beens,0,0
 beep,bi:p,"n. 短而尖的声音, 嘟\nv. 嘟嘟响","n. a short high tone produced as a signal or warning\nv. call, summon, or alert with a beeper",,s:beeps/i:beeping/p:beeped/3:beeps/d:beeped,25769,13285
 beeper,,"n. 驾驶飞机的遥控人员\n[计] 报警器, 声信号装置",n. an electronic device that generates a series of beeps when the person carrying it is being paged,,,0,16329
 beeping,bi:pɪŋ,v. 嘟嘟响( beep的现在分词 ),"v make a loud noise\nv call, summon, or alert with a beeper",,0:beep/1:i/i:beeping,0,33309
@@ -6052,6 +6060,7 @@ branchial,'bræŋkiәl,"a. 鳃的, 鳃状的\n[医] 鳃的",a. of or relating to
 branching,'bræntʃiŋ,"n. 分歧\na. 发枝的, 分歧的",n. the act of branching out or dividing into branches\ns. resembling the branches of a tree,,0:branch/1:i/i:branching/s:branchings,16648,18017
 branco,"'bræŋ,kəu",n. 布兰科（姓氏）；布朗库（河流名）,,,,46770,0
 brand,brænd,"n. 商标, 牌子, 烙印\nvt. 打烙印于","n. a recognizable kind\nn. identification mark on skin, made by burning\nn. a piece of wood that has been burned or is burning\nv. burn with a branding iron to indicate ownership; of animals",,s:brands/d:branded/i:branding/p:branded/3:brands,3387,2570
+brand-new,,a. 崭新的,s. conspicuously new,,,0,0
 brandade,brɔŋ'dɑ:d,"n. 奶油烙(鳕)鱼,鱼羹",,,,0,45915
 branded,'brændid,a. 名牌商标的；打有烙印的；[英方]有斑纹的（等于brindled）,s. (of goods and merchandise) marked or labeled by a distinctive word or symbol indicating exclusive rights\na. marked with a brand,,0:brand/1:dp/d:branded/p:branded,20574,21546
 brandenburg,'brændənbə:ɡ,n. 勃兰登堡（德国城市）,n. the territory of an Elector (of the Holy Roman Empire) that expanded to become the kingdom of Prussia in 1701,,,25739,0
@@ -6443,6 +6452,7 @@ bros,,n. (Bros)人名；(法、西、罗)布罗斯,,,0:bro/1:s,23452,0
 broth,brɒθ,"n. 原汁清汤, 肉汤\n[医] 肉汤(培养基)",n. liquid in which meat and vegetables are simmered; used as a basis for e.g. soups or sauces\nn. a thin soup of meat or fish or vegetable stock,,s:broths,16262,5690
 brothel,'brɒθәl,n. 妓院\n[法] 妓院,n a building where prostitutes are available,,s:brothels,12138,12966
 brother,'brʌðә,n. 兄弟,n. a male with the same parents as someone else\nn. a male person who is a fellow member (of a fraternity or religion or other group)\nn. used as a term of address for those male persons engaged in the same movement\nn. (Roman Catholic Church) a title given to a monk and used as form of address,,s:brothers,827,614
+brother-in-law,,n. 姊妹的丈夫,n. a brother by marriage,,s:brother-in-laws,0,0
 brotherhood,'brʌðәhud,"n. 手足情谊, 兄弟关系",n. the kinship relation between a male offspring and the siblings\nn. people engaged in a particular occupation\nn. the feeling that men should treat one another like brothers,,s:brotherhoods,11836,13702
 brotherly,'brʌðәli,"a. 兄弟的, 亲兄弟似的, 亲切的",a. like or characteristic of or befitting a brother\nr. (archaic as adverb) in a brotherly manner,,,18970,20842
 brotherton,,布拉泽顿（人名）,,,,42254,0
@@ -7968,6 +7978,7 @@ ccp,,"[计] 调用控制端口, 计算机程序设计检验合格证, 通信控�
 cctv,,[计] 闭路电视,,,,49770,0
 ccw,,[计] 通道命令字,,,,32080,0
 cd,,"n. 镭射碟, 镭射唱片\n[计] 光盘, 压缩盘, 载波检测, DOS内部命令:显示或改变当前目录","n a soft bluish-white ductile malleable toxic bivalent metallic element; occurs in association with zinc ores\nn the basic unit of luminous intensity adopted under the Systeme International d'Unites; equal to 1/60 of the luminous intensity per square centimeter of a black body radiating at the temperature of 2,046 degrees Kelvin\nn a debt instrument issued by a bank; usually pays interest\nn a digitally encoded recording on an optical disk that is smaller than a phonograph record; played back by a laser\ns being one hundred more than three hundred",,s:cds,32141,0
+cd-rom,si:di:'rɔm,n. 光盘驱动器,n a compact disk that is used with a computer (rather than with an audio system); a large amount of digital information can be stored and accessed but it cannot be altered by the user,,s:cd-roms,0,0
 cdc,,abbr. 疾病防治中心（Centers for Disease Control）；（美）市民民防团（Citizens ' Defense Corps）；控制数据公司（Control Data Corp）,n a federal agency in the Department of Health and Human Services; located in Atlanta; investigates and diagnoses and tries to control or prevent diseases (especially new and unusual diseases),,,30079,0
 cdi,,abbr. 航向偏差指示器（Course Deviation Indicator）；综合报告索引（Comprehensive Dissertation Index）,,,,46902,0
 cdna,,[化] 互补DNA,n single-stranded DNA that is complementary to messenger RNA or DNA that has been synthesized from messenger RNA by reverse transcriptase,,s:cdnas,8399,0
@@ -12153,6 +12164,7 @@ customised,'kʌstəmaɪz,vt. 依照顾客具体要求而制造（等于customize
 customizable,,[计] 可定制的,,,,0,31464
 customize,kʌstәmaiz,"vt. 定制, 按规格改制, 定做\n[计] 定制",v. make according to requirements,,d:customized/i:customizing/p:customized/3:customizes,45556,11372
 customized,,n. 自定义；客制化；自定义级别,v make to specifications\nv make according to requirements,,0:customize/1:dp/p:customized,0,15114
+customs,,"n. 海关, 关卡, 关税\n[经] 关税, 海关",n. money collected under a tariff\nn. money collected under a tariff,,0:custom/1:s,0,0
 cut,kʌt,"n. 切口, 割伤, 降低, 切, 割, 砍, 削, 伤口, 削减, 缩短, 删节, 通路\na. 经切割的, 缩减的\nvt. 切, 割, 减少, 刺痛, 开辟, 雕刻, 删节, 缩短, 停止, 排斥, 切断, 关, 显出\nvi. 切, 割, 砍, 刺痛, 相交, 抄近路, 剪辑\n[计] 剪切",n. a share of the profits\nn. (film) an immediate transition from one shot to the next\nn. a trench resembling a furrow that was made by erosion or excavation\nn. a step on some scale,,d:cut/0:cut/1:dp/s:cuts/i:cutting/p:cut/3:cuts,541,414
 cutaneous,kju:'teinjәs,"a. 皮肤上的, 影响皮肤的\n[医] 皮的",a. relating to or existing on or affecting the skin,,,43351,26239
 cutaway,'kʌtә.wei,"a. 剖面的, 下摆裁成圆角的\nn. 常礼服",n. a representation (drawing or model) of something in which the outside is omitted to reveal the inner parts\nn. a man's coat cut diagonally from the waist to the back of the knees,,s:cutaways,29482,24748
@@ -12190,6 +12202,7 @@ cyanide,'saiәnaid,n. 氰化物\nvt. 用氰化物处理\n[计] 氰化物,n. an e
 cyanobacteria,saɪænɒ'bæktɪərɪə, 蓝细菌,n. predominantly photosynthetic prokaryotic organisms containing a blue pigment in addition to chlorophyll; occur singly or in colonies in diverse habitats; important as phytoplankton,,,0,30641
 cyanobacterial,,蓝藻,a. relating to or caused by photosynthetic bacteria of the class Cyanobacteria,,,0,46766
 cybele,'sibili,n. 自然女神,n. great nature goddess of ancient Phrygia in Asia Minor; counterpart of Greek Rhea and Roman Ops,,,49988,0
+cybercrime,,n. 网络犯罪,n. crime committed using a computer and the internet to steal a person's identity or sell contraband or stalk victims or disrupt operations with malevolent programs,,,0,0
 cybernetic,.saibә'nætik,a. 控制论的\n[计] 控制论的,a. of or relating the principles of cybernetics,,s:cybernetics,40639,27788
 cybernetics,",saibә:'netiks",n. 控制论\n[计] 控制论,n. (biology) the field of science concerned with processes of communication and control (especially the comparison of these processes in biological and artificial systems),,0:cybernetic/1:s,0,32370
 cyberpunk,ˈsaɪbəpʌŋk,n. 计算机科幻小说； 网络黑客,n. a writer of science fiction set in a lawless subculture of an oppressive society dominated by computer technology\nn. a genre of fast-paced science fiction involving oppressive futuristic computerized societies,,,0,30756
@@ -12503,6 +12516,7 @@ datum,'deitәm,"n. 论据, 材料, 资料, 已知数\n[医] 材料, 资料, 论�
 daub,dɒ:b,"v. 涂抹, 乱画, 弄脏\nn. 污迹, 劣画",n. material used to daub walls\nn. an unskillful painting\nv. apply to a surface,,p:daubed/d:daubed/i:daubing/s:daubs/3:daubs,20322,26498
 dauber,'dɒ:bә,"n. 涂抹者, 拙劣的画匠, 涂抹工具",n. an unskilled painter,,s:daubers,0,39538
 daughter,'dɒ:tә,n. 女儿\na. 女儿的,n. a female human offspring,,s:daughters,871,634
+daughter-in-law,,n. 媳妇,n. the wife of your son,,s:daughters-in-law,0,0
 daunt,dɒ:nt,"vt. 威吓, 难倒, 使气馁",v. cause to lose courage,,d:daunted/p:daunted/3:daunts/i:daunting,19635,23838
 daunting,'dɒ:ntiŋ,a. 使人畏缩的,s. discouraging through fear,,1:i/0:daunt,8477,7463
 dauntingly,'dɔːntɪŋlɪ,adv. 令人生畏地；吓人地,r. to a degree or in a manner that daunts,,,40754,35512
@@ -13794,6 +13808,7 @@ dictatorship,dik'teitәʃip,"n. 独裁者之职位, 独裁, 独裁政权\n[法] 
 diction,'dikʃәn,"n. 措辞, 发音, 用语",n the articulation of speech regarded from the point of view of its intelligibility to the audience\nn the manner in which something is expressed in words,,,21809,19662
 dictionary,'dikʃәnәri,"n. 字典, 词典\n[计] 词典",n. a reference book containing an alphabetical list of words with information about them,,s:dictionaries,3332,8493
 dictum,'diktәm,"n. 声明, 格言, 法官意见\n[法] 宣言, 声明, 法官的意见",n an authoritative declaration\nn an opinion voiced by a judge on a point of law not directly bearing on the case in question and therefore not binding,,s:dicta,12484,17196
+did,did,do的过去式,"v engage in\nv carry out or perform an action\nv get (something) done\nv proceed or get along\nv give rise to; cause to happen or occur, not always intentionally\nv carry out or practice; as of jobs and professions\nv be sufficient; be adequate, either in quality or quantity\nv create or design, often in a certain way\nv behave in a certain manner; show a certain behavior; conduct or comport oneself\nv spend time in prison or in a labor camp\nv carry on or function\nv arrange attractively\nv travel or traverse (a distance)",,1:p/0:do/s:dids,0,0
 didactic,"di'dæktik(әl), dai-","a. 教训的, 说教的, 教导的, 教诲的\n[医] 教导的",s. instructive (especially excessively),,,20113,17040
 didacticism,dai'dæktisizm,"n. 教导(性), 说教(性), 教诲(性)",n. communication that is suitable for or intended to be instructive,,,44921,34965
 didcot,,迪德科特,,,,17485,0
@@ -14724,6 +14739,7 @@ dods,,abbr. Department of Defense (of the United States) (美国)国防部,n the
 dodson,,多德森（男子名）,,,,28920,0
 doe,dәu,"n. 母鹿, 雌兔",n. mature female of mammals of which the male is called `buck',,s:does,9309,12665
 doer,'du:ә,"n. 行为者, 实干家\n[法] 行为人, 实行家",n a person who acts and gets things done,,s:doers,22170,22704
+does,dʌz; dәz,v. 做；工作；有用（do的第三人称单数形式）,"n the federal department responsible for maintaining a national energy policy of the United States; created in 1977\nn mature female of mammals of which the male is called `buck'\nv engage in\nv carry out or perform an action\nv get (something) done\nv proceed or get along\nv give rise to; cause to happen or occur, not always intentionally\nv carry out or practice; as of jobs and professions\nv be sufficient; be adequate, either in quality or quantity\nv create or design, often in a certain way\nv behave in a certain manner; show a certain behavior; conduct or comport oneself\nv spend time in prison or in a labor camp\nv carry on or function\nv arrange attractively\nv travel or traverse (a distance)",,0:doe/1:s,0,0
 doeskin,'dәuskin,n. 母鹿皮,n. soft leather from deerskin or lambskin\nn. a fine smooth soft woolen fabric,,s:doeskins,0,45223
 doff,dɒf,"vt. 脱, 丢弃, 摆脱",v. remove,,p:doffed/i:doffing/3:doffs/d:doffed,34711,27016
 dog,dɒg,"n. 狗, 坏蛋\nvt. 跟踪, 尾随",n. a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds\nn. informal term for a man,,s:dogs/d:dogged/p:dogged/i:dogging/3:dogs,819,753
@@ -15512,9 +15528,11 @@ dutiful,'dju:tiful,"a. 尽职的, 忠实的, 顺从的, 守本分的",s. willing
 dutifully,,adv. 忠实地；忠贞地,r. out of a sense of duty; in a dutiful manner,,,15052,12991
 dutton,,达顿（人名）\n达顿（地名）,,,,35706,0
 duty,'dju:ti,"n. 责任, 关税, 职务, 尊敬\n[化] 职责","n. the social force that binds you to the courses of action demanded by that force; every opportunity, an obligation; every possession, a duty""- John D.Rockefeller Jr\nn. work that you are obliged to perform for moral or legal reasons\nn. a government tax on imports or exports",,s:duties,846,1752
+duty-free,,a. 免税的\n[法] 免税的,s. exempt from duty,,3:duty-frees,0,0
 duval,,杜瓦尔（男子名）,,,,30372,0
 duvall,,n. (Duvall)人名；(英、法)杜瓦尔,,,,18272,0
 duvet,du:'vei,n. 羽绒被,n a soft quilt usually filled with the down of the eider,,s:duvets,12450,26843
+dvd,,abbr. 数字化视频光盘（Digital Video Disk）,n a digital recording (as of a movie) on an optical disk that can be played on a computer or a television set,,,0,0
 dvi,,abbr. 交互式数字视频系统（Digital Video Interactive）,,,,31920,0
 dvorak,,n. 德沃夏克（男子名）,n. Czech composer who combined folk elements with traditional forms (1841-1904),,,37361,0
 dw,,abbr. 发展的宽度（Developed Width）；蒸馏水（Distilled Water）；双重墙（Double Wall）；双重载（Double Weight）,,,,29507,0
@@ -16200,6 +16218,7 @@ em,em,[计] 媒体用毕符\n[化] 射气,n. a quad with a square body\nn. a lin
 emaciate,i'meisieit,"vt. 使消瘦, 使憔悴\nvi. 消瘦",v. grow weak and thin or waste away physically,,p:emaciated/d:emaciated/i:emaciating/3:emaciates,33067,26620
 emaciated,i'meisieitid,"a. 瘦弱的, 衰弱的",v cause to grow thin or weak\nv grow weak and thin or waste away physically\ns very thin especially from disease or hunger or cold,,p:emaciated/0:emaciated/1:p,22385,22698
 emaciation,i.meisi'eiʃәn,"n. 瘦弱, 憔悴, 衰弱\n[医] 消瘦",n extreme leanness (usually caused by starvation or disease),,,41061,40513
+email,'i:'meil,n. 电子信函,n (computer science) a system of world-wide electronic communication in which a computer user can compose a message at one terminal that can be regenerated at the recipient's terminal when the recipient logs in\nv communicate electronically on the computer,,,0,0
 emanate,'emәneit,"vi. 散发, 发出, 发源","v. proceed or issue forth, as from a source",,i:emanating/p:emanated/3:emanates/d:emanated,8454,8681
 emanation,.emә'neiʃәn,"n. 散发, 发出\n[化] 射气","n. something that is emitted or radiated (as a gas or an odor or a light, etc.)\nn. (theology) the origination of the Holy Spirit at Pentecost",,s:emanations,34709,26726
 emancipate,i'mænsipeit,"vt. 释放, 解放",v. give equal rights to; of women and minorities,,d:emancipated/p:emancipated/i:emancipating/3:emancipates,24131,23235
@@ -17903,6 +17922,7 @@ fabulous,'fæbjulәs,"a. 传说的, 寓言般的, 难以置信的",s. extremely 
 fabulously,,adv. 非常(富有的/伟大的),r. exceedingly; extremely,,,34320,21177
 facade,fә'sɑ:d,"n. 建筑物的正面, 外观, 表面",n. the face or front of a building\nn. a showy misrepresentation intended to conceal something unpleasant,,s:facades,11331,7600
 face,feis,"n. 脸, 面容, 正面, 外观\nvt. 面对, 朝, 正视, 面临\nvi. 朝, 向\n[计] 现场可改变的控制元件",n. the front of the human head from the forehead to the chin and ear to ear\nn. the general outward appearance of something\nn. the striking or working surface of an implement\nn. a part of a person that is used to refer to a person,,i:facing/s:faces/d:faced/p:faced/3:faces,282,330
+face-to-face,,adv. 面对面,s. in each other's presence\nr. within each other's presence\nr. directly facing each other,,,0,0
 faced,feist,a. 有某种面孔或表情的,a. having a face or facing especially of a specified kind or number; often used in combination,,0:face/1:dp/p:faced/d:faced,36501,37350
 facedown,'feis'dajn,"n. <美>直接对抗, 摊牌",,,,0,17892
 faceless,'feislis,"a. 无面的, 无个性的, 匿名的, 无名的",a. without a face or identity,,,18527,15846
@@ -17922,6 +17942,7 @@ facilitating,fəˈsiliteitɪŋ,v. 促进( facilitate的现在分词 ); 使便利
 facilitation,"fә,sili'teiʃәn","[医] 容易化, 助长, 接通[作用]",n. the condition of being made easy (or easier)\nn. (neurophysiology) phenomenon that occurs when two or more neural impulses that alone are not enough to trigger a response in a neuron combine to trigger an action potential\nn. act of assisting or making easier the progress or improvement of something,,,36750,21857
 facilitative,,a. 使便利的,s. freeing from difficulty or impediment,,,0,30729
 facilitator,fә'siliteitә,n. 服务商；促进者,n. someone who makes progress easier,,s:facilitators,20872,12000
+facilities,,"n. 工具, 设施, 设备",n a building or place that provides a particular service or is used for a particular industry\nn skillful performance or ability without difficulty\nn a natural effortlessness\nn something designed and created to serve a particular function and to afford a particular convenience or service\nn a service that an organization or a piece of equipment offers you,,0:facility/1:s,0,0
 facility,fә'siliti,"n. 容易, 灵巧, 设备\n[计] 设施; 设备; 装备",n. a building or place that provides a particular service or is used for a particular industry\nn. a natural effortlessness\nn. something designed and created to serve a particular function and to afford a particular convenience or service\nn. a service that an organization or a piece of equipment offers you,,s:facilities,1014,1297
 facing,'feisiŋ,"n. 贴边, 饰面\n[化] 衬片; 盖面; 铺面; 饰面; 贴面; 密封面",n. a lining applied to the edge of a garment for ornamentation or strengthening\nn. an ornamental coating to a building\nn. a protective covering that protects the outside of a building,,0:face/1:i/s:facings/i:facing,19423,20872
 facsimile,fæk'simili,"n. 摹(真)本, 传真\nvt. 传真, 临摹\na. 复制的\n[计] 复制; 传真; 精确复制",n. an exact copy or reproduction\nn. duplicator that transmits the copy by wire or radio,,s:facsimiles,12590,18332
@@ -18197,6 +18218,7 @@ fateful,'feitful,"a. 宿命的, 重大的, 决定性的",s. having momentous con
 fatefully,'feitfuli,"adv. 宿命地, 决定性地",r. in a prophetically fateful manner,,,0,41703
 fathead,'fæthed,"n. 笨蛋, 呆子",n. a man who is a stupid incompetent fool,,,0,45600
 father,'fɑ:ðә,"n. 父亲, 祖先, 长辈, 神父, 创始者\nvt. 当...的父亲, 保护, 创作, 发明, 培养",n. a male parent (also used as a term of address to your father)\nn. `Father' is a term of address for priests in some churches (especially the Roman Catholic Church or the Orthodox Catholic Church); `Padre' is frequently used in the military\nn. a person who holds an important or distinguished position in some organization\nn. God when considered as the first person in the Trinity,,s:fathers/d:fathered/i:fathering/p:fathered/3:fathers,364,267
+father-in-law,'fɑ:ðәrinlɔ:,"n. 公公, 岳父",n. the father of your spouse,,,0,0
 fatherhood,'fɑ:ðәhud,"n. 父亲的身分, 父性, 父权, 父道",n. the kinship relation between an offspring and the father\nn. the status of a religious leader\nn. the status of a father,,,33409,14523
 fathering,ˈfɑ:ðərɪŋ, [医]父爱,v make children,,1:i/0:father,0,43048
 fatherland,'fɑ:ðә'lænd,n. 祖国,n. the country where you were born,,s:fatherlands,22547,23072
@@ -18657,6 +18679,7 @@ filling,'filiŋ,"n. 充填物, 填料\n[化] 加填; 填充",n. any material tha
 fillip,'filip,"n. 弹指, 刺激\nvt. 用指弹, 刺激",n anything that tends to arouse,,,21876,37386
 filly,'fili,"n. 小雌马, 小姑娘",n. a young female horse under the age of four,,s:fillies,16740,20635
 film,film,"n. 软片, 薄膜, 胶卷, 电影\nvt. 覆以薄膜, 拍摄\nvi. 生薄膜, 拍电影",n. a medium that disseminates moving pictures\nn. photographic material consisting of a base of celluloid covered with a photographic emulsion; used to make negatives or transparencies\nn. a thin coating or layer\nn. a thin sheet of (usually plastic and usually transparent) material used to wrap or cover things,,s:films/i:filming/d:filmed/p:filmed/3:films,739,593
+film-maker,ˈfɪlmˈmeɪkə,n. 电影摄制者,,,s:film-makers,0,0
 filmed,,v. 拍摄（复以薄膜）,s. recorded on film; made into a movie,,0:film/1:dp/p:filmed/d:filmed,34416,28508
 filmer,,n. 菲尔默（人名）,,,,31739,0
 filmic,'filmik,a. 电影的,,,,41596,30268
@@ -18788,6 +18811,7 @@ firmly,'fә:mli,"adv. 坚固, 坚定, 断然",r with resolute determination\nr i
 firmness,'fә:mnis,"n. 坚固, 坚牢, 坚定",n. the muscle tone of healthy tissue\nn. the property of being unyielding to the touch,,,14463,19226
 firmware,"'fә:m,weә",[计] 固件,n. (computer science) coded instructions that are stored permanently in read-only memory,,,0,30175
 first,fә:st,"adv. 首先, 第一, 优先\na. 第一的\nnum. 第一\nn. 开始, 第一",n. the first or highest in an ordering or series\nn. the first element in a countable series\nn. an honours degree of the highest class\na. preceding all others in time or space or degree,,,79,86
+first-floor,,一楼；二楼,,,,0,0
 firstborn,'fә:st'bɒ:n,"a. 第一胎生的\nn. 初生儿, 长男, 长女",n. the offspring who came first in the order of birth\ns. first in order of birth,,,40166,18885
 firsthand,'fә:st'hænd,"a. 直接的, 直接得来的, 直接采购的\nadv. 直接地",s. received directly from a source\nr. from the original source; directly,,,37760,9274
 firstly,'fә:stli,"adv. 第一, 首先",r before anything else,,,3974,20778
@@ -20025,6 +20049,7 @@ fulfilment,,"n. 履行, 结束, 完成, 实现, 满意, 称心\n[法] 履行, �
 fulford,,n. (Fulford)人名；(德、英)富尔福德,,,s:fulfords,35096,0
 fulham,'fulәm,n. <旧俚>(赌博中作弊的)假骰,n. A false die.,,,10199,0
 full,ful,"n. 全部, 完整\na. 充满的, 完全的, 丰富的, 完美的, 丰满的, 详尽的\nadv. 完全地, 整整, 十分\nvt. 把(衣服等)缝得宽松, 漂洗\n[计] 完整",v. beat for the purpose of cleaning and thickening\nv. make (a garment) fuller by pleating or gathering\na. containing as much or as many as is possible or normal\ns. complete in extent or degree and in every particular,,r:fuller/t:fullest,309,503
+full-time,,"a. 全部时间的, 专任的",a. for the entire time appropriate to an activity\nr. for the standard number of hours,,,0,0
 fullback,'fulbæk,n. 后卫,n. (football) the running back who plays the fullback position on the offensive team\nn. (American football) the position of a back on a football team\nv. play the fullback,,s:fullbacks,28499,16117
 fuller,'fulә,"n. 漂洗工, 套柄铁锤\n[机] 半圆型锤",n. United States jurist and chief justice of the United States Supreme Court (1833-1910)\nn. United States architect who invented the geodesic dome (1895-1983)\nn. a workman who fulls (cleans and thickens) freshly woven cloth for a living,,0:full/1:r/s:fullers,16021,0
 fullerene,,[化] 富勒烯,n. a form of carbon having a large molecule consisting of an empty cage of sixty or more carbon atoms,,s:fullerenes,0,33274
@@ -20951,6 +20976,7 @@ glaciated,'gleiʃieitid,"a. 冻结成冰的, 受到冰川作用的",s. covered w
 glaciation,.gleisi'eiʃәn,"n. 冻结成冰, 冰川作用",n. the condition of being covered with glaciers or masses of ice; the result of glacial action\nn. the process of covering the earth with glaciers or masses of ice,,s:glaciations,28341,34546
 glacier,'gleiʃә,n. 冰川,n. a slowly moving mass of ice,,s:glaciers,10592,7875
 glaciologist,.gleiʃi'ɒlәdʒist,n. 冰川学家,,,s:glaciologists,0,39289
+glacis,'gleisis,"n. 缓慢倾斜, 斜堤, 缓冲地区","n. A gentle slope, or a smooth, gently sloping bank;\n   especially (Fort.), that slope of earth which inclines from the covered\n   way toward the exterior ground or country (see Illust. of Ravelin).",,,0,0
 glad,glæd,"a. 高兴的, 喜欢的, 情愿的",a. showing or causing joy and pleasure; especially made happy\ns. eagerly disposed to act or to be of service\ns. feeling happy appreciation,,r:gladder,2185,2269
 gladden,'glædәn,vt. 使喜悦\nvi. 喜悦,v. make glad or happy\nv. become glad or happy,,3:gladdens/d:gladdened/p:gladdened/i:gladdening,34257,26502
 glade,gleid,"n. 林间空地, 沼泽地",n a tract of land with few or no trees in the middle of a wooded area,,s:glades,21540,19174
@@ -20989,6 +21015,7 @@ glasnost,'glæsˌnəʊst,n. 公开性; 公开化,n. a policy of the Soviet gover
 glass,glɑ:s,"n. 玻璃, 玻璃杯, 透镜\nvt. 装玻璃于, 反射, 反映\nvi. 成玻璃状",n. a brittle transparent solid with irregular atomic structure\nn. a container for holding liquids while drinking\nn. the quantity a glass will hold\nn. glassware collectively,,s:glasses/i:glassing/p:glassed/3:glasses/d:glassed,844,820
 glassblower,'glɑ:sblauә,n. 吹玻璃的人(或机器),n. someone skilled in blowing bottles from molten glass,,,0,30770
 glassed,,vt. 给某物加玻璃（glass的过去式与过去分词形式）,v furnish with glass\nv scan (game in the forest) with binoculars\nv enclose with glass\nv put in a glass container\nv become glassy or take on a glass-like appearance\na fitted or covered with glass,,1:pd/0:glass,0,42706
+glasses,'glɑ:siz,n. 眼镜；双筒望远镜；玻璃（glass的复数形式）,n optical instrument consisting of a frame that holds a pair of lenses for correcting defective vision\nn a brittle transparent solid with irregular atomic structure\nn a container for holding liquids while drinking\nn the quantity a glass will hold\nn a small refracting telescope\nn an amphetamine derivative (trade name Methedrine) used in the form of a crystalline hydrochloride; used as a stimulant to the nervous system and as an appetite suppressant\nn a mirror; usually a ladies' dressing mirror\nn glassware collectively\nv furnish with glass\nv scan (game in the forest) with binoculars\nv enclose with glass\nv put in a glass container\nv become glassy or take on a glass-like appearance,,1:s3/0:glass,0,0
 glassful,'glɑ:sful,n. 一玻璃杯的容量,n the quantity a glass will hold,,s:glassfuls,46869,42639
 glasshouse,'glɑ:shaus,"n. 温室, 玻璃工场, 禁闭房",n a building with glass walls and roof; for the cultivation and exhibition of plants under controlled conditions,,s:glasshouses,22763,39029
 glassine,glæ'si:n,n. 薄玻璃纸\n[化] 玻璃纸; 透明纸; 赛璐玢; 半透明纸,,,,0,39439
@@ -21294,6 +21321,7 @@ goo,gu:,"n. 粘性物, 过分多情","n any thick, viscous matter",,s:goos/i:goo
 goober,'gu:bә,"n. 落花生, 皮肤上的小疙瘩",n pod of the peanut vine containing usually 2 nuts or seeds; `groundnut' and `monkey nut' are British terms,,,0,34741
 gooch,,古氏,,,,7493,0
 good,gud,"n. 善行, 好处, 利益\na. 好的, 优良的, 上等的, 愉快的, 有益的, 好心的, 慈善的, 虔诚的",n. benefit\nn. moral excellence or admirableness\nn. that which is pleasing or valuable or useful\na. having desirable or positive qualities especially those suitable for a thing specified,,t:best/r:better,73,110
+good-looking,,"a. 相貌好看的, 吸引人的",s pleasing in appearance especially by reason of conformity to ideals of form and proportion,,,0,0
 goodall,,古道尔（人名）,n. English zoologist noted for her studies of chimpanzees in the wild (born in 1934),,,24172,0
 goodby,.ɡud'bai,int. 再见（等于goodbye）,n a farewell remark,,,0,37659
 goodbye,gud'bai,interj. 再见,n a farewell remark,,s:goodbyes,5756,5578
@@ -21885,6 +21913,7 @@ growing,'grәuiŋ,a. 成长的,n. (electronics) the production of (semiconductor
 growl,graul,"n. 吠声, 咆哮声\nv. 怒吠, 咆哮, 吼",n. the sound of growling (as made by animals),,p:growled/i:growling/s:growls/3:growls/d:growled,8237,8745
 growling,,"a. 咆哮的, 隆隆响的",n. a gruff or angry utterance (suggestive of the growling of an animal),,0:growl/1:i/i:growling/s:growlings,35582,27589
 grown,grәun,"a. 长大的, 成年的, 长满某物的\ngrow的过去分词","v pass into a condition gradually, take on a specific property or attribute; become\nv become larger, greater, or bigger; expand or gain\nv increase in size by natural process\nv cause to grow or develop\nv develop and reach maturity; undergo maturation\nv come into existence; take on form or shape\nv cultivate by growing, often involving improvements by means of agricultural techniques\nv come to have or undergo a change of (physical features and attributes)\nv grow emotionally or mature\nv become attached by or as if by the process of growth\ns (of animals) fully developed",,0:grow/1:d/p:grown,39395,15613
+grown-up,,"a. 成熟的, 已经成人的\nn. 成人, 大人",,,s:grown-ups,0,0
 grownup,'ɡrәun.ʌp,n. 成年人,n a fully developed person from maturity onward\ns (of animals) fully developed,,s:grownups/3:grownups,44628,0
 growth,grәuθ,"n. 生长, 栽培, 增长\n[计] 等比级数",n. (biology) the process of an individual organism growing organically; a purely biological unfolding of events involved in an organism changing gradually from a simple to a more complex level\nn. a progression from simpler to more complex forms\nn. vegetation that has grown\nn. (pathology) an abnormal proliferation of tissue (as in a tumor),,s:growths,770,787
 groyne,grɒin,"n. 丁坝, 防波堤\nvt. 筑造防波堤",n a protective structure of stone or concrete; extends from shore into the water to prevent a beach from washing away,,s:groynes,49532,0
@@ -22156,6 +22185,7 @@ haberdashery,'hæbәdæʃәri,"n. 男子服饰经售店, 杂货商店",n. the dr
 habit,'hæbit,"n. 习惯, 嗜好, 习性\nvt. 使穿衣",n. an established custom\nn. (psychology) an automatic pattern of behavior in reaction to a specific situation; may be inherited or acquired through frequent repetition\nn. a distinctive attire worn by a member of a religious order\nn. the general form or mode of growth (especially of a plant or crystal),,s:habits/i:habiting/p:habited/3:habits/d:habited,2239,2308
 habitability,",hæbitә'bilәti","n. 可居住性, 适于居住",n. suitability for living in or on,,,0,35401
 habitable,'hæbitәbl,"a. 适于居住的, 可居住的",s. fit for habitation,,,21087,18476
+habitant,'hæbitәnt,"n. 居住者, 居民",n a person who inhabits a particular place,,,0,0
 habitat,'hæbitæt,"n. 栖息地, 居留地, 自生地, 聚集处\n[医] 习生地, 产地, 生境, 栖所",n. the type of environment in which an organism or group normally lives or occurs,,s:habitats,4609,3221
 habitation,.hæbi'teiʃәn,"n. 居住, 住所",n. the native habitat or home of an animal or plant,,s:habitations,14815,17865
 habitual,hә'hitʃuәl,"a. 习惯的, 惯常的, 平常的\n[法] 习惯的, 以习惯为常业的, 惯常的",s commonly used or practiced; usual,,,11263,13451
@@ -22179,6 +22209,7 @@ hackman,'hækmәn,"n. 出租马车夫, 出租车司机",n. The driver of a hack 
 hackney,'hækni,"n. 乘用马, 出租马车\nvt. 出租, 役使, 过于频繁使用\na. 出租的, 陈腐的",n. a carriage for hire\nn. a compact breed of harness horse,,s:hackneys,12404,37378
 hackneyed,'hæknid,"a. 使用过于频繁的, 常见的, 陈腐的",s repeated too often; overfamiliar through overuse,,,32700,26346
 hacksaw,'hæksɒ:,"n. 弓锯, 钢锯\n[化] 弓锯",n. saw used with one hand for cutting metal,,s:hacksaws/i:hacksawing/d:hacksawed,25495,29035
+had,hæd,have的过去式和过去分词,"v have or possess, either in a concrete or an abstract sense\nv have as a feature\nv go through (mental or physical states or experiences)\nv have ownership or possession of\nv cause to move; cause to be in a certain position or condition\nv serve oneself to, or consume regularly\nv have a personal or business relationship with someone\nv organize or be responsible for\nv have left\nv be confronted with\nv undergo\nv suffer from; be ill with\nv cause to do; cause to act in a specified manner\nv receive willingly something given or offered\nv get something; come into possession of\nv undergo (as of injuries and illnesses)\nv achieve a point or goal\nv cause to be born\nv have sex with; archaic use",,1:pd/0:have/s:hads,0,0
 hadden,,n. (Hadden)人名；(英)哈登,,,,44998,0
 haddington,'hædiŋtən,n. 哈丁顿（苏格兰一城镇名）,,,,38151,0
 haddock,'hædәk,n. 黑斑鳕,n. lean white flesh of fish similar to but smaller than cod; usually baked or poached or as fillets sauteed or fried\nn. important food fish on both sides of the Atlantic; related to cod but usually smaller,,s:haddocks,20594,24650
@@ -22274,6 +22305,7 @@ hale,heil,"a. 强壮的, 矍铄的, 健壮的\nvt. 猛拉, 拖曳",n. a soldier 
 halen,,n. (Halen)人名；(捷)哈伦；(英)海伦,,,,47785,0
 haley,,n. 哈利（人名）,n. United States rock singer who was one of the first to popularize rock'n'roll music (1925-1981)\nn. United States writer and Afro-American who wrote a fictionalized account of tracing his family roots back to Africa (1921-1992),,,34394,0
 half,hɑ:f,"n. 一半, 半场, 不完全\na. 一半的, 不完全的, 部分的, 半场的\nadv. 一半地, 部分地, 在某种程度上地, 几乎",n. one of two divisions into which some games or performances are divided: the two divisions are separated by an interval\ns. consisting of one of two equivalent parts in value or quantity\ns. partial\na. (of siblings) related through one parent only,,s:halves,470,547
+half-price,'hɑ:f'prais,adv. 半价,r for half the price,,,0,0
 halfback,'hɑ:f'bæk,n. (足球)前卫,n. (football) the running back who plays the offensive halfback position\nn. (American football) the position of a back on a football team,,s:halfbacks,0,25932
 halfheartedly,'hɑ:fhɑ:tɪdlɪ,"adv. 不认真地, 无兴趣地",,,,48581,0
 halford,,n. (Halford)人名；(英、德)哈尔福德,,,,28042,0
@@ -22375,6 +22407,7 @@ han,hæn,n. 汉朝；汉民族,n. imperial dynasty that ruled China (most of the
 hanbury,,n. (Hanbury)人名；(英)汉伯里,,,,35770,0
 hancock,'hænkɔk,n. 全民超人（电影名）；汉考克,n. American revolutionary patriot who was president of the Continental Congress; was the first signer of the Declaration of Independence (1737-1793),,,15893,0
 hand,hænd,"n. 手, 爪, 指针, 掌握, 协助, 人手, 手艺, 手迹, 支配, 插手\nvt. 交给, 支持, 搀扶",n. the (prehensile) extremity of the superior limb\nn. ability\nn. a position given by its location to the side of an object\nn. the cards held in a card game by a given player at any given time,,s:hands/p:handed/d:handed/i:handing/3:hands,163,174
+hand-held,ˈhændˌheld,"a. 手提式的, 便携式的; 掌上型的\nn. 手提式的报话机; 手提的",a small and light enough to be operated while you hold it in your hands,,s:hand-helds,0,0
 handbag,'hændbæg,n. 手提包,n a container used for carrying money and small personal items or accessories (especially by women),,s:handbags/d:handbagged,7266,11790
 handball,'hændbɒ:l,"n. 墙手球, 墙手球运动",n. a small rubber ball used in playing the game of handball\nn. a game played in a walled court or against a single wall by two or four players who strike a rubber ball with their hands,,,40741,24346
 handbasket,, = go to the dogs at dog n.,n a container that is usually woven and has handles,,,0,32411
@@ -22509,6 +22542,7 @@ harborough,, [地名] [英国] 哈伯勒, Alt. of Harbrough,,,28668,0
 harbour,'hɑ:bә,"n. 港, 避难所\nv. 庇护, 藏匿, (使)入港停泊","n a sheltered port where ships can take on or discharge cargo\nn a place of refuge and comfort and security\nv secretly shelter (as of fugitives or criminals)\nv keep in one's possession; of animals\nv hold back a thought or feeling about\nv maintain (a theory, thoughts, or feelings)",,i:harbouring/s:harbours/p:harboured/3:harbours/d:harboured,3526,36866
 harcourt,'hɑ:kәt,n. 哈考特（姓氏）；哈科特港（尼日利亚）,,,,22654,0
 hard,hɑ:d,"a. 坚硬的, 硬的, 难的, 艰苦的, 困难的, 坚固的, 猛烈的, 艰难的, 结实的, 确实的\nadv. 坚硬地, 努力地, 辛苦地, 接近地, 猛烈地, 牢固地",a. dispassionate; \na. resisting weight or pressure\ns. very strong or vigorous\na. (of light) transmitted directly from a pointed light source,,r:harder/t:hardest,573,438
+hard-working,,(hard-work 的现在分词) 努力工作；[劳经] 繁重的工作,-ing form of hard-work,,0:hard-work/1:i,0,0
 hardback,'hɑ:dbæk,a. 硬封面的\nn. 精装本,n. a book with cardboard or cloth or leather covers,,s:hardbacks/p:hardbacked/d:hardbacked,15412,25942
 hardball,'hɑ:dbɔ:l,n. 硬式棒球（等于baseball）；（为达到某种目的而采取的）强硬手段；[俚]刀剑搏杀,n. a no-nonsense attitude in business or politics\nn. baseball as distinguished from softball,,,0,16712
 hardboard,'hɑ:dbɒ:d,n. 硬纸板,n a cheap hard material made from wood chips that are pressed together and bound with synthetic resin,,s:hardboards,23442,36341
@@ -22642,6 +22676,7 @@ harwich,,哈里奇,,,,17212,0
 harwood,,哈伍德,,,,24725,0
 haryana,",hɑ:ri'ɑ:nә",哈里亚纳邦[印度邦名],,,,31106,0
 harz,hɑ:rts,哈尔茨山[中欧](在德意志联邦共和国东北部和德意志民主共和国西南部),,,,45732,0
+has,hæz,have的第三人称单数现在式,"n (astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day\nv have or possess, either in a concrete or an abstract sense\nv have as a feature\nv go through (mental or physical states or experiences)\nv have ownership or possession of\nv cause to move; cause to be in a certain position or condition\nv serve oneself to, or consume regularly\nv have a personal or business relationship with someone\nv organize or be responsible for\nv have left\nv be confronted with\nv undergo\nv suffer from; be ill with\nv cause to do; cause to act in a specified manner\nv receive willingly something given or offered\nv get something; come into possession of\nv undergo (as of injuries and illnesses)\nv achieve a point or goal\nv cause to be born\nv have sex with; archaic use",,1:3/0:have,0,0
 hasan,,n. (Hasan)人名；(芬、阿拉伯、罗、土、波黑、阿尔巴)哈桑\n哈桑,,,,17967,0
 hash,hæʃ,"n. 剁碎的食物, 杂乱无章的的一大堆, 杂烩, 复述\nvt. 切碎, 搞糟",n. chopped meat mixed with potatoes and browned\nv. chop up,,i:hashing/p:hashed/s:hashes/3:hashes/d:hashed,21798,16754
 hashemi,,n. (Hashemi)人名；(阿拉伯、伊朗)哈希米,,,,30280,0
@@ -22721,6 +22756,7 @@ haverfordwest,,n. 哈弗福韦斯特,,,,43949,0
 havering,,"n. 黑弗灵, 哈化令",,,s:haverings/i:havering/0:havering/1:i,40873,0
 havers,,n. (Havers)人名；(英、德)哈弗斯,,,0:haver/1:3s,36192,0
 haversack,'hævәsæk,n. 粗帆布背包,n a bag carried by a strap on your back or shoulder,,s:haversacks,37995,38069
+having,'hæviŋ,"n. 财产, 所有物","v have or possess, either in a concrete or an abstract sense\nv have as a feature\nv go through (mental or physical states or experiences)\nv have ownership or possession of\nv cause to move; cause to be in a certain position or condition\nv serve oneself to, or consume regularly\nv have a personal or business relationship with someone\nv organize or be responsible for\nv have left\nv be confronted with\nv undergo\nv suffer from; be ill with\nv cause to do; cause to act in a specified manner\nv receive willingly something given or offered\nv get something; come into possession of\nv undergo (as of injuries and illnesses)\nv achieve a point or goal\nv cause to be born\nv have sex with; archaic use",,1:i/0:have,0,0
 havoc,'hævәk,"n. 大破坏, 蹂躏\nvt. 严重破坏",n. violent and needless disturbance,,s:havocs,11169,9540
 havre,'hɑ:vrə; 'hɑ:və,"n. 勒阿弗尔（法国的港市, 等于Le Havre）",,,,26907,0
 haw,hɒ:,"n. 山楂, 吆喝牲畜左转, 呃, 瞬膜\nvt. 使向左转\nvi. 向左转",n. the nictitating membrane of a horse\nv. utter `haw',,s:haws/p:hawed/i:hawing/3:haws/d:hawed,37695,26147
@@ -24954,6 +24990,7 @@ imploringly,ɪmp'lɔ:rɪŋlɪ,"adv. 恳求地, 哀求地",r in a beseeching mann
 implosion,im'plәuʒәn,[化] 爆聚; 内向爆炸,n. a sudden inward collapse\nn. the initial occluded phase of a stop consonant,,,43459,20384
 imply,im'plai,"vt. 暗示, 意味\n[计] 隐含",v. express or state indirectly\nv. suggest as a logically necessary consequence; in logic\nv. have as a necessary feature,,3:implies/d:implied/i:implying/p:implied,1675,2796
 impolite,.impә'lait,"a. 无礼的, 粗鲁的",a. not polite,,,24595,24132
+impolitely,ˌɪmpə'laɪtlɪ,"adv. 无礼地, 没规矩地",r in an impolite manner,,,0,0
 impolitic,im'pɒlitik,"a. 失策的, 不得当的",a. not politic,,,46252,33246
 imponderable,im'pɒndәrәbl,"a. 无重量的, 无法计算的, 不可估价的\nn. 无法衡量的事物",n. a factor whose effects cannot be accurately assessed\na. difficult or impossible to evaluate with precision,,s:imponderables,34561,35424
 import,im'pɒ:t,"n. 进口货, 进口, 输入, 含义, 重要性\nvt. 输入, 引入, 进口, 含...的意思, 重要\nvi. 有关系\n[计] 引入",n. commodities (goods or services) bought from a foreign country\nn. an imported person brought from a foreign country\nv. bring in from abroad\nv. transfer (electronic data) into a database or document,,s:imports/d:imported/i:importing/p:imported/3:imports,2757,4050
@@ -28408,6 +28445,7 @@ lassitude,'læsitju:d,"n. 疲倦, 疲乏, 无精神\n[医] 倦怠",n a state of 
 lasso,'læsәu,"n. 套索, 以套索捕\nvt. 以套索捕",n. Belgian composer (1532-1594)\nn. a long noosed rope used to catch animals\nv. catch with a lasso,,i:lassoing/s:lassos/p:lassoed/3:lassos/d:lassoed,44461,24486
 lassy,,n. (Lassy)人名；(芬)拉叙,,,s:lassies,43770,0
 last,lɑ:st,"a. 最后的, 末尾的, 最近的\nvi. 持续, 支持, 维持\nvt. 使维持, 够...用\nadv. 最后, 后来\nn. 最后, 末尾, 鞋楦头","n. the last or lowest in an ordering or series\nn. a person's dying act; the final thing a person can do\nn. a unit of weight equal to 4,000 pounds\nn. a unit of capacity for grain equal to 80 bushels",,p:lasted/3:lasts/i:lasting/d:lasted,119,130
+last-minute,'lɑ:st'minit;'læst-,"a. 最后的, 紧急关头的",s. just before a deadline; at the last minute,,,0,0
 lasting,'lɑ:stiŋ,"a. 永久的, 永恒的, 持久的\nn. 厚实斜纹织物",s. lasting a long time without change,,0:last/1:i/i:lasting,6361,6220
 lastingly,," [医]有残留性, 持久地, 耐久地",r. in an enduring or permanent manner,,,0,45536
 lastly,'lɑ:stli,"adv. 最后, 终于",r the item at the end,,,9713,12764
@@ -28427,6 +28465,7 @@ laterality,lætә'ræliti,[医] 偏利,n. superior development of one side of th
 lateralization,",lætәrәlai'zeiʃәn;-li'z-","n. [生理](尤指脑部的)偏侧性, 偏侧优势,偏利",n. localization of function on either the right or left sides of the brain,,,0,42583
 laterally,,adv. 旁边地,r. to or by or from the side\nr. in a lateral direction or location,,,21103,19761
 lateran,'lætәrәn,"n. (罗马)拉特兰教堂, 拉特兰宫(现为博物馆)",n. the site in Rome containing the church of Rome and the Lateran Palace,,,30390,0
+latest,'leitist,a. 最近的,n. the most recent news or development\ns. in the current fashion or style,,0:late/1:t,0,0
 latex,'leiteks,"n. 乳液, 胶乳\n[化] 胶乳",n. a milky exudate from certain plants that coagulates on exposure to air,,s:latexes,23110,13768
 lath,læθ. lɑ:θ,n. 板条,n. a narrow thin strip of wood used as backing for plaster or to make latticework,,s:laths,28168,31704
 latham,,n. 莱瑟姆,,,,24052,0
@@ -28695,6 +28734,7 @@ leeway,'li:wei,"n. 风压差, 风压角, 可容许的误差, 余地",n. (of a sh
 lefebvre,,列斐伏尔,,,s:lefebvres,40868,0
 lefevre,,n. (Lefevre)人名；(英)勒费夫尔,,,,31572,0
 left,left,"a. 左边的, 左倾的, 左侧的, 左派的\nadv. 在左面\nn. 左, 左面, 左派\nleave的过去式和过去分词",n. location near or direction toward the left side; i.e. the side to the north when a person or object faces east\nn. those who support varying degrees of social or political or economic change designed to promote the public welfare\nn. the hand that is on the left side of the body\nn. a turn toward the side of the body that is on the north when the person is facing east,,0:leave/1:dp/d:left/p:left,1045,771
+left-hand,,"a. 左侧的, 左手的\n[机] 左手方, 左侧的",s. located on or directed toward the left,,,0,0
 leftfield,"'left,fiːld",n. [美国英语]；活动中心之外的对方,n the piece of ground in the outfield on the catcher's left\nn the fielding position of the player on a baseball team who is expected to field balls in the left third of the outfield (looking from home plate),,,0,43945
 leftish,'leftɪʃ,"a. 左派的, 左倾的",s. tending toward the political left,,,44602,0
 leftism,'leftizәm,"n. 左派观点, 在倾行为",n. the ideology of the political left; belief in or support of the tenets of the political left,,,43455,37574
@@ -29565,6 +29605,8 @@ lonely,'lәunli,"a. 孤单的, 孤寂的, 荒凉的",s. marked by dejection from
 loner,'lәunә,"n. 喜孤独的人, 不合群的动物",n. a person who avoids the company or assistance of others,,s:loners,18545,14748
 lonesome,'lәunsәm,a. 寂寞的,s being the only one; single and isolated from others\ns marked by dejection from being alone,,,35057,15486
 long,lɒŋ,"a. 长的, 长久的, 冗长的, 做多头的\nvi. 渴望, 热望, 极想\nadv. 长久, 始终\nn. 长时间, 长信号, 长整型\n[计] 长, 长整型",a. primarily temporal sense; being or indicating a relatively great or greater than average duration or passage of time or a duration as specified\na. primarily spatial sense; of relatively great or greater than average spatial extension or extension as specified\ns. of relatively great height\na. holding securities or commodities in expectation of a rise in prices,,r:longer/t:longest/p:longed/i:longing/d:longed/3:longs,217,254
+long-distance,,"a. 长途的, 长途电话的",a. of or relating to or being a long-distance telephone call\ns. covering a long distance,,,0,0
+long-term,,"a. 长期的\n[经] 长期, (通常指一年以上)",s relating to or extending over a relatively long time,,,0,0
 longbeard,lɒŋ'bɪəd,"n. <非正>老人, 长者",n a stoneware drinking jug with a long neck; decorated with a caricature of Cardinal Bellarmine (17th century),,,0,37669
 longboat,'lɒŋbәut,n. (商船附载的)大艇,n. the largest boat carried by a merchant sailing vessel,,s:longboats,48561,36483
 longbow,'lɒŋbәu,"n. 大弓, 长弓",n. a powerful wooden bow drawn by hand; usually 5-6 feet long; used in medieval England,,s:longbows,42700,33687
@@ -30332,6 +30374,7 @@ majoritarian,mә.dʒɒri'tєәriәn,n. 多数主义者,,,,0,29559
 majority,mә'dʒɒriti,"n. 多数, 大半\n[计] 多数逻辑",n. the property resulting from being or relating to the greater in number of two parts; the main part\nn. (elections) more than half of the votes\nn. the age at which persons are considered competent to manage their own affairs,,s:majorities,989,1085
 majorly,, 非常地；极端地,,,,0,41428
 make,meik,"vt. 制造, 安排, 创造, 构成, 使得, 产生, 造成, 整理, 布置, 引起, 到达, 进行\nvi. 开始, 前进, 增大, 被制造, 被处理\nn. 制造, 构造, 性情",v. engage in\nv. give certain properties to something\nv. make or cause to be or to become\nv. compel or make somebody or something to act in a certain way,,d:made/p:made/i:making/3:makes,43,45
+make-up,'meikʌp,n. 捏造,n an event that is substituted for a previously cancelled event\nn the way in which someone or something is composed\nn cosmetics applied to the face to improve or change your appearance,,s:make-ups,0,0
 makeable,'meikәbl,"a. 可制作的,可制造的,可建造的, 可标记的",,,,0,43914
 makeover,,n. 化妆美容；大转变,n. an overall beauty treatment (involving a person's hair style and cosmetics and clothing) intended to change or improve a person's appearance\nn. a complete reconstruction and renovation of something,,3:makeovers,0,10495
 makepeace,,n. (Makepeace)人名；(英)梅克皮斯,,,,29300,0
@@ -31959,6 +32002,7 @@ midbrain,'midbrein,n. 中脑\n[医] 中脑,n. the middle portion of the brain,,,
 midday,'middei,"n. 正午, 中午\na. 正午的",n the middle of the day,,,7619,9129
 midden,'midn,"n. 垃圾堆, 堆肥",n (archeology) a mound of domestic refuse containing shells and animal bones marking the site of a prehistoric settlement\nn a heap of dung or refuse,,s:middens,42188,26910
 middle,'midl,"n. 中央, 中间, 腰部\na. 中央的, 中庸的, 中间的",n. an intermediate part or section\nn. the middle area of the human torso (usually in front)\nn. time between the beginning and the end of a temporal period\nv. put in the middle,,s:middles/i:middling/p:middled/3:middles/d:middled,1360,988
+middle-aged,'midl'eidʒd,a. 中年的,s. being roughly between 45 and 65 years old,,,0,0
 middlebrow,'mid(ә)lbraj,"a. 只有中等文化素养的, 自以为渊博实则浅薄的\nn. 只有中等文化素养的人, 自以为渊博实则浅薄的人",n. someone who is neither a highbrow nor a lowbrow,,,0,38731
 middleman,'midlmæn,"n. 中间人\n[法] 调解人, 中间人, 中人",n someone who buys large quantities of goods and resells to merchants rather than to the ultimate customers\nn the performer in the middle of a minstrel line who engages the others in talk\nn a person who is in a position to give you special assistance,,s:middlemen,20635,19569
 middlemarch,,米德尔马契（小说名）,,,,49733,0
@@ -33019,6 +33063,7 @@ moth,mɒθ,"n. 蛾害, 蛾, 乌头叶菜豆\n[医] 蠹, 蛾",n. typically crepus
 mothball,'mɒθbɒ:l,"n. 樟脑丸, 保藏\nvt. 封存\na. 封存的",n. a small sphere of camphor or naphthalene used to keep moths away from stored clothing\nv. put into long-term storage,,s:mothballs/i:mothballing/p:mothballed/3:mothballs/d:mothballed,34304,39884
 mothballed,ˈmɔθˌbɔ:ld,v. 封存( mothball的过去式和过去分词 ),v put into long-term storage,,0:mothbal/1:dp,0,40843
 mother,'mʌðә,"n. 母亲, 修女院长\nvt. 产生, 照看, 收养",n. a woman who has given birth to a child (also used as a term of address to your mother)\nn. a stringy slimy substance consisting of yeast cells and bacteria; forms during fermentation and is added to cider or wine to produce vinegar\nn. a term of address for an elderly woman\nn. a term of address for a mother superior,,s:mothers/i:mothering/p:mothered/3:mothers/d:mothered,306,229
+mother-in-law,,"n. 婆母, 岳母\n[法] 岳母",n. the mother of your spouse,,s:mother-in-laws,0,0
 motherboard,'mʌðәbɒ:d,"n. 底板, 母板\n[计] 母板, 主板",,,s:motherboards,18204,21941
 motherfucker,ˈmʌðəfʌkə(r),"n. （通常指男性）不要脸的家伙, 混账东西",n insulting terms of address for people who are stupid or irritating or ridiculous,,s:motherfuckers,49798,16221
 motherfucking,"'mʌðә,fʌkiŋ","a. <美俚><粗>不要脸的,混帐的,讨厌的",,,,0,37987
@@ -33623,6 +33668,7 @@ nanette,nә'net,"n. 纳内特（女子名, 等于Anna）",,,,40244,0
 nanjing,'næn'dʒiŋ,"n. 南京（等于Nanking, Nanching）",n. a city in eastern China on the Yangtze River; a former capital of China; the scene of a Japanese massacre in the 1930s,,,47463,0
 nanking,"næn,kiŋ","n. 南京（中国城市, 现今命名为Nanjing）",n a city in eastern China on the Yangtze River; a former capital of China; the scene of a Japanese massacre in the 1930s,,,30602,0
 nanny,'næni,n. 保姆；母山羊,n. a woman who is the custodian of children\nn. female goat,,s:nannies/i:nannying/d:nannied,7333,8687
+nano,,"[计] 纳, 毫微",,,,0,0
 nanobot,næ'nəʊbɒt,n. 超微型机械人装置,,,,0,34133
 nanogram,"'neinә,^ræm",[化] 纳克,"n. one billionth (1/1,000,000,000) gram",,s:nanograms,0,38212
 nanomachine,"'neinәmә,ʃi:n","[计] 纳诺计算机, 毫微计算机",,,,0,34834
@@ -33976,6 +34022,7 @@ nerdy,'nɜːdi,a. 傻瓜似的；蠢的,,,,0,24002
 nero,'niәrәu,n. 尼禄（古罗马暴君）,n. Roman Emperor notorious for his monstrous vice and fantastic luxury (was said to have started a fire that destroyed much of Rome in 64) but the Roman Empire remained prosperous during his rule (37-68),,,24820,0
 nerve,nә:v,"n. 精神, 勇气, 叶脉, 神经\nvt. 鼓起勇气",n. any bundle of nerve fibers running to various organs and tissues of the body,,s:nerves/p:nerved/i:nerving/d:nerved/3:nerves,3005,3083
 nerveless,'nә:vlis,"a. 无力的, 无力气的, 松懈的",s marked by calm self-control (especially in trying circumstances); unemotional\ns lacking strength,,,38965,40314
+nerves,,"n. 神经质, 神经紧张",n. control of your emotions,,1:s3/0:nerve,0,0
 nervosa,,n. 神经衰弱,,,,17741,0
 nervous,'nә:vәs,"a. 神经紧张的, 不安的, 神经的\n[医] 神经的; 神经质的, 神经过敏的",s. easily agitated\na. of or relating to the nervous system,,,2632,2393
 nervously,,adv. 焦急地；神经质地；提心吊胆地,r. in an anxiously nervous manner\nr. with nervous excitement,,,7330,7093
@@ -34163,6 +34210,7 @@ newton,'nju:tn,n. 牛顿\n[化] 牛顿,"n. English mathematician and physicist; 
 newtonian,nju:'tәuniәn,"a. 牛顿的, 牛顿学说的\nn. 信仰牛顿学说的人",n. a follower of Isaac Newton\na. of or relating to or inspired by Sir Isaac Newton or his science,,s:newtonians,27585,19038
 newtown,,n. 纽镇（地名）,,,,22646,0
 next,'nekst,"n. 下一个\na. 下一个的, 其次的, 贴近的\nadv. 然后, 下次, 次于\n[计] 近邻干扰",r. at the time or occasion immediately following,,,199,217
+next-door,'nekstdɔ:(r),a. 隔壁的,,,,0,0
 nextstep,,一种操作系统,,,,31855,0
 nexus,'neksәs,"n. 连结, 关系\n[化] 融合膜",n. a connected series or group,,,19850,14124
 nez,,n. (Nez)人名；(法)内；(西)内斯\n北方经济区（northern economic zone ）,,,,13644,0
@@ -34417,6 +34465,7 @@ nominee,.nɒmi'ni:,"n. 被提名者, 被任命者\n[经] 被指定人",n a polit
 nomothetic,",nɔmә'θetik","[法] 立法的, 法律的, 根据法律的",a. relating to or involving the search for abstract universal principles,,,0,46211
 nomura,,n. 野村证券；野村（日本企业）,,,,28103,0
 non,nɔn,"adv. 非, 不",r negation of a word or group of words,,,6044,0
+non-smoking,nɒn 'sməʊkɪŋ,a. （公共场所）禁止吸烟的; （人）不吸烟的,,,,0,0
 nona,'nәunә,[医] 南欧嗜眠性脑炎,,,,31788,0
 nonagenarian,.nɒnәdʒi'nєәriәn,a. 90至99岁的\nn. 90至99岁的人,n. someone whose age is in the nineties\ns. being from 90 to 99 years old,,s:nonagenarians,0,42554
 nonaggression,.nɒnә'greʃәn,n. 不侵略,n. a policy of not initiating hostilities,,,0,32734
@@ -34481,6 +34530,7 @@ nonpayment,nɒn'peimәnt,n. 不支付,n. loss resulting from failure of a debt t
 nonperformance,.nɒnpә'fɒ:mәns,"n. 不履行, 不实行, 不实施\n[法] 不履行, 违约行为, 不给付",n failure to act with the prudence that a reasonable person would exercise under the same circumstances,,,0,43137
 nonplussed,,"a. 惊讶不止的, 不知所措的",v be a mystery or bewildering to\ns filled with bewilderment,,1:pd/0:nonplus,25597,26820
 nonporous,'nɔn'pɔ:rәs,"a. 无孔的, 无孔隙的",a. not porous; especially not having vessels that appear as pores,,,0,40558
+nonprofessional,.nɒnprʌ'feʃәnl,"a. 无职业的, 无专长的",a. not professional; not engaged in a profession or engaging in as a profession or for gain,,s:nonprofessionals,0,0
 nonprofit,nɒn'prɒfit,"a. 非赢利的, 无利可图的\n[法] 非营利的, 无利可图的",s. not commercially motivated,,,0,3837
 nonproliferation,"'nɔnprәu,lifә'reiʃәn","n. 防扩散\n[法] 不扩散, 防扩散",n. the prevention of something increasing or spreading (especially the prevention of an increase in the number of countries possessing nuclear weapons),,,0,12521
 nonreactive,'nɔnri'æktiv,"a. 非电抗的, 不反应的, 无电抗的",,,,0,27339
@@ -35181,6 +35231,7 @@ ol,,[医] 油,,,s:ols,43765,0
 ola,,abbr. occipito-laeva anterior 左前枕骨,n. leaf or strip from a leaf of the talipot palm used in India for writing paper,,s:olas,0,37923
 olaf,"'әulәf, 'ɔl-",n. 奥拉夫（男子名）,,,,29967,0
 old,әuld,"n. 以前, 往昔\na. 老的, 旧的, 古老的, 年长的, 老练的",n. past times (especially in the phrase `in days of old')\na. (used especially of persons) having lived for a relatively long time or attained a specific age\na. of long duration; not new\ns. (used for emphasis) very familiar,,r:older/t:oldest/s:olds,126,152
+old-fashioned,'әjld'fæʃәnd,"a. 旧式的, 过时的, 保守的, 大人模样的",s out of fashion,,,0,0
 olde,əʊld,"a. （用于地名或广告）古的, 老的",,,,32881,0
 olden,әuldn,"a. 古时的, 从前的\nvt. 使衰老\nvi. 变老",s. long past,,,24982,24123
 oldenburg,'əuldənbə:ɡ; -buk,n. 奥尔登堡（德国西南部城市名）,n. United States sculptor (born in Sweden); a leader of the pop art movement who was noted for giant sculptures of common objects (born in 1929),,,48109,0
@@ -35717,6 +35768,7 @@ ousted,austid,v. 驱逐( oust的过去式和过去分词 ); 革职; 罢黜; 剥�
 ouster,'ajstә(r),"n. 驱逐, 撵走, 剥夺\n[法] 驱逐, 撵走, 剥夺",n. a person who ousts or supplants someone else\nn. a wrongful dispossession\nn. the act of ejecting someone or forcing them out,,s:ousters,48157,17107
 ousting,austɪŋ,v. 驱逐( oust的现在分词 ); 革职; 罢黜; 剥夺,n the act of ejecting someone or forcing them out\nv remove from a position or office\nv remove and replace,,0:oust/1:i/i:ousting,44861,38191
 out,aut,"a. 外面的, 熄灭的, 结束的\nadv. 在外, 熄灭, 出现\nprep. 出自, 离去, 向",n. (baseball) a failure by a batter or runner to reach a base safely in baseball\nv. reveal (something) about somebody's identity or lifestyle\nv. be made known; be disclosed or revealed\na. not allowed to continue to bat or run,,i:outing/p:outed/3:outs/d:outed,62,64
+out-of-date,'autәv'deit,"a. 旧式的, 过时的, 不流行的",s old; no longer valid or fashionable,,,0,0
 outa,'u:tə, [医]龈,,,,45043,0
 outage,'autidʒ,"n. (水、电、煤)断供, 储运损耗\n[化] (蓄水池为了水膨胀)预留的容量; 排出量",n. the amount of something (as whiskey or oil) lost in storage or transportation\nn. a temporary suspension of operation (as of computers),,s:outages,0,14819
 outback,'aut'bæk,n. 内地\na. 内地的\nadv. 在内地,n. the bush country of the interior of Australia\ns. inaccessible and sparsely populated;,,,24588,21877
@@ -36673,6 +36725,7 @@ parson,'pɑ:sn,n. 教区牧师,n a person authorized to conduct religious worshi
 parsonage,pɑ:snidʒ,"n. 教区牧师的住所, 牧师住所",n. an official residence provided by a church for its parson or vicar or rector,,s:parsonages,26311,31489
 parsons,,n. 帕森斯（姓氏）,n. United States sociologist (1902-1979),,0:parson/1:s,9091,0
 part,pɑ:t,"n. 部分, 局部, 零件, 要素, 等分, 职责, 角色, 部位\nvt. 分开, 分离, 断绝, 区别, 分配\nvi. 分开, 断裂, 分手\na. 部分的, 局部的\nadv. 部分地, 有些",n. something determined in relation to something that includes it\nn. something less than the whole of a human artifact\nn. a portion of a natural object\nn. that which concerns a person with regard to a particular role or situation,,s:parts/d:parted/p:parted/i:parting/3:parts,140,178
+part-time,,"a. 兼任的, 半工半读的, 部分时间的\nadv. 部分时间, 兼任地",a. involving less than the standard or customary time for an activity,,,0,0
 partake,pɑ:'teik,"vt. 参与, 分担, 分享\nvi. 分享, 参与, 带有","v. have some of the qualities or attributes of something\nv. have, give, or receive a share of\nv. consume",,i:partaking/3:partakes/s:partakes/p:partook/d:partaken,18983,15537
 partaking,pɑ:ˈteɪkɪŋ,v. 参加( partake的现在分词 ); 参与; 吃; 喝,"v have some of the qualities or attributes of something\nv have, give, or receive a share of\nv consume",,0:partake/1:i/i:partaking,0,45106
 parted,'pɑ:tid,a. 分开的,s. having a margin incised almost to the base so as to create distinct divisions or lobes,,0:part/1:dp,27735,31787
@@ -39251,6 +39304,8 @@ prehensile,pri'hensail,"a. 能抓的, 善于领会的, 贪得无厌的\n[医] �
 prehension,pri'henʃәn,"n. 抓住, 理解\n[医] 理解, 掌握, 抓握, 捕捉",n the act of gripping something firmly with the hands (or the tentacles),,,0,39596
 prehistoric,'pri:his'tɔrik,"a. 历史以前的, 史前的",s. belonging to or existing in times before recorded history\na. of or relating to times before written history\ns. no longer fashionable,,,10315,10293
 prehistory,.pri:'histәri,"n. 史前学, 史前史, 历史背景\n[法] 史前的, 史前考古学, 史前背景",n. the time during the development of human culture before the appearance of the written word,,,22778,20302
+prehuman,pri:'hju:mәn,"a. 人类出现以前的, 类人猿的",,,,0,0
+preindustrial,",pri:in'dʌstriәl","a. 未工业化的, 工业化前的",,,,0,0
 prejudge,pri:'dʒʌdʒ,"vt. 预先判断, 对...预先作出判决","v. judge beforehand, especially without sufficient evidence",,d:prejudged/i:prejudging/p:prejudged/3:prejudges,24753,26180
 prejudgment,,"n. 预先判断, 不审而判, 过早判断\n[法] 未经审迅的判决, 预断, 臆断",n. a judgment reached before the evidence is available,,s:prejudgments,0,38487
 prejudice,'predʒudis,"n. 偏见, 成见, 侵害\nvt. 使存偏见, 使有成见, 侵害",v. disadvantage by prejudice\nv. influence (somebody's) opinion in advance,,s:prejudices/d:prejudiced/i:prejudicing/p:prejudiced/3:prejudices,4112,5235
@@ -41406,6 +41461,7 @@ recombination,'ri:kɔmbi'neiʃәn,"n. 再组合.重组合, 复合, 再化合\n[�
 recombine,.ri:kәm'bain,"vt. 再结合, 重组",v. undergo genetic recombination\nv. cause genetic recombination\nv. to combine or put together again,,i:recombining/d:recombined/p:recombined/s:recombines/3:recombines,35714,26693
 recommence,.ri:kә'mens,v. (使)重新开始,v. cause to start anew\nv. begin again,,p:recommenced/3:recommences/d:recommenced/i:recommencing,21010,36254
 recommend,.rekә'mend,"vt. 推荐, 介绍, 劝告, 使受欢迎, 托付\n[经] 建议, 推荐",v. push for something\nv. make attractive or acceptable,,d:recommended/p:recommended/3:recommends/i:recommending,1578,1688
+recommendable,",rekә'mendәbl","a. 可推荐的, 值得推荐的, 得当的, 明智的",a. Suitable to be recommended; worthy of praise;\n   commendable.,,,0,0
 recommendation,.rekәmen'deiʃәn,"n. 推荐, 介绍, 推荐信, 劝告\n[经] 建议书",n. something (as a course of action) that is recommended as advisable\nn. something that recommends (or expresses commendation of) a person or thing as worthy or desirable\nn. any quality or characteristic that gains a person a favorable reception or acceptance or admission,,s:recommendations,2208,2765
 recommended,,a. 被推荐的,v push for something\nv express a good opinion of\nv make attractive or acceptable,,0:recommend/1:dp/d:recommended/p:recommended,7956,8346
 recommit,.ri:kә'mit,"vt. 把...再委托, 再犯\n[法] 再委托, 重提, 再犯","v. commit once again, as of a crime\nv. commit again\nv. send back to a committee",,d:recommitted/i:recommitting/p:recommitted/3:recommits,0,33459
@@ -41721,6 +41777,7 @@ refresher,'ri'freʃә,"n. 使清新的事物, 使恢复记忆的事物, 饮料, 
 refreshing,ri'freʃiŋ,"a. 使清爽的, 有精神的, 爽快的",v refresh one's memory\nv make (to feel) fresh\nv become or make oneself fresh again\nv make fresh again\ns imparting vitality and energy\ns pleasantly new or different,,i:refreshing/0:refreshing/1:i,9492,8722
 refreshingly,rɪ'freʃɪŋlɪ,"adv. 清爽地, 有精神地",r. in a manner that relieves fatigue and restores vitality\nr. in a pleasantly novel manner,,,18981,22404
 refreshment,ri'freʃmәnt,"n. 点心, 起提神作用的事物, 精神爽快",n. snacks and drinks served as a light meal\nn. activity that refreshes and recreates; activity that renews your health and spirits by enjoyment and relaxation,,s:refreshments,7812,14418
+refreshments,,n. 茶点；点心；小吃,n snacks and drinks served as a light meal\nn activity that refreshes and recreates; activity that renews your health and spirits by enjoyment and relaxation,,0:refreshment/1:s,0,0
 refrigerant,ri'fridʒәrәnt,"a. 冷冻的, 冷却的, 清凉的\nn. 清凉剂, 冷却剂, 冷冻剂\n[计] 致冷剂",n. any substance used to provide cooling (as in a refrigerator)\ns. causing cooling or freezing,,s:refrigerants,44559,23229
 refrigerate,ri'fridʒәreit,"vt. 使冷却, 使清凉, 冷藏\n[机] 冷冻",v. preserve by chilling\nv. cool or chill in or as if in a refrigerator,,p:refrigerated/d:refrigerated/i:refrigerating/3:refrigerates,24362,8533
 refrigerated,rɪf'rɪdʒəreɪtɪd,v. 冷藏( refrigerate的过去式和过去分词 ); 冷冻,s. made or kept cold by refrigeration,,0:refrigerate/1:pd/p:refrigerated/d:refrigerated,23960,17952
@@ -42933,6 +42990,7 @@ rigger,'ri^ә,n. 装配工,n. someone who rigs ships\nn. a long slender pointed 
 rigging,'rigiŋ,"n. 索具, 装备\n[经] 提价",n. gear consisting of ropes etc. supporting a ship's masts and sails,,0:rig/1:i/i:rigging,20213,19035
 riggs,,里格斯（人名）,,,0:rigg/1:s,46944,0
 right,rait,"n. 权利, 右边, 正义, 右派, 公正\na. 正确的, 对的, 恰当的, 正常的, 正直的, 正面的, 右方的\nadv. 正确地, 以有利结果, 一直, 直接, 向右\nvt. 扶直, 整理, 纠正, 伸冤, 使昭雪\nvi. 恢复平衡\n[计] 右, 权利","n. an abstract idea of that which is due to a person or governmental body by law or tradition or nature; it is something that nobody can take away""\nn. location near or direction toward the right side; i.e. the side to the south when a person or object faces east\nn. those who support political or social or economic conservatism; those who believe that things are better left unchanged\nn. the hand that is on the right side of the body",,s:rights/i:righting/p:righted/3:rights/d:righted,244,193
+right-hand,,"a. 用右手的, 右侧的",s. located on or directed toward the right\ns. most helpful and reliable,,,0,0
 righteous,'raitʃәs,"a. 公正的, 正义的, 正直的\n[法] 正直的, 正当的, 正义的",a. characterized by or proceeding from accepted standards of morality or justice\ns. morally justified,,,14454,10845
 righteously,,adv. 正直地；公正地,r. in a righteous manner,,,38452,32592
 righteousness,'raitʃәsnis,"n. 正义, 公正, 正直",n. adhering to moral principles,,,15552,15299
@@ -44802,6 +44860,7 @@ seclude,si'klu:d,"vt. 使隔离, 使孤立, 隔开",v. keep away from others,,d:
 secluded,si'klu:did,"a. 隐退的, 隐蔽的",v keep away from others\ns hidden from general view or use\ns providing privacy or seclusion,,d:secluded/0:secluded/1:d,11872,13247
 seclusion,si'klu:ʒәn,"n. 隔离, 隐退",n. the act of secluding yourself from others,,s:seclusions,19046,16579
 second,'sekәnd,"n. 秒, 瞬间, 第二名, 支持者, 助手\na. 第二的, 其次的, 次要的, 附加的, 辅助的\nnum. 第二\nvt. 当...助手, 支持",n. 1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites\nn. following the first in an ordering or series\nn. a 60th part of a minute of arc\nn. the official attendant of a contestant in a duel or boxing match,,s:seconds/d:seconded/p:seconded/i:seconding/3:seconds,242,381
+second-hand,'sekәnd'hænd,"a. 用过的, 旧货的, 旧的, 间接的, 传来的, 第二手的\n[机] 半新的, 旧货",,,s:second-hands,0,0
 secondarily,'sekәndәrili,"adv. 在第二, 在其次, 在第二位",r. of secondary import,,,33505,25053
 secondary,'sekәndәri,"a. 中级的, 中等的, 次要的, 第二的, 从属的, 辅助的\n[化] 仲(指CH-3...CH(CH-3)-型支链烃基或指二元胺及R-2CHOH型的醇); 第二",n. the defensive football players who line up behind the linemen\na. being of second rank or importance or value; not direct or immediate\ns. depending on or incidental to what is original or primary\ns. not of major importance,,s:secondaries,2098,3455
 secondee,səˌkɒn'di:,n. 借调员工,,,s:secondees,29676,0
@@ -44955,6 +45014,9 @@ selector,si'lektә,"n. 选择者, 选择器\n[计] 选择器",n. a switch that i
 selenium,si'li:niәm,n. 硒\n[化] 硒Se,n. a toxic nonmetallic element related to sulfur and tellurium; occurs in several allotropic forms; a stable grey metallike allotrope conducts electricity better in the light than in the dark and is used in photocells; occurs in sulfide ores (as pyrite),,,37313,20018
 seles,,n. (Seles)人名；(芬、瑞典)塞勒斯,n. United States tennis player (born in Yugoslavia in 1973),,,29410,0
 self,self,"n. 自己, 自我, 本性, 本质, 私心, 本人\nvt. 使近亲繁殖, 使自花授精\nvi. 自花授精\na. 同一的",n. your consciousness of your own identity\nn. a person considered as a unique individual\na. (used as a combining form) relating to--of or by or to or from or for--the self,,s:selves,2286,2162
+self-confidence,self'kɔnfid(ә)ns,n. 自信,n freedom from doubt; belief in yourself and your abilities,,,0,0
+self-confident,'self'kɔnfidәnt,a. 自信的,s showing poise and confidence in your own worth,,,0,0
+self-service,'self'sә:vis,"n. 自我服务, 自助式销售\n[法] 自助, 顾客自理, 无人售货",n. the practice of serving yourself (as in a grocery or cafeteria)\na. of or denoting an establishment (a restaurant or shop etc.) where customers serve themselves,,,0,0
 selfhood,'selfhud,"n. 自我, 个性, 人格","n. Existence as a separate self, or independent person;\n   conscious personality; individuality.",,,39966,23197
 selfish,'selfiʃ,"a. 自私的, 利己主义的, 自我中心的",a. concerned chiefly or only with yourself and your advantage to the exclusion of others,,,6992,7386
 selfishly,'selfiʃli,"adv. 自私地, 自我中心地, 任性地",r in an egotistical manner,,,32906,27041
@@ -44991,12 +45053,14 @@ semblance,'semblәns,"n. 外表, 伪装, 假象, 少量",n. an outward or token 
 semen,'si:mәn,"n. 精液, 精子\n[医] 种子; 精液",n. the thick white fluid containing spermatozoa that is ejaculated by the male genital tract,,,16598,14940
 semester,si'mestә,n. 学期,n. one of two divisions of an academic year\nn. half a year; a period of 6 months,,s:semesters,36683,5465
 semi,'semi,[计] 半,n one of the two competitions in the next to the last round of an elimination tournament\nn a truck consisting of a tractor and trailer together\nn a trailer having wheels only in the rear; the front is supported by the towing vehicle,,s:semis,15743,20144
+semi-final,"ˈsemi:ˌfaɪnəl, ˈsemaɪ-",n. 半决赛; 准决赛; 复赛,,,s:semi-finals,0,0
 semiannually,ˌsemɪ'ænjʊəlɪ,adv. 每半年,r. twice a year,,,0,44062
 semiaquatic,'semiә'kwætik,a. 半水生的,s. partially aquatic; living or growing partly on land and partly in water,,,0,45051
 semiautomatic,'semi.ɒ:tә'mætik,a. 半自动的\n[电] 半自动的,s. partially automatic,,,0,45686
 semicircle,'semi.sә:kl,n. 半圆形,n. a plane figure with the shape of half a circle,,s:semicircles,33785,19191
 semicircular,.semi'sә:kjulә,a. 半圆的\n[医] 半环形的,s. curved into a half circle,,,34028,24272
 semiclassical,",semi'klæsikәl,,semai-",n. 半古典作品\na. 半古典的,,,,0,41707
+semicolon,'semi.kәulәn,n. 分号\n[计] 分号,n. a punctuation mark (`; ') used to connect independent clauses; indicates a closer relation than does a period,,s:semicolons,0,0
 semiconductor,.semikәn'dʌktә,n. 半导体\n[化] 半导体,n. a substance as germanium or silicon whose electrical conductivity is intermediate between that of a metal and an insulator; its conductivity increases with temperature and in the presence of impurities,,s:semiconductors,9381,8736
 semifinal,.semi'fainl,n. 半决赛,n. one of the two competitions in the next to the last round of an elimination tournament,,s:semifinals,0,9781
 semiformal,.semi'fɒ:ml,a. 半正式的,s. moderately formal; requiring a dinner jacket,,,0,37938
@@ -45677,6 +45741,7 @@ shoreward,'ʃɒ:wәd,"adv. 向岸, 朝岸, 朝向陆地\na. 向岸的",a (of win
 shorewards,,adv. 向海岸,,,,49062,0
 shorn,ʃɔ:n,shear的过去分词,a having the hair or wool cut or clipped off as if with shears or clippers,,0:shear/1:d/d:shorned,0,34052
 short,ʃɒ:t,"a. 短的, 近的, 矮的, 短期的, 简短的, 少量的\nadv. 简短地, 突然\nn. 扼要, 短片, 缺乏\nvt. 故意少给, 使短路",n. the location on a baseball field where the shortstop is stationed\na. primarily temporal sense; indicating or being or seeming to be limited in duration\na. (primarily spatial sense) having little length or lacking in length\na. low in stature; not tall,,r:shorter/t:shortest/i:shorting/p:shorted/3:shorts/d:shorted,500,627
+short-term,,a. 短期的,s relating to or extending over a limited period,,,0,0
 shortage,'ʃɒ:tidʒ,"n. 不足, 缺乏\n[化] 缺额",n the property of being an amount by which something is less than expected or required\nn an acute insufficiency,,s:shortages,3405,4027
 shortbread,'ʃɒ:tbred,n. 白脱甜酥饼,n. very rich thick butter cookie,,,34238,27581
 shortcake,,"n. (英)厚的奶油酥饼, (美)脆饼, 水果松糕, 松饼",n. very short biscuit dough baked as individual biscuits or a round loaf; served with sweetened fruit and usually whipped cream,,,0,29018
@@ -46123,6 +46188,7 @@ siskin,'siskin,"n. 黄雀, 松金翅",n. small yellow-and-black Eurasian finch w
 sisson,,n. (Sisson)人名；(英)西森,,,s:sissons,26088,0
 sissy,'sisi,"n. 女孩子, 女人腔的男人, 胆小鬼\na. 女人腔的",n. a timid man or boy considered childish or unassertive,,,49058,31296
 sister,'sistә,"n. 姐妹, 姐, 妹, 护士, 修女\nvt. 姐妹般对待",n. a female person who has the same parents as another person\nn. (Roman Catholic Church) a title given to a nun (and used as a form of address)\nn. a female person who is a fellow member of a sorority or labor union or other group,,s:sisters,1049,823
+sister-in-law,,"n. 夫(或妻)的姊妹, 嫂子, 弟媳\n[法] 夫或妻的姐妹, 姑, 姨",n. the sister of your spouse,,s:sister-in-laws,0,0
 sisterhood,'sistәhud,"n. 姊妹关系, 姊妹之谊, 妇女团体",n. the kinship relation between a female offspring and the siblings\nn. an association or society of women who are linked together by a common religion or trade or interest\nn. a religious society of women who live together as sisters (especially an order of nuns),,,34291,21832
 sisterly,'sistәli,"a. 姊妹一般的, 象姊妹的",a. like or characteristic of or befitting a sister,,,34290,29438
 sisters,,n. 姐妹们（sister的复数形式）,n a female person who has the same parents as another person\nn (Roman Catholic Church) a title given to a nun (and used as a form of address)\nn a female person who is a fellow member of a sorority or labor union or other group\nn (slang) sometimes used as a term of address for attractive young women,,0:sister/1:s,40677,0
@@ -46764,6 +46830,7 @@ snuggle,'snʌgl,"vi. 偎依\nvt. 使舒适温暖, 紧抱",n a close and affectio
 snugly,'snʌgli,"adv. 舒适地, 整洁干净地, 紧密地",r. fitting closely\nr. safely protected\nr. warmly and comfortably sheltered,,,20472,17724
 snyder,,n. 斯奈德（美国得克萨斯州城市名）,,,,40676,0
 so,sәu,"adv. 如此, 如是, 如...那样\nconj. 所以, 因此\npron. 这样","r. to a very great extent or degree\nr. in a manner that facilitates\nr. in such a condition or manner, especially as expressed or implied\nr. to a certain unspecified extent or degree",,,48,55
+so-called,,"a. 所谓的, 号称的\n[法] 所谓的, 据称的",s doubtful or suspect,,,0,0
 soak,sәuk,"n. 浸, 湿透, 大雨\nvt. 使上下湿透, 浸, 吸入, 吸收, 浸洗掉\nvi. 浸泡, 渗透",n. the process of becoming softened and saturated as a consequence of being immersed in water (or other liquid)\nn. washing something by allowing it to soak\nv. submerge in a liquid\nv. beat severely,,i:soaking/d:soaked/p:soaked/3:soaks/s:soaks,5630,4835
 soaked,,a. 湿透的,"v submerge in a liquid\nv rip off; ask an unreasonable price\nv cover with liquid; pour liquid onto\nv leave as a guarantee in return for money\nv beat severely\nv make drunk (with alcoholic drinks)\nv become drunk or drink excessively\nv fill, soak, or imbue totally\nv heat a metal prior to working it\ns very drunk",,0:soak/1:dp/d:soaked/p:soaked,14852,12283
 soaker,'sәukә,"n. 浸洗人, 酒量大的人, 倾盆大雨\n[化] 裂化反应室; 浸渍剂",n a heavy rain\nn a person who drinks alcohol to excess habitually,,s:soakers,0,33884
@@ -46979,6 +47046,7 @@ sommer,,n. [建] 大梁；[建] 地梁；凛条\nn. (Sommer)人名；(德)佐默
 somnolence,'sɔmnәlәns,"n. 思睡, 困倦, 瞌睡, 嗜眠, 嗜眠症\n[医] 瞌睡, 欲睡; 嗜眠",n a very sleepy state,,,0,38522
 somnolent,'sɒmnәlәnt,"a. 想睡的, 催眠的\n[医] 瞌睡的; 嗜眠的",s inclined to or marked by drowsiness,,,38600,32814
 son,sʌn,"n. 儿子, 女婿, 子孙\n[法] 儿子, 女婿, 养子",n. a male human offspring\nn. the divine word of God; the second person in the Trinity (incarnate in Jesus),,s:sons,599,481
+son-in-law,,n. 女婿,n. the husband of your daughter,,s:son-in-laws,0,0
 sonar,'sәunɑ:,n. 声纳\n[计] 声纳,n. a measuring instrument that sends out an acoustic pulse in water and measures distances in terms of the time for the echo of the pulse to return,,s:sonars,17722,14879
 sonata,sә'nɑ:tә,n. 奏鸣曲,n. a musical composition of 3 or 4 movements of contrasting forms,,s:sonatas,17340,20594
 sondheim,,桑德海姆（人名）,n. United States composer of musicals (born in 1930),,,47339,0
@@ -47209,6 +47277,7 @@ sparc,,abbr. SUN公司的工作站系统,,,,7517,0
 spare,spєә,"n. 剩余, 备用品, 备件, 备用零件, 备用轮胎\na. 多余的, 备用的, 空闲的, 节约的, 瘦的\nvi. 节约, 省掉, 宽恕\nvt. 节约, 省用, 剩下, 饶恕, 赦免",n. a score in tenpins; knocking down all ten after rolling two balls\nv. refrain from harming\nv. save or relieve from an experience or action\nv. give up what is not strictly needed,,d:spared/s:spares/p:spared/i:sparing/3:spares,3617,4585
 sparely,'spєәli,"adv. 缺乏着, 节俭地, 瘦瘦地",r. in a spare manner,,,0,40428
 spareness,'spєәnis,"n. 缺乏, 贫乏, 瘦弱",n the property of being scanty or scattered; lacking denseness\nn the property of having little body fat,,,0,42904
+sparerib,'spєәrib,n. 排骨,n. a cut of pork ribs with much of the meat trimmed off,,,0,0
 spareribs,'speərɪbz,"n. 排骨, 小排骨",n. cut of pork from the rib section with most of the meat trimmed off,,,0,34318
 sparing,'speәriŋ,"a. 节约的, 节制的, 吝啬的, 爱惜的, 吝惜的, 节省的, 贫乏的, 少量的",v refrain from harming\nv save or relieve from an experience or action\nv give up what is not strictly needed\nv use frugally or carefully\nv furnish with spars\nv fight with spurs\nv box lightly\nv fight verbally\ns avoiding waste,,0:spare/1:i/i:sparing,43294,42561
 sparingly,,"adv. 节约地, 爱惜地, 吝惜地, 少量地, 贫乏地",r to a meager degree or in a meager manner,,,18495,17358
@@ -47557,6 +47626,7 @@ sportfisherman,"'spɔːt,fɪʃəmən","n. (比赛或消遣性的)垂钓者；垂
 sporting,'spɒ:tiŋ,"a. 喜好运动的, 运动用的, 冒险性的",a. relating to or used in sports\ns. involving risk or willingness to take a risk,,0:sport/1:i/i:sporting,5354,6535
 sportingly,,adv. 在体育运动方面,r. so as to be sporting; in a sporting manner,,,43554,0
 sportive,'spɒ:tiv,"a. 嬉戏着的, 戏谑的, 闹着玩的, 运动的",a. relating to or interested in sports,,,0,40128
+sports,spɔ:ts,"n. (英)运动会, 运动的, 适用于运动的, 运动会的, 与运动会有关的",n an active diversion requiring physical exertion and competition\nn the occupation of athletes who compete for pay\nn (Maine colloquial) a temporary summer resident of Maine\nn a person known for the way she (or he) behaves when teased or defeated or subjected to trying circumstances\nn someone who engages in sports\nn (biology) an organism that has characteristics resulting from chromosomal alteration\nn verbal wit or mockery (often at another's expense but not to be taken seriously)\nv wear or display in an ostentatious or proud manner\nv play boisterously,,0:sport/1:s3,0,0
 sportscar,spɔ:ts'kɑ:,n. 跑车; 运动车; 比赛用车,,,s:sportscars,47406,0
 sportscast,'spɒ:tskɑ:st,"n. 运动比赛转播, 比赛实况说明",n. a broadcast of sports news or commentary\nv. broadcast a sports event,,s:sportscasts,0,39655
 sportscaster,'spɒ:tskɑ:stә,n. 体育节目广播员,n an announcer who reads sports news or describes sporting events,,s:sportscasters,0,19897
@@ -52630,6 +52700,7 @@ unadventurous,ˌʌnədˈventʃərəs,"a. 没有危险的, 不冒险的",a. lacki
 unaffected,.ʌnә'fektid,"a. 不矫揉造作的, 自然的, 未受影响的, 未被感动的\n[经] 不受影响的",a. undergoing no change when acted upon\na. free of artificiality; sincere and genuine,,,8595,13116
 unaffiliated,ˌʌnəˈfɪlieɪtɪd,"a. 无党派, 无组织的",s. not affiliated,,,0,27044
 unaffordable,ˌʌnə'fɔ:dəbl,"a. 买不起的, 负担不起的",,,,42860,28352
+unafraid,.ʌnә'freid,a. 不怕的,a. oblivious of dangers or perils or calmly resolute in facing them,,0:unafray/1:dp/d:unafraid,0,0
 unaided,.ʌn'eidid,"a. 无助的, 未受协助的",s. carried out without aid or assistance,,,18415,20002
 unalienable,",ʌn'eiljәnәbl","[法] 不可转让的, 不可剥夺的, 不可出卖的",a incapable of being repudiated or transferred to another,,,0,32420
 unaligned,.ʌnә'laind,a. 不结盟的,,,,0,41180
@@ -52792,6 +52863,7 @@ unclean,.ʌn'kli:n,"a. 不洁净的, 不纯洁的, 行为不检的",a. having a 
 uncleanliness,, [医]不清洁,n. lack of cleanly habits,,,0,46135
 unclear,.ʌn'kliә,"a. 不易了解的, 不清楚的, 含混的",a. not clear to the mind,,,5656,5282
 uncleared,,[经] 未付清的,a. not cleared; not rid of objects or obstructions,,,45527,43167
+unclearly,,[网络] 含糊地；不清晰,,,,0,0
 unclench,.ʌn'klentʃ,"vt. 弄开, 撬开\nvi. 松开",v. t. Same as Unclinch.,,p:unclenched/i:unclenching/3:unclenches,37166,28803
 unclipped,",ʌn'klipt",a. 未剪(短)的,s. not clipped,,,35969,35578
 unclog,'ʌn'klɔ^,"vt.使畅通,清除…的阻塞, 扫除…的阻碍",v. become or cause to become unobstructed,,i:unclogging/p:unclogged/3:unclogs/d:unclogged,0,36909
@@ -54021,6 +54093,7 @@ unzip,.ʌn'zip,vi. 拉开拉链\nvt. 拉开,v. open the zipper of,,p:unzipped/i:
 unzipped,",ʌn'zipt",a. 未拉上拉链的,v open the zipper of,,0:unzip/1:pd,0,45881
 uo,,abbr. 尚未发出的定货单（undelivered orders）；网络创世纪（Ultima Online）,,,s:uos,32175,0
 up,ʌp,"a. 向上的, 起床的, 涨的\nadv. 向上, 上涨\nprep. 在...上面, 向...的较高处",v. raise\na. being or moving higher in position or greater in some value; being above a former position or level\ns. extending or moving toward a higher place\ns. (usually followed by `on' or `for') in readiness,,d:upped/0:up/i:upping/3:up/1:3/p:upped/s:ups,52,50
+up-to-date,'ʌptә'deit,"a. 直到现在的, 最近的, 现代化的\n[化] 最新的",s. reflecting the latest information or changes\ns. in accord with the most fashionable ideas or style,,,0,0
 upanishad,u:'pæniʃәd,"n. 《奥义书》(印度教古代吠陀教义的思辩作品,为后世各派印度哲学所依据)",n. a later sacred text of Hinduism of a mystical nature dealing with metaphysical questions,,,46738,0
 upbeat,'ʌpbi:t,"n. 弱拍, 上升, 兴旺\na. 上升的, 乐观的",n. an unaccented beat (especially the last beat of a measure),,s:upbeats,20777,9397
 upbraid,ʌp'breid,"vt. 谴责, 责骂, 申斥",v express criticism towards,,d:upbraided/p:upbraided/i:upbraiding/3:upbraids/0:upbray/1:p,35891,29948
@@ -55347,6 +55420,7 @@ wash,wɒʃ,"n. 洗, 洗涤, 冲洗, 洗的衣服, 冲积物, 洼地\nvt. 洗, �
 washable,'wɔʃәbl,"a. 可洗的, 耐洗的",a. capable of being washed without injury,,,24841,26190
 washbasin,'wɒ:ʃ.beisәn,n. 脸盆,n. a bathroom sink that is permanently installed and connected to a water supply and drainpipe; where you can wash your hands and face\nn. a basin for washing the hands (`wash-hand basin' is a British expression),,s:washbasins,22743,31471
 washboard,'wɒ:ʃbɒ:d,n. 洗衣板,n. device consisting of a corrugated surface to scrub clothes on\nn. protective covering consisting of a broad plank along a gunwale to keep water from splashing over the side,,,47491,24768
+washbowl,"'wɔʃbәjl, 'wɔ:ʃ-",n. 洗脸盆,n a bathroom sink that is permanently installed and connected to a water supply and drainpipe; where you can wash your hands and face\nn a basin for washing the hands (`wash-hand basin' is a British expression),,,0,0
 washburn,,n. (Washburn)人名；(英)沃什伯恩,,,,30560,0
 washcloth,'wɒʃklɒθ,"n. 毛巾, 浴巾",n. bath linen consisting of a piece of cloth used to wash the face and body,,,0,18398
 washday,'wɔʃdei; (?@) 'wɔ:-,n. 洗衣日,n. a day set aside for doing household laundry,,s:washdays,42938,0
@@ -55355,6 +55429,7 @@ washer,'wɒʃә,"n. 洗衣人, 垫圈, 洗衣机\n[化] 洗涤器; 垫圈",n. so
 washerman,"'wɔʃәmәn, 'wɔ:ʃ-",n. 男洗衣工,n. operates industrial washing machine,,s:washermen,0,46948
 washerwoman,'wɔʃәwjmәn; (?@) 'wɔ:-,n. 洗衣女工,n a working woman who takes in washing,,s:washerwomen,38236,32866
 washing,'wɒʃiŋ,"n. 洗涤, 浸, 洗涤物\n[机] 涂浆, 洗涤","n the work of cleansing (usually with soap and water)\nn garments or white goods that can be cleaned by laundering\nv clean with some chemical process\nv cleanse (one's body) with soap and water\nv cleanse with a cleaning agent, such as soap, and water\nv move by or as if by water\nv be capable of being washed\nv admit to testing or proof\nv separate dirt or gravel from (precious minerals)\nv apply a thin coating of paint, metal, etc., to\nv remove by the application of water or other liquid and soap or some other cleaning agent\nv form by erosion\nv make moist\nv wash or flow against\nv to cleanse (itself or another animal) by licking",,0:wash/1:i/i:washing/s:washings,4128,8958
+washing-up,,"n. 洗餐具, 待洗餐具",n. the washing of dishes etc after a meal,,,0,0
 washington,'wɒʃiŋtn,n. 华盛顿,n. the capital of the United States in the District of Columbia and a tourist mecca; George Washington commissioned Charles L'Enfant to lay out the city in 1791\nn. a state in northwestern United States on the Pacific\nn. 1st President of the United States; commander-in-chief of the Continental Army during the American Revolution (1732-1799),,,2563,0
 washingtonian,",wɔʃiŋ'tәuniәn",a. 华盛顿市的,n. a native or resident of the city of Washington\nn. a native or resident of the state of Washington\na. of or relating to or in the manner of George Washington,,s:washingtonians,0,25829
 washout,'wɒʃaut,"n. 冲刷, 冲蚀, 冲蚀的地区, 失败者",n. the channel or break produced by erosion of relatively soft soil by water\nn. the erosive process of washing away soil or gravel by water (as from a roadway),,s:washouts,28992,0
@@ -55629,6 +55704,11 @@ welding,'weldiŋ,"a. 焊的\n[机] 熔接, 焊接, 锻接",n. fastening two piec
 weldon,'weldәn,n. 韦尔登（男子名）,,,,27430,0
 welfare,'welfєә,"n. 福利, 安宁, 幸福, 福利事业\na. 福利的",n governmental provision of economic assistance to persons in need\nn something that aids or promotes well-being\nn a contented state of being happy and healthy and prosperous,,,1883,1933
 well,wel,"n. 井, 泉水, 源泉, 好\nv. 涌出\na. 健康的, 良好的, 适宜的, 恰当的\nadv. 很好地, 适当地, 好意地, 很, 完全\ninterj. 好啦",n. a deep hole or shaft dug or drilled to obtain water or oil or gas or brine\nn. a cavity or vessel used to contain liquid\nn. an abundant source\nn. an open shaft through the floors of a building (as for a stairway),,s:wells/i:welling/p:welled/3:wells/d:welled,84,100
+well-balanced,wel'bælәnst,"a. 匀称的, 营养成分均衡的, 神志健全的, 明智的, 通情达理的\n[计] 良平衡的",s. in an optimal state of balance or equilibrium,,,0,0
+well-built,'wel'bɪlt,adj. 结实的; 坚固的; <口>肌肉发达的; 体格健美的,,,,0,0
+well-dressed,,a. 穿得很体面的,s having tasteful clothing and being scrupulously neat,,,0,0
+well-known,,"a. 众所周知的, 有名的",s. widely or fully known,,,0,0
+well-paid,,"a. 高工资的, 报酬优厚的\n[经] 高工资的, 报酬优厚的",,,,0,0
 wella,,n. 威娜（公司名）,,,,30463,0
 welland,'welәnd,"韦兰[加拿大东南部港市](临韦兰运河) , Canal 韦兰运河",,,,42550,0
 wellbeing,,"n. 健康, 幸福, 福利, 舒适, 安宁",n. a contented state of being happy and healthy and prosperous,,,18568,0
@@ -55668,6 +55748,7 @@ wenlock,,n. 文洛克（2012伦敦夏季奥运会吉祥物）; 文洛克（英�
 wensleydale,'wenzlideil,"(英国 Yorkshire 产的)温斯利代干酪, 英国产的一种长毛羊",,,,25802,0
 wentworth,,n. 温特沃斯（英国一地名）；文特沃斯（男子名）,,,,22816,0
 wer,,abbr. 文字差错率（Word Error Rate）；[医]风团红斑反应（wheal erythema reaction）,,,s:wers,46780,0
+were,wә:,be的过去式,"v have the quality of being; (copula, used with an adjective or a predicate noun)\nv be identical to; be someone or something\nv occupy a certain position or area; be somewhere\nv have an existence, be extant\nv happen, occur, take place; this was during the visit to my parents' house""\nv be identical or equivalent to\nv form or compose\nv work in a specific place, with a specific subject, or in a specific function\nv represent, as of a character on stage\nv spend or use time\nv have life, be alive\nv to remain unmolested, undisturbed, or uninterrupted -- used only in infinitive form\nv be priced at",,1:p/0:be,0,0
 werewolf,'wә:wulf,"n. 狼人, 豺狼般的人",n. a monster able to change appearance from human to wolf and back again,,s:werewolves,31792,20783
 werner,'wә:nә,n. 维尔纳（男子名）,,,,16529,0
 wes,wes,"n. 韦斯（Wesley的昵称, 男子名）",,,,18032,0
@@ -56617,6 +56698,7 @@ wynne,,n. 魏恩（男子名）；云茵（女子名）,,,,25905,0
 wyoming,wai'әumiŋ,n. 怀俄明,n. a state in the western United States; mountainous in the west and north with the Great Plains in the east,,,23646,0
 wysiwyg,'wiziwi^,abbr. 所见即所得（What You See Is What You Get）,a. relating to or being a word processing system that prints the text exactly as it appears on the computer screen,,,30894,0
 x,eks,"n. 未知数\n[计] 交换, 变址, 索引, 传输",n. the 24th letter of the Roman alphabet,,,1553,0
+x-ray,'eks'rei,"a. X射线的\nvt. 用X光检查, 照X光\nvi. 使用X光",v. examine by taking x-rays\nv. take an x-ray of something or somebody,,s:x-rays/i:x-raying/p:x-rayed/3:x-rays/d:x-rayed,0,0
 xa,,abbr. 辅助放大器（Auxiliary Amplifier）,,,,44064,0
 xanadu,"'zænә,du:","n. 华厦,行宫,世外桃源",,,,44490,0
 xanthe,'zænθi,n. 赞茜(f.),,,,32161,0
@@ -56991,3 +57073,7 @@ zygomatic,.zaigәu'mætik,"a. 颊骨的, 颧骨的\n[医] 颧的, 颧骨的",a. 
 zygote,'zaigәut,"n. 合子, 受精卵\n[医] 合子",n. (genetics) the diploid cell resulting from the union of a haploid spermatozoon and ovum (including the organism that develops from that cell),,s:zygotes/3:zygotes,0,31590
 zz,,"n. Z字形, 锯齿形（等于zigzag）",,,,0,31977
 zzz,,int. 打鼾声,,,,0,40687
+cyberaddict,,网络成瘾者,a person with a compulsive dependence on the internet,n.,,,
+cyberpet,,电子宠物；虚拟宠物,an electronic toy that simulates caring for a pet,n.,,,
+cyberschool,,网络学校；在线学校,a school that teaches through online methods,n.,,,
+glocal,,兼具全球与本地特点的；全球本土化的,having features or relating to factors that are both local and global,a.,,,

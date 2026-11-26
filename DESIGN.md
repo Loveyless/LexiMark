@@ -196,7 +196,8 @@ JSON 格式：{ "words": ["abandon", "ability", ...] }
 ```txt
 读取完整 ECDICT
 ↓
-过滤条件：bnc <= 50000 OR (bnc == 0 AND frq <= 50000)
+过滤条件：bnc <= 50000 OR (bnc == 0 AND frq <= 50000)，并保留全部 CEFR-J A1-B2 词条
+追加：scripts/ecdict-overrides.json 中有来源记录的本地补充词条
 ↓
 保留字段：word, phonetic, translation, definition, pos, exchange, bnc, frq
 ↓

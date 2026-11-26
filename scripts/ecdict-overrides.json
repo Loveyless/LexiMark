@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "word": "cyberaddict",
+      "translation": "网络成瘾者",
+      "definition": "a person with a compulsive dependence on the internet",
+      "pos": "n.",
+      "source": "Office québécois de la langue française, GDT"
+    },
+    {
+      "word": "cyberpet",
+      "translation": "电子宠物；虚拟宠物",
+      "definition": "an electronic toy that simulates caring for a pet",
+      "pos": "n.",
+      "source": "Collins English Dictionary"
+    },
+    {
+      "word": "cyberschool",
+      "translation": "网络学校；在线学校",
+      "definition": "a school that teaches through online methods",
+      "pos": "n.",
+      "source": "Cambridge Dictionary"
+    },
+    {
+      "word": "glocal",
+      "translation": "兼具全球与本地特点的；全球本土化的",
+      "definition": "having features or relating to factors that are both local and global",
+      "pos": "a.",
+      "source": "Oxford Advanced Learner's Dictionary"
+    }
+  ]
+}

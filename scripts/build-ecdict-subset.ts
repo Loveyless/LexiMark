@@ -6,15 +6,15 @@
  * 用法：
  *   pnpm tsx scripts/build-ecdict-subset.ts <ecdict.csv> [out.csv]
  *
- * 过滤：bnc <= 50000 OR (bnc == 0 AND frq <= 50000)
+ * 过滤：保留词频阈值内的词条，并完整保留 CEFR-J 词表中的词条。
  * 保留字段：word, phonetic, translation, definition, pos, exchange, bnc, frq
  *
  * 数据源：https://github.com/skywind3000/ECDICT  MIT License。
  */
 import { promises as fs } from 'node:fs'
 import * as path from 'node:path'
+import { shouldIncludeEcdictEntry } from '../src/dictionary/subset-filter'
 
-const FREQ_LIMIT = 50_000
 const KEEP_FIELDS = [
   'word',
   'phonetic',
@@ -25,6 +25,17 @@ const KEEP_FIELDS = [
   'bnc',
   'frq',
 ] as const
+
+type SupplementalEntry = {
+  word: string
+  phonetic?: string
+  translation?: string
+  definition?: string
+  pos?: string
+  exchange?: string
+  bnc?: string
+  frq?: string
+}
 
 async function main() {
   const input = process.argv[2]
@@ -53,7 +64,13 @@ async function main() {
     }
   }
 
+  const levelWordSet = await loadLevelWordSet()
+  const supplementalData = JSON.parse(
+    await fs.readFile(path.resolve('scripts/ecdict-overrides.json'), 'utf8'),
+  ) as { entries?: SupplementalEntry[] }
+
   const out: string[][] = [[...KEEP_FIELDS] as string[]]
+  const includedWords = new Set<string>()
   let kept = 0
   for (let i = 1; i < rows.length; i++) {
     const row = rows[i]!
@@ -63,19 +80,38 @@ async function main() {
     if (/\s/.test(word)) continue
     const bnc = toIntOrZero(row[indexes['bnc']!])
     const frq = toIntOrZero(row[indexes['frq']!])
-    const keep =
-      (bnc > 0 && bnc <= FREQ_LIMIT) ||
-      (bnc === 0 && frq > 0 && frq <= FREQ_LIMIT)
-    if (!keep) continue
+    if (!shouldIncludeEcdictEntry(word, bnc, frq, levelWordSet)) continue
     out.push(
       KEEP_FIELDS.map((f) => (f === 'word' ? word : row[indexes[f]!] ?? '')),
     )
+    includedWords.add(word)
+    kept++
+  }
+
+  for (const entry of supplementalData.entries ?? []) {
+    const word = entry.word.trim().toLowerCase()
+    if (!word || /\s/.test(word) || includedWords.has(word)) continue
+    out.push(KEEP_FIELDS.map((f) => (f === 'word' ? word : entry[f] ?? '')))
+    includedWords.add(word)
     kept++
   }
 
   await fs.mkdir(path.dirname(output), { recursive: true })
   await fs.writeFile(output, stringifyCsv(out), 'utf8')
   console.log(`wrote ${output}: ${kept} entries`)
+}
+
+async function loadLevelWordSet(): Promise<Set<string>> {
+  const words = new Set<string>()
+  for (const level of ['a1', 'a2', 'b1', 'b2']) {
+    const file = path.resolve(`public/data/levels/${level}.json`)
+    const data = JSON.parse(await fs.readFile(file, 'utf8')) as { words?: string[] }
+    for (const word of data.words ?? []) {
+      const normalized = word.trim().toLowerCase()
+      if (normalized) words.add(normalized)
+    }
+  }
+  return words
 }
 
 function toIntOrZero(v: string | undefined): number {
